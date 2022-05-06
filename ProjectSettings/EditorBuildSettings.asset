@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Username.unity
     guid: 4533ba704e2a0a24686d19c211fdec7c
   - enabled: 1
-    path: Assets/Scenes/PandaExhibit.unity
-    guid: 4e8164031a02aae4db9a4465dfd58ee8
+    path: Assets/Scenes/Lobby.unity
+    guid: 88c6fbcbaa3edd8438f113ace318c851
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
