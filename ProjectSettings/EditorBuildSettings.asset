@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Username.unity
     guid: 4533ba704e2a0a24686d19c211fdec7c
   - enabled: 1
+    path: Assets/Scenes/Background.unity
+    guid: 2ff88684489446b418348eea7ed6b578
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: fab9100cad9db764686b0e84095a90b0
+  - enabled: 1
     path: Assets/Scenes/PandaExhibit.unity
     guid: 88c6fbcbaa3edd8438f113ace318c851
   - enabled: 0
