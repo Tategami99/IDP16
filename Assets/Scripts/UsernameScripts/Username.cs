@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Username : MonoBehaviour
 {
-    public static string input;
+    public static string username;
 
     public void ReadStringInput(string name)
     {
-        input = name;
-        Debug.Log(input);
-        SceneManager.LoadScene("PandaExhibit");
+        username = name;
+        Debug.Log(username);
+        SceneManager.LoadScene("Background");
     }
 }

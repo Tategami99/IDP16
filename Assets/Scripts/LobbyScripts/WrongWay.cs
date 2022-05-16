@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class BackgroundTextWrite : MonoBehaviour
+public class WrongWay : MonoBehaviour
 {
-    [SerializeField] private float writeSpeed = 50f;
-    [SerializeField] private GameObject ContButton;
+    [SerializeField] private float writeSpeed = 15f;
+    [SerializeField] private GameObject Continue;
+    [SerializeField] private TMP_Text usernameLabel;
     // Start is called before the first frame update
     void Start()
     {
-        ContButton.SetActive(false);
+        Continue.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     // Update is called once per frame
@@ -18,11 +19,14 @@ public class BackgroundTextWrite : MonoBehaviour
     {
         
     }
-    public void Run(string textToType, TMP_Text textLabel){
-        StartCoroutine(ShowText(textToType, textLabel));
+    public void RunWrongWay(string textToType, TMP_Text textLabel){
+        StartCoroutine(ShowWrongWayText(textToType, textLabel));
     }
-    IEnumerator ShowText(string textToType, TMP_Text textLabel){
+    IEnumerator ShowWrongWayText(string textToType, TMP_Text textLabel){
+        textLabel.text = "";
+        usernameLabel.text = "";
         yield return new WaitForSeconds(1);
+        usernameLabel.text = Username.username;
         float t = 0;
         int charIndex = 0;
         while (charIndex < textToType.Length){
@@ -33,6 +37,6 @@ public class BackgroundTextWrite : MonoBehaviour
             yield return null;
         }
         textLabel.text = textToType;
-        ContButton.SetActive(true);
+        Continue.GetComponent<BoxCollider2D>().enabled = true;
     }
 }
