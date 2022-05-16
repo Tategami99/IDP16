@@ -5,7 +5,8 @@ using TMPro;
 
 public class KeypadEnter : MonoBehaviour
 {
-    [SerializeField] private string Correct;
+    [SerializeField] private string CorrectForStorehouse;
+    [SerializeField] private string CorrectForDoorsHouse;
     [SerializeField] private string Inorrect;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text SpeakerLabel;
@@ -32,9 +33,13 @@ public class KeypadEnter : MonoBehaviour
         textLabel.text = "";
         SpeakerLabel.text = "";
         SpeakerLabel.text = Username.username;
-        if (Keypad1.StorehousePasscode == "1611441"){
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Correct, textLabel);
+        if (Keypad1.StorehousePasscode == "222318218111824228" && GoDoorsHouse.EnteredFromDoorsHouse == false){
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForStorehouse, textLabel);
             StorehouseDoor.locked = false;
+        }
+        else if (Keypad1.StorehousePasscode == "16" && GoDoorsHouse.EnteredFromDoorsHouse){
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForDoorsHouse, textLabel);
+            DoorsHouseDoor.DoorsHouselocked = false;
         }
         else{
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Inorrect, textLabel);

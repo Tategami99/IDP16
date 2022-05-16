@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoStorehouseDoor : MonoBehaviour
+public class GoDoorsHouse : MonoBehaviour
 {
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject LeftArrow;
     [SerializeField] private GameObject RightArrow;
-    Vector2 door = new Vector2 (0, 11);
-    Vector2 DoorsHouseFront = new Vector2 (-18, 11);
+    Vector2 door = new Vector2 (-18, 11);
+    public static bool EnteredFromDoorsHouse = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +21,11 @@ public class GoStorehouseDoor : MonoBehaviour
         
     }
     void OnMouseDown() {
+        EnteredFromDoorsHouse = true;
         Debug.Log("clicked");
-        if (GoDoorsHouse.EnteredFromDoorsHouse){
-            Camera.transform.position = DoorsHouseFront;
-        }
-        else{
         Camera.transform.position = door;
-        }
         LeftArrow.SetActive(false);
         RightArrow.SetActive(false);
-        Keypad1.StorehousePasscode = "";
     }
 }
+
