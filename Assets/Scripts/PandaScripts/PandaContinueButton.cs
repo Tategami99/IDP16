@@ -7,8 +7,14 @@ public class PandaContinueButton : MonoBehaviour
 {
     // lines talking w/ panda 1
     [SerializeField] private string Panda1Line1;
+    [SerializeField] private string Panda1AlternateUserLine1;
+    [SerializeField] private string Panda1AlternateLine2;
+    [SerializeField] private string Panda1AlternateUserLine2;
     //lines talking w/ panda 2
     [SerializeField] private string Panda2UserLine1;
+    [SerializeField] private string Panda2AlternateUserLine1;
+    [SerializeField] private string Panda2AlternatePandaLine2;
+    [SerializeField] private string NarratorLine2;
     //lines talking w/ panda 3
     [SerializeField] private string Panda3Line1;
     [SerializeField] private string Panda3AlternateLine1;
@@ -49,14 +55,41 @@ public class PandaContinueButton : MonoBehaviour
         SpeakerLabel.text = "";
         // Panda 1 lines
         if (Panda1Line == 2 && Panda1DialogueUI.P1clicked){
-            SpeakerLabel.text = "Panda";
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1Line1, textLabel);
-            Panda1Line += 1;
+            if (Panda1DialogueUI.infoObtained){
+                SpeakerLabel.text = Username.username;
+                GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1AlternateUserLine1, textLabel);
+                Panda1Line += 1;
+            }
+            else{
+                SpeakerLabel.text = "Panda";
+                GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1Line1, textLabel);
+                Panda1Line += 1;
+            }
         }
         else if (Panda1Line == 3 && Panda1DialogueUI.P1clicked){
+            if (Panda1DialogueUI.infoObtained){
+                SpeakerLabel.text = "Panda";
+                GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1AlternateLine2, textLabel);
+                Panda1Line += 1;
+            }
+            else{
+                Panda1DialogueUI.P1clicked = false;
+                PandaDialogueBox.SetActive(false);
+                PandaN1.GetComponent<BoxCollider2D>().enabled = true;
+                Panda1Line = 2;
+            }
+        }
+        else if (Panda1Line == 4 && Panda1DialogueUI.P1clicked){
+            if (Panda1DialogueUI.infoObtained){
+                SpeakerLabel.text = Username.username;
+                GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1AlternateUserLine2, textLabel);
+                Panda1Line += 1;
+            }
+        }
+        else if (Panda1Line == 5){
             Panda1DialogueUI.P1clicked = false;
             PandaDialogueBox.SetActive(false);
-            PandaN1.GetComponent<BoxCollider2D>().enabled = true;
+            PandaN1.GetComponent<BoxCollider2D>().enabled = false;
             Panda1Line += 1;
         }
 
@@ -69,14 +102,38 @@ public class PandaContinueButton : MonoBehaviour
 
         // Panda 2 lines
         if (Panda2Line == 2 && Panda2.P2clicked){
-            SpeakerLabel.text = Username.username;
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda2UserLine1, textLabel);
+            if (Panda2.bambooObtained){
+                SpeakerLabel.text = Username.username;
+                GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda2AlternateUserLine1, textLabel);
+            }
+            else{
+                SpeakerLabel.text = Username.username;
+                GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda2UserLine1, textLabel);
+            }
             Panda2Line += 1;
         }
         else if (Panda2Line == 3 && Panda2.P2clicked){
+            if (Panda2.bambooObtained){
+                SpeakerLabel.text = "Panda 2";
+                GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda2AlternatePandaLine2, textLabel);
+                Panda2Line += 1;
+            }
+            else{
+                Panda2.P2clicked = false;
+                PandaDialogueBox.SetActive(false);
+                PandaN2.GetComponent<BoxCollider2D>().enabled = true;
+                Panda2Line = 2;
+            }
+        }
+        else if (Panda2Line == 4 && Panda2.P2clicked){
+            SpeakerLabel.text = "";
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:NarratorLine2, textLabel);
+            Panda2Line += 1;
+        }
+        else if (Panda2Line == 5 && Panda2.P2clicked){
             Panda2.P2clicked = false;
             PandaDialogueBox.SetActive(false);
-            PandaN2.GetComponent<BoxCollider2D>().enabled = true;
+            PandaN2.GetComponent<BoxCollider2D>().enabled = false;
         }
 
         // lines when u click on the enter button on the keypad
@@ -89,7 +146,7 @@ public class PandaContinueButton : MonoBehaviour
         // Panda 3 lines
         if (Panda3Line == 2 && Panda3.P3clicked){
             SpeakerLabel.text = "Panda 3";
-            if (AddSword.swordObtained){
+            if (Panda3.coinObtained){
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda3AlternateLine1, textLabel);
             }
             else{
@@ -98,10 +155,9 @@ public class PandaContinueButton : MonoBehaviour
             Panda3Line += 1;
         }
         else if (Panda3Line == 3 && Panda3.P3clicked){
-            if (AddSword.swordObtained){
+            if (Panda3.coinObtained){
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:NarratorLine1, textLabel);
-                Panda3.coinObtained = true;
-                Panda3Line = 6;
+                Panda3Line = 7;
             }
             else{
                 SpeakerLabel.text = Username.username;
@@ -110,7 +166,7 @@ public class PandaContinueButton : MonoBehaviour
             }
         }
         else if (Panda3Line == 4 && Panda3.P3clicked){
-            SpeakerLabel.text = Username.username;
+            SpeakerLabel.text = "Panda 3";
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda3Line2, textLabel);
             Panda3Line += 1;
         }
@@ -123,6 +179,13 @@ public class PandaContinueButton : MonoBehaviour
             Panda3.P3clicked = false;
             PandaDialogueBox.SetActive(false);
             PandaN3.GetComponent<BoxCollider2D>().enabled = true;
+            Panda3Line = 2;
+        }
+        else if (Panda3Line == 7 && Panda3.P3clicked){
+            Panda3.P3clicked = false;
+            PandaDialogueBox.SetActive(false);
+            PandaN3.GetComponent<BoxCollider2D>().enabled = false;
+            Panda3Line = 2;
         }
 
         // lines when u click on the hint button

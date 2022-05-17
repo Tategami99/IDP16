@@ -10,8 +10,11 @@ public class AddItemToInventory : MonoBehaviour
     [SerializeField] SpriteRenderer slot4;
     [SerializeField] SpriteRenderer slot5;
     [SerializeField] Sprite item;
-    [SerializeField] GameObject self;
-    public static int slotfull = 0;
+    public static bool slot1full = false;
+    public static bool slot2full = false;
+    public static bool slot3full = false;
+    public static bool slot4full = false;
+    public static bool slot5full = false;
     public static int maxSlot = 5;
     // Start is called before the first frame update
     void Start()
@@ -24,25 +27,28 @@ public class AddItemToInventory : MonoBehaviour
     {
         
     }
-    private void OnMouseDown() {
-        if (slotfull == 0){
+    public void Add() {
+        if (slot1full == false){
             slot1.sprite = item;
+            slot1full = true;
         }
-        else if (slotfull == 1){
+        else if (slot2full == false){
             slot2.sprite = item;
+            slot2full = true;
         }
-        else if (slotfull == 2){
+        else if (slot3full == false){
             slot3.sprite = item;
+            slot3full = true;
         }
-        else if (slotfull == 3){
+        else if (slot4full == false){
             slot4.sprite = item;
+            slot4full = true;
         }
-        else if (slotfull == 4){
+        else if (slot5full == false){
             slot5.sprite = item;
+            slot5full = true;
         }
-        if (slotfull < maxSlot - 1){
-            slotfull += 1;
-            self.SetActive(false);
-        }
+        Debug.Log(slot1full);
     }
+    
 }

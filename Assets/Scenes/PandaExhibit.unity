@@ -283,7 +283,6 @@ MonoBehaviour:
   slot4: {fileID: 1875662169452928329}
   slot5: {fileID: 1875662169452928328}
   item: {fileID: 21300000, guid: 7fb27807f02435743bc47ada92313e92, type: 3}
-  self: {fileID: 20859419}
 --- !u!61 &20859422
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -374,6 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcf40fb20e3311498cff2b2309c2cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 20859419}
 --- !u!1 &68576552
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +534,6 @@ MonoBehaviour:
   slot4: {fileID: 1875662169452928329}
   slot5: {fileID: 1875662169452928328}
   item: {fileID: 21300000, guid: 43e24b7d02ef1df46a6737ad64a6e9cc, type: 3}
-  self: {fileID: 136737662}
 --- !u!61 &136737665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -753,7 +752,6 @@ MonoBehaviour:
   slot4: {fileID: 1875662169452928329}
   slot5: {fileID: 1875662169452928328}
   item: {fileID: 21300000, guid: c92cd87c047febb49a00a58140f15d80, type: 3}
-  self: {fileID: 176627570}
 --- !u!1 &192139182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,6 +1991,7 @@ GameObject:
   - component: {fileID: 912246550}
   - component: {fileID: 912246549}
   - component: {fileID: 912246552}
+  - component: {fileID: 912246553}
   m_Layer: 5
   m_Name: Panda#3
   m_TagString: Untagged
@@ -2131,6 +2130,24 @@ MonoBehaviour:
   PandaDialogueBox: {fileID: 1264581989}
   PandaContinue: {fileID: 1264581990}
   self: {fileID: 912246547}
+--- !u!114 &912246553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912246547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72cad193e55ad05458ee3fb1a4b62ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot1: {fileID: 1875662169452928332}
+  slot2: {fileID: 1875662169452928331}
+  slot3: {fileID: 1875662169452928330}
+  slot4: {fileID: 1875662169452928329}
+  slot5: {fileID: 1875662169452928331}
+  coin: {fileID: 21300000, guid: 8143f4327d2aaaa42a40a6a2869c886c, type: 3}
 --- !u!1 &960279841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,6 +3011,7 @@ GameObject:
   - component: {fileID: 1734470229}
   - component: {fileID: 1734470228}
   - component: {fileID: 1734470230}
+  - component: {fileID: 1734470231}
   m_Layer: 5
   m_Name: Panda1
   m_TagString: Untagged
@@ -3088,6 +3106,7 @@ MonoBehaviour:
   Panda1Line1: 
   UserLine1: Hello good sir! Do you happen to know anything about a Phoenix artifact
     fragment floating around these parts?
+  Panda1AlternateLine1: You bring me that bamboo yet?
   textLabel: {fileID: 1264581988}
   SpeakerLabel: {fileID: 1264581987}
   PandaDialogueBox: {fileID: 1264581989}
@@ -3133,6 +3152,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panda1TypeSpeed: 15
   Panda1Continue: {fileID: 1264581990}
+--- !u!114 &1734470231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734470225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943d3ea421646264b8c284b5ee1a54c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot1: {fileID: 1875662169452928332}
+  slot2: {fileID: 1875662169452928331}
+  slot3: {fileID: 1875662169452928330}
+  slot4: {fileID: 1875662169452928329}
+  slot5: {fileID: 1875662169452928328}
+  blank: {fileID: 21300000, guid: a75705ddf6763dc4483e7b129add4b1e, type: 3}
 --- !u!1 &1793398333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3691,6 +3728,7 @@ GameObject:
   - component: {fileID: 2053926658}
   - component: {fileID: 2053926661}
   - component: {fileID: 2053926660}
+  - component: {fileID: 2053926662}
   m_Layer: 5
   m_Name: Panda#2
   m_TagString: Untagged
@@ -3829,6 +3867,24 @@ MonoBehaviour:
   PandaDialogueBox: {fileID: 1264581989}
   PandaContinue: {fileID: 1264581990}
   self: {fileID: 2053926655}
+--- !u!114 &2053926662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053926655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f39dca93b7076489b57cdd96a04cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot1: {fileID: 1875662169452928332}
+  slot2: {fileID: 1875662169452928331}
+  slot3: {fileID: 1875662169452928330}
+  slot4: {fileID: 1875662169452928329}
+  slot5: {fileID: 1875662169452928331}
+  bamboo: {fileID: 21300000, guid: 1f80c02eca10747429b4f223b5fefea7, type: 3}
 --- !u!1 &2126263781
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4274,10 @@ PrefabInstance:
       value: You obtained a gold coin.
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: NarratorLine2
+      value: You obtained a stalk of bamboo.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: StorehouseDoor
       value: 
       objectReference: {fileID: 1567706199}
@@ -4230,8 +4290,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 392487612}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda1AlternateLine2
+      value: It's at the top of the mountain. I opened the gate for you so you should
+        be able to enter.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda3AlternateLine1
       value: OMG THANK YOU!!! HERE'S A GOLD COIN!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda1AlternateUserLine1
+      value: Yes I did. So about that Pheonix artifact fragment.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda1AlternateUserLine2
+      value: Alright, thanks!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda2AlternateUserLine1
+      value: Yes please. Here is the gold coin.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda2AlternatePandaLine2
+      value: Thank you so much and here's your bamboo. You don't know how much this
+        means to me.
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508378, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_Name
