@@ -33,6 +33,12 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private GameObject StorehouseDoor;
     [SerializeField] private GameObject StoreEnterButton;
     [SerializeField] private GameObject HintButton;
+    [SerializeField] private GameObject Gate;
+    [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject enterDown;
+    [SerializeField] private GameObject storeDown;
+    [SerializeField] private GameObject doorDown;
+    [SerializeField] private GameObject PlaceRope;
     public static bool storehouseClicked = false;
     private int Panda1Line = 2;
     private int Panda2Line = 2;
@@ -48,6 +54,15 @@ public class PandaContinueButton : MonoBehaviour
     {
          
     }
+
+    public void disableUI(){
+        UI.SetActive(false);
+    }
+
+    public void enableUI(){
+        UI.SetActive(true);
+    }
+
     public void OnMouseDown(){
         Debug.Log("clicked");
         PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
@@ -77,6 +92,7 @@ public class PandaContinueButton : MonoBehaviour
                 PandaDialogueBox.SetActive(false);
                 PandaN1.GetComponent<BoxCollider2D>().enabled = true;
                 Panda1Line = 2;
+                enableUI();
             }
         }
         else if (Panda1Line == 4 && Panda1DialogueUI.P1clicked){
@@ -91,6 +107,8 @@ public class PandaContinueButton : MonoBehaviour
             PandaDialogueBox.SetActive(false);
             PandaN1.GetComponent<BoxCollider2D>().enabled = false;
             Panda1Line += 1;
+            Gate.SetActive(true);
+            enableUI();
         }
 
         // lines when u click on the storehouse
@@ -98,6 +116,8 @@ public class PandaContinueButton : MonoBehaviour
             PandaDialogueBox.SetActive(false);
             storehouseClicked = false;
             StorehouseDoor.GetComponent<BoxCollider2D>().enabled = true;
+            storeDown.SetActive(true);
+            doorDown.SetActive(true);
         }
 
         // Panda 2 lines
@@ -123,6 +143,7 @@ public class PandaContinueButton : MonoBehaviour
                 PandaDialogueBox.SetActive(false);
                 PandaN2.GetComponent<BoxCollider2D>().enabled = true;
                 Panda2Line = 2;
+                enableUI();
             }
         }
         else if (Panda2Line == 4 && Panda2.P2clicked){
@@ -134,6 +155,7 @@ public class PandaContinueButton : MonoBehaviour
             Panda2.P2clicked = false;
             PandaDialogueBox.SetActive(false);
             PandaN2.GetComponent<BoxCollider2D>().enabled = false;
+            enableUI();
         }
 
         // lines when u click on the enter button on the keypad
@@ -141,6 +163,7 @@ public class PandaContinueButton : MonoBehaviour
             KeypadEnter.KeypadEnterClicked = false;
             PandaDialogueBox.SetActive(false);
             StoreEnterButton.GetComponent<BoxCollider2D>().enabled = true;
+            enterDown.SetActive(true);
         }
         
         // Panda 3 lines
@@ -180,12 +203,14 @@ public class PandaContinueButton : MonoBehaviour
             PandaDialogueBox.SetActive(false);
             PandaN3.GetComponent<BoxCollider2D>().enabled = true;
             Panda3Line = 2;
+            enableUI();
         }
         else if (Panda3Line == 7 && Panda3.P3clicked){
             Panda3.P3clicked = false;
             PandaDialogueBox.SetActive(false);
             PandaN3.GetComponent<BoxCollider2D>().enabled = false;
             Panda3Line = 2;
+            enableUI();
         }
 
         // lines when u click on the hint button
@@ -193,6 +218,14 @@ public class PandaContinueButton : MonoBehaviour
             NumOHint.HintButtonClicked = false;
             PandaDialogueBox.SetActive(false);
             HintButton.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        // lines when u click to place the rope
+        if (PlaceTheRope.PlaceRopeClicked){
+            PlaceTheRope.PlaceRopeClicked = false;
+            PandaDialogueBox.SetActive(false);
+            PlaceRope.GetComponent<BoxCollider2D>().enabled = true;
+            enableUI();
         }
     }
 }

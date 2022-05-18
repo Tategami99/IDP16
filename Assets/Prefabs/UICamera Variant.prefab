@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1875662168854861627, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875662169474833468, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1875662169474833470, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
       propertyPath: textLabel
       value: 
@@ -23,6 +31,10 @@ PrefabInstance:
       propertyPath: PandaDialogueBox
       value: 
       objectReference: {fileID: 4868124641568775663}
+    - target: {fileID: 1875662169962231544, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1875662170489859995, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -74,6 +86,10 @@ PrefabInstance:
     - target: {fileID: 1875662170617910008, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
       propertyPath: SettingsArea
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875662170617910010, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
@@ -234,9 +250,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panda1Line1: I'll answer your question if you give me some bamboo.
+  Panda1AlternateUserLine1: 
+  Panda1AlternateLine2: 
+  Panda1AlternateUserLine2: 
   Panda2UserLine1: Sorry, I don't have any money.
+  Panda2AlternateUserLine1: 
+  Panda2AlternatePandaLine2: 
+  NarratorLine2: 
   Panda3Line1: Life is super unfair sometimes, am I right?
+  Panda3AlternateLine1: 
   Panda3UserLine2: What's up with all the pandas here being sad today?
+  NarratorLine1: 
   Panda3Line2: I have a whole bunch of money, but my parents won't let me buy a cool
     sword. Apparently it's too dangerous for a 'little panda' like me.
   Panda3UserLine3: Dang, that sucks.

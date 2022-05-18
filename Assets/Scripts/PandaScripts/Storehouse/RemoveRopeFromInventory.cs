@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoveBambooFromInventory : MonoBehaviour
+public class RemoveRopeFromInventory : MonoBehaviour
 {
     [SerializeField] SpriteRenderer slot1;
     [SerializeField] SpriteRenderer slot2;
@@ -21,30 +21,26 @@ public class RemoveBambooFromInventory : MonoBehaviour
     {
         
     }
-    private void OnMouseDown() {
-        if (RemoveCoinFromInventory.bambooLocation == 1 && Panda2.bambooObtained){
+    public void removeRope() {
+        if (AddRope.ropeLocation == 1 && Panda2.bambooObtained){
             slot1.sprite = blank;
             AddItemToInventory.slot1full = false;
         }
-        else if (RemoveCoinFromInventory.bambooLocation == 2 && Panda2.bambooObtained){
+        else if (AddRope.ropeLocation == 2 && Panda2.bambooObtained){
             slot2.sprite = blank;
             AddItemToInventory.slot2full = false;
         }
-        else if (RemoveCoinFromInventory.bambooLocation == 3 && Panda2.bambooObtained){
+        else if (AddRope.ropeLocation == 3 && Panda2.bambooObtained){
             slot3.sprite = blank;
             AddItemToInventory.slot3full = false;
         }
-        else if (RemoveCoinFromInventory.bambooLocation == 4 && Panda2.bambooObtained){
+        else if (AddRope.ropeLocation == 4 && Panda2.bambooObtained){
             slot4.sprite = blank;
             AddItemToInventory.slot4full = false;
         }
-        else if (RemoveCoinFromInventory.bambooLocation == 5 && Panda2.bambooObtained){
+        else if (AddRope.ropeLocation == 5 && Panda2.bambooObtained){
             slot5.sprite = blank;
             AddItemToInventory.slot5full = false;
-        }
-        if (Panda2.bambooObtained){
-            Panda1DialogueUI.infoObtained = true;
-            Panda3.coinObtained = false;
         }
     }
 }

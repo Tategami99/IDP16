@@ -8,6 +8,8 @@ public class ExitDoorsFront : MonoBehaviour
     [SerializeField] private GameObject LeftArrow;
     [SerializeField] private GameObject RightArrow;
     Vector2 left = new Vector2 (-18, 0);
+    [SerializeField]  private GameObject wall;
+    [SerializeField]  private GameObject label;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,8 @@ public class ExitDoorsFront : MonoBehaviour
         
     }
     private void OnMouseDown() {
+        label.SetActive(false);
+        wall.SetActive(false);
         GoDoorsHouse.EnteredFromDoorsHouse = false;
         Camera.transform.position = left;
         LeftArrow.SetActive(true);

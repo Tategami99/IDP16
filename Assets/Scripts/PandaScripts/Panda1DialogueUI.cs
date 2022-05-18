@@ -13,8 +13,9 @@ public class Panda1DialogueUI : MonoBehaviour
     [SerializeField] private GameObject PandaDialogueBox;
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
+    [SerializeField] private GameObject cont;
     public static bool P1clicked = false;
-    public static bool infoObtained;
+    public static bool infoObtained = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class Panda1DialogueUI : MonoBehaviour
     }
     public void OnMouseDown(){
         if (Panda2.bambooObtained){
+            infoObtained = true;
             P1clicked = true;
             Debug.Log("clicked");
             PandaDialogueBox.SetActive(true);
@@ -49,5 +51,6 @@ public class Panda1DialogueUI : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserLine1, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
+        cont.GetComponent<PandaContinueButton>().disableUI();
     }
 }

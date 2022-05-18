@@ -12,6 +12,9 @@ public class Panda3 : MonoBehaviour
     [SerializeField] private GameObject PandaDialogueBox;
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
+    [SerializeField] private GameObject cont;
+    [SerializeField] private GameObject rightArea;
+    [SerializeField] private Sprite PandaWDrip;
     public static bool P3clicked = false;
     public static bool coinObtained = false;
     // Start is called before the first frame update
@@ -47,6 +50,8 @@ public class Panda3 : MonoBehaviour
             SpeakerLabel.text = Username.username;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserAlternateLine1, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
+            rightArea.GetComponent<SpriteRenderer>().sprite = PandaWDrip;
         }
+        cont.GetComponent<PandaContinueButton>().disableUI();
     }
 }

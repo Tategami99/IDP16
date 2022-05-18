@@ -12,6 +12,7 @@ public class DoorsHouseDoor : MonoBehaviour
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
     [SerializeField] private GameObject Camera;
+    [SerializeField] private GameObject doorDown;
     Vector2 InTheDoorsHouse = new Vector2 (-18, 22);
     public static bool DoorsHouselocked = true;
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class DoorsHouseDoor : MonoBehaviour
     }
     public void OnMouseDown(){
         if (DoorsHouselocked){
+            doorDown.SetActive(false);
             Debug.Log("clicked");
             PandaContinueButton.storehouseClicked = true;
             PandaDialogueBox.SetActive(true);

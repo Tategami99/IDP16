@@ -12,6 +12,7 @@ public class StorehouseDoor : MonoBehaviour
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
     [SerializeField] private GameObject Camera;
+    [SerializeField] private GameObject storeDown;
     Vector2 InTheStorehouse = new Vector2 (18, 22);
     public static bool locked = true;
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class StorehouseDoor : MonoBehaviour
     }
     public void OnMouseDown(){
         if (locked){
+            storeDown.SetActive(false);
             Debug.Log("clicked");
             PandaContinueButton.storehouseClicked = true;
             PandaDialogueBox.SetActive(true);
