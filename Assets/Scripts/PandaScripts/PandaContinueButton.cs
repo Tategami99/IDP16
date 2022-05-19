@@ -39,6 +39,8 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private GameObject storeDown;
     [SerializeField] private GameObject doorDown;
     [SerializeField] private GameObject PlaceRope;
+    [SerializeField] private GameObject BackFromSmallMark;
+    [SerializeField] private GameObject frag1case;
     public static bool storehouseClicked = false;
     private int Panda1Line = 2;
     private int Panda2Line = 2;
@@ -226,6 +228,23 @@ public class PandaContinueButton : MonoBehaviour
             PlaceTheRope.PlaceRopeClicked = false;
             PandaDialogueBox.SetActive(false);
             PlaceRope.GetComponent<BoxCollider2D>().enabled = true;
+            enableUI();
+        }
+
+        // lines when u click on the small mark
+        if (ToMagniScreen.magniScreenclicked){
+            ToMagniScreen.magniScreenclicked = false;
+            PandaDialogueBox.SetActive(false);
+            BackFromSmallMark.SetActive(true);
+            enterDown.SetActive(true);
+            enableUI();
+        }
+        
+        //lines when u click on the fragment case
+        if (fragment1case.case1clicked){
+            fragment1case.case1clicked = false;
+            PandaDialogueBox.SetActive(false);
+            frag1case.SetActive(true);
             enableUI();
         }
     }
