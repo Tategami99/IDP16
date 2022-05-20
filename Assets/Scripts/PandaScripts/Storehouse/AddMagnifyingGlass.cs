@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AddMagnifyingGlass : MonoBehaviour
 {
-    [SerializeField] private GameObject self;
     public static bool magniObtained = false;
     public static int magniLocation = 0;
     // Start is called before the first frame update
@@ -18,7 +17,7 @@ public class AddMagnifyingGlass : MonoBehaviour
     {
         
     }
-    private void OnMouseDown() {
+    public void magniAdd() {
         if (AddItemToInventory.slot1full == false){
             magniLocation = 1;
         }
@@ -35,8 +34,7 @@ public class AddMagnifyingGlass : MonoBehaviour
             magniLocation = 5;
         }
         magniObtained = true;
-        GetComponent<AddItemToInventory>().Add();
-        self.SetActive(false);
+        GetComponent<AddItemToInventory>().AddAnother();
         Debug.Log("mgl= " + magniLocation);
     }
 }

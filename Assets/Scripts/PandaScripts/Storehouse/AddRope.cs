@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AddRope : MonoBehaviour
 {
-    [SerializeField] private GameObject self;
     public static bool ropeObtained = false;
     public static int ropeLocation = 0;
     // Start is called before the first frame update
@@ -18,7 +17,7 @@ public class AddRope : MonoBehaviour
     {
         
     }
-    private void OnMouseDown() {
+    public void ropeAdd() {
         if (AddItemToInventory.slot1full == false){
             ropeLocation = 1;
         }
@@ -36,7 +35,6 @@ public class AddRope : MonoBehaviour
         }
         ropeObtained = true;
         GetComponent<AddItemToInventory>().Add();
-        self.SetActive(false);
         Debug.Log("rl= " + ropeLocation);
     }
 }

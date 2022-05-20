@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AddSword : MonoBehaviour
 {
-    [SerializeField] private GameObject self;
     public static bool swordObtained = false;
     public static int swordLocation = 0;
     // Start is called before the first frame update
@@ -18,7 +17,7 @@ public class AddSword : MonoBehaviour
     {
         
     }
-    private void OnMouseDown() {
+    public void swordAdd() {
         if (AddItemToInventory.slot1full == false){
             swordLocation = 1;
         }
@@ -36,7 +35,6 @@ public class AddSword : MonoBehaviour
         }
         swordObtained = true;
         GetComponent<AddItemToInventory>().Add();
-        self.SetActive(false);
         Debug.Log("sl= " + swordLocation);
     }
 }

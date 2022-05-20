@@ -15,7 +15,7 @@ public class PlaceTheRope : MonoBehaviour
     [SerializeField] private GameObject cont;
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject withRope;
-    Vector2 path = new Vector2 (18, -11);
+    Vector2 path = new Vector2 (36, -11);
     public static bool PlaceRopeClicked = false;
     private int placement = 0;
     // Start is called before the first frame update

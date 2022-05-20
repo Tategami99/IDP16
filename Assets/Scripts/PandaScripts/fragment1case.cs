@@ -13,6 +13,8 @@ public class fragment1case : MonoBehaviour
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
     [SerializeField] private GameObject cont;
+    [SerializeField] private SpriteRenderer background;
+    [SerializeField] private Sprite open;
     public static bool case1clicked = false;
     public static bool case1unlocked = false;
     private int firsttime = 0;
@@ -40,6 +42,7 @@ public class fragment1case : MonoBehaviour
             self.GetComponent<BoxCollider2D>().enabled = false;
             firsttime += 1;
             cont.GetComponent<PandaContinueButton>().disableUI();
+            background.sprite = open;
         }
         else{
             case1clicked = true;

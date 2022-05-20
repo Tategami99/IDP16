@@ -6,15 +6,16 @@ using TMPro;
 public class DoorsHouseDoor : MonoBehaviour
 {
     [SerializeField] private string UserLineDoorsHouse;
+    [SerializeField] private string UserAlternateLineDoorsHouse;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text SpeakerLabel;
     [SerializeField] private GameObject PandaDialogueBox;
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
-    [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject doorDown;
     Vector2 InTheDoorsHouse = new Vector2 (-18, 22);
     public static bool DoorsHouselocked = true;
+    private int firsttime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,8 +40,17 @@ public class DoorsHouseDoor : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserLineDoorsHouse, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
-        else{
-            Camera.transform.position = InTheDoorsHouse;
+        else if (DoorsHouselocked == false && firsttime == 0){
+            GetComponent<AddSword>().swordAdd();
+            doorDown.SetActive(false);
+            Debug.Log("clicked");
+            PandaContinueButton.storehouseClicked = true;
+            PandaDialogueBox.SetActive(true);
+            PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
+            textLabel.text = "";
+            SpeakerLabel.text = "";
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserAlternateLineDoorsHouse, textLabel);
+            self.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }

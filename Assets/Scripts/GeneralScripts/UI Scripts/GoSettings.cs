@@ -10,14 +10,18 @@ public class GoSettings : MonoBehaviour
     public GameObject SettingsArea;
     AudioListener SettingsAreaAudioListener;
     // Start is called before the first frame update
-    void Start()
-    {
+
+    private void OnEnable() {
         SettingsAreaAudioListener = SettingsArea.GetComponent<AudioListener>();
         UIAudioListener = UI.GetComponent<AudioListener>();
         UIAudioListener.enabled = true;
         SettingsAreaAudioListener.enabled = false;
         UI.SetActive(true);
         SettingsArea.SetActive(false);
+    }
+    void Start()
+    {
+        
     }
 
     // Update is called once per frame

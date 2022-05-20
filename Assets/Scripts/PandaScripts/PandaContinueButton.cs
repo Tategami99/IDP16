@@ -31,6 +31,7 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private GameObject PandaN2;
     [SerializeField] private GameObject PandaN3;
     [SerializeField] private GameObject StorehouseDoor;
+    [SerializeField] private GameObject DoorhouseDoor;
     [SerializeField] private GameObject StoreEnterButton;
     [SerializeField] private GameObject HintButton;
     [SerializeField] private GameObject Gate;
@@ -119,6 +120,7 @@ public class PandaContinueButton : MonoBehaviour
             PandaDialogueBox.SetActive(false);
             storehouseClicked = false;
             StorehouseDoor.GetComponent<BoxCollider2D>().enabled = true;
+            DoorhouseDoor.GetComponent<BoxCollider2D>().enabled = true;
             storeDown.SetActive(true);
             doorDown.SetActive(true);
         }

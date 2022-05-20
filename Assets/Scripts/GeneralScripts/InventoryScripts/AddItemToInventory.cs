@@ -10,6 +10,7 @@ public class AddItemToInventory : MonoBehaviour
     [SerializeField] SpriteRenderer slot4;
     [SerializeField] SpriteRenderer slot5;
     [SerializeField] Sprite item;
+    [SerializeField] Sprite item2;
     public static bool slot1full = false;
     public static bool slot2full = false;
     public static bool slot3full = false;
@@ -50,5 +51,27 @@ public class AddItemToInventory : MonoBehaviour
         }
         Debug.Log(slot1full);
     }
-    
+    public void AddAnother() {
+        if (slot1full == false){
+            slot1.sprite = item2;
+            slot1full = true;
+        }
+        else if (slot2full == false){
+            slot2.sprite = item2;
+            slot2full = true;
+        }
+        else if (slot3full == false){
+            slot3.sprite = item2;
+            slot3full = true;
+        }
+        else if (slot4full == false){
+            slot4.sprite = item2;
+            slot4full = true;
+        }
+        else if (slot5full == false){
+            slot5.sprite = item2;
+            slot5full = true;
+        }
+        Debug.Log(slot1full);
+    }
 }
