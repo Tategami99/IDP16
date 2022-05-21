@@ -54,8 +54,6 @@ public class StorehouseDoor : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserAlternateLineStorehouse, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
             firsttime += 1;
-            PandaTime.Ppuzzle1Time = PandaTime.pandaTimeSec;
-            Debug.Log(PandaTime.Ppuzzle1Time);
         }
     }
 }
