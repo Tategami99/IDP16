@@ -6943,6 +6943,14 @@ PrefabInstance:
       value: Thank you so much and here's your bamboo. You don't know how much this
         means to me.
       objectReference: {fileID: 0}
+    - target: {fileID: 1422984409638505438, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: self
+      value: 
+      objectReference: {fileID: 145356662}
+    - target: {fileID: 1422984409638505438, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 1838788086}
     - target: {fileID: 1422984409740134395, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_SizeDelta.x
       value: 17.75
@@ -6961,11 +6969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7011,6 +7019,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1422984411515843549, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 145356662}
+    - target: {fileID: 1422984411515843549, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: self
+      value: 
+      objectReference: {fileID: 1838788086}
     - target: {fileID: 1422984411668409656, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Hint1Line
       value: Maybe these signs have something to do with the locked houses.

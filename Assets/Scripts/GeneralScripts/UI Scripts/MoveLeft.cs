@@ -5,35 +5,40 @@ using UnityEngine.SceneManagement;
 
 public class MoveLeft : MonoBehaviour
 {
+    [SerializeField] private GameObject self;
+    [SerializeField] private GameObject right;
     public GameObject Camera;
-    Vector2 startPos = new Vector2 (0, 0);
-    Vector2 Left = new Vector2 (-18 , 0);
+    Vector2 startPos = new Vector2(0, 0);
+    Vector2 Left = new Vector2(-18, 0);
 
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    void OnMouseDown() {
+    void OnMouseDown()
+    {
         Debug.Log("clicked");
-        if (MoveRight.PandaArea == 0){
+        if (MoveRight.PandaArea == 0)
+        {
             Camera.transform.position = Left;
             MoveRight.PandaArea -= 1;
-            
+            self.SetActive(false);
         }
-        if (MoveRight.PandaArea == 1){
+        if (MoveRight.PandaArea == 1)
+        {
             Camera.transform.position = startPos;
             MoveRight.PandaArea -= 1;
-            
+            right.SetActive(true);
         }
-        
+
     }
 }
