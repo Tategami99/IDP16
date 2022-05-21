@@ -43,6 +43,8 @@ public class fragment1case : MonoBehaviour
             firsttime += 1;
             cont.GetComponent<PandaContinueButton>().disableUI();
             background.sprite = open;
+            PandaTime.Ppuzzle3Time = PandaTime.pandaTimeSec;
+            Debug.Log(PandaTime.Ppuzzle3Time);
         }
         else{
             case1clicked = true;
