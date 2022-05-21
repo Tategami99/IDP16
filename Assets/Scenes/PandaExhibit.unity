@@ -7109,6 +7109,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1422984409638505438, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: self
+      value: 
+      objectReference: {fileID: 145356662}
+    - target: {fileID: 1422984409638505438, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 1838788086}
     - target: {fileID: 1422984409740134395, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_SizeDelta.x
       value: 17.75
@@ -7205,6 +7213,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1422984411515843549, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 145356662}
+    - target: {fileID: 1422984411515843549, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: self
+      value: 
+      objectReference: {fileID: 1838788086}
     - target: {fileID: 1422984411668409656, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Hint1Line
       value: Maybe these signs have something to do with the locked houses.

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AddMap : MonoBehaviour
 {
+    [SerializeField] private GameObject mapView;
     public static int mapLocation = 0;
     [SerializeField] private GameObject self;
     [SerializeField] private GameObject slot1;
@@ -14,7 +15,7 @@ public class AddMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        mapView.SetActive(false);
     }
 
     // Update is called once per frame

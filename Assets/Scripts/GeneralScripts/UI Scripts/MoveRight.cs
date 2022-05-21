@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoveRight : MonoBehaviour
 {
+    [SerializeField] private GameObject self;
+    [SerializeField] private GameObject left;
     public GameObject Camera;
     Vector2 startPos = new Vector2 (0, 0);
     Vector2 Right = new Vector2 (18 , 0);
@@ -28,12 +30,13 @@ public class MoveRight : MonoBehaviour
         if (PandaArea == 0){
             Camera.transform.position = Right;
             PandaArea = PandaArea + 1;
+            self.SetActive(false);
             
         }
         if (PandaArea == -1){
             Camera.transform.position = startPos;
             PandaArea = PandaArea + 1;
-            
+            left.SetActive(true);
         }
         
     }

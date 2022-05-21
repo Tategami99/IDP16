@@ -36,5 +36,6 @@ public class PandaTime : MonoBehaviour
         float minutes = Mathf.FloorToInt((totalTimeLeft / 60) % 60);
         float seconds = Mathf.FloorToInt(totalTimeLeft % 60);
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
     }
 }

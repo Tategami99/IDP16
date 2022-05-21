@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UseMap : MonoBehaviour
+public class ViewMapExit : MonoBehaviour
 {
-    [SerializeField] private GameObject cont;
     [SerializeField] private GameObject mapView;
     // Start is called before the first frame update
     void Start()
@@ -17,11 +16,7 @@ public class UseMap : MonoBehaviour
     {
         
     }
-    public void useIt() {
-        cont.GetComponent<CobraContinue>().mapClicked();
-    }
-
-    public void openMap(){
-        mapView.SetActive(true);
+    private void OnMouseDown() {
+        mapView.SetActive(false);
     }
 }

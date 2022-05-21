@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1875662168854861625, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: X
+      value: 
+      objectReference: {fileID: 21300000, guid: fefe0b2b6521f554b935a23c64821746, type: 3}
+    - target: {fileID: 1875662168854861625, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: self
+      value: 
+      objectReference: {fileID: 1422984410780526141}
+    - target: {fileID: 1875662168854861625, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: backpack
+      value: 
+      objectReference: {fileID: 21300000, guid: a7646bbbc7ec7a346b466ba6f60cdc21, type: 3}
     - target: {fileID: 1875662168854861627, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -31,6 +43,22 @@ PrefabInstance:
       propertyPath: PandaDialogueBox
       value: 
       objectReference: {fileID: 4868124641568775663}
+    - target: {fileID: 1875662169590694619, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: left
+      value: 
+      objectReference: {fileID: 1422984409638505432}
+    - target: {fileID: 1875662169590694619, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: self
+      value: 
+      objectReference: {fileID: 1422984411515843545}
+    - target: {fileID: 1875662169860373208, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: self
+      value: 
+      objectReference: {fileID: 1422984409638505432}
+    - target: {fileID: 1875662169860373208, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: 1422984411515843545}
     - target: {fileID: 1875662169962231544, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
       propertyPath: m_SortingOrder
       value: 10
@@ -93,6 +121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+--- !u!1 &1422984409638505432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1875662169860373214, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+  m_PrefabInstance: {fileID: 700525273317536006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1422984410267508380 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1875662170489859994, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
@@ -101,6 +134,16 @@ Camera:
 --- !u!4 &1422984410267508381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1875662170489859995, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+  m_PrefabInstance: {fileID: 700525273317536006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1422984410780526141 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1875662168854861627, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+  m_PrefabInstance: {fileID: 700525273317536006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1422984411515843545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1875662169590694623, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
   m_PrefabInstance: {fileID: 700525273317536006}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1422984411668409654 stripped
@@ -272,8 +315,17 @@ MonoBehaviour:
   PandaN2: {fileID: 0}
   PandaN3: {fileID: 0}
   StorehouseDoor: {fileID: 0}
+  DoorhouseDoor: {fileID: 0}
   StoreEnterButton: {fileID: 0}
   HintButton: {fileID: 1422984411668409654}
+  Gate: {fileID: 0}
+  UI: {fileID: 0}
+  enterDown: {fileID: 0}
+  storeDown: {fileID: 0}
+  doorDown: {fileID: 0}
+  PlaceRope: {fileID: 0}
+  BackFromSmallMark: {fileID: 0}
+  frag1case: {fileID: 0}
 --- !u!114 &1264581996
 MonoBehaviour:
   m_ObjectHideFlags: 0
