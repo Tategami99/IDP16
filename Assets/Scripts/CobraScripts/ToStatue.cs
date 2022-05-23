@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObtainMap : MonoBehaviour
+public class ToStatue : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer background;
-    [SerializeField] private Sprite noMap;
-    [SerializeField] private GameObject cont;
+    public static int playerLocation = 0;
+    [SerializeField] private GameObject Camera;
+    Vector2 Statue = new Vector2 (0, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,9 @@ public class ObtainMap : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        cont.GetComponent<CobraContinue>().mapObtained();
-        background.sprite = noMap;
+        if (playerLocation != 0){
+            Camera.transform.position = Statue;
+            playerLocation = 0;
+        }
     }
 }

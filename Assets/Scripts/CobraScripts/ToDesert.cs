@@ -18,6 +18,9 @@ public class ToDesert : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        Camera.transform.position = Desert;
+        if (ToStatue.playerLocation != 1){
+            Camera.transform.position = Desert;
+            ToStatue.playerLocation = 1;
+        }
     }
 }

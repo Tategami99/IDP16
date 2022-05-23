@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ToRainforest : MonoBehaviour
 {
+    [SerializeField] private GameObject rainforestHighlight;
+    [SerializeField] private GameObject cont;
+    private int firsttime = 0;
     [SerializeField] private GameObject Camera;
-    Vector2 Rainforest = new Vector2 (-18, 0);
+    Vector2 Rainforest = new Vector2 (18, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,16 @@ public class ToRainforest : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        Camera.transform.position = Rainforest;
+        if (firsttime != 0 && ToStatue.playerLocation != 2){
+            Camera.transform.position = Rainforest;
+            ToStatue.playerLocation = 2;
+        }
+        else if (firsttime == 0 && ToStatue.playerLocation != 2){
+            Camera.transform.position = Rainforest;
+            ToStatue.playerLocation = 2;
+            cont.GetComponent<CobraContinue>().enterRainforest();
+            firsttime += 1;
+            rainforestHighlight.SetActive(false);
+        }
     }
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InventoryButton : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer self;
+    [SerializeField] private Sprite backpack;
+    [SerializeField] private Sprite x;
     public GameObject InventoryArea;
     private bool showing;
     // Start is called before the first frame update
@@ -22,10 +25,12 @@ public class InventoryButton : MonoBehaviour
         if(showing){
             InventoryArea.SetActive(false);
             showing = false;
+            self.sprite = backpack;
         }
         else{
             InventoryArea.SetActive(true);
             showing = true;
+            self.sprite = x;
         }
     }
 }

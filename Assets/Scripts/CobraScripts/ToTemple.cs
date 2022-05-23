@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObtainMap : MonoBehaviour
+public class ToTemple : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer background;
-    [SerializeField] private Sprite noMap;
-    [SerializeField] private GameObject cont;
+    [SerializeField] private GameObject Camera;
+    Vector2 temple = new Vector2 (18, 11);
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +18,6 @@ public class ObtainMap : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        cont.GetComponent<CobraContinue>().mapObtained();
-        background.sprite = noMap;
+        Camera.transform.position = temple;
     }
 }
