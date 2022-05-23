@@ -371,6 +371,7 @@ RectTransform:
   - {fileID: 413445285}
   - {fileID: 1838285361}
   - {fileID: 276697476}
+  - {fileID: 1545725832}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4494,6 +4495,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510338224}
   m_CullTransparentMesh: 1
+--- !u!1 &1545725831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545725832}
+  - component: {fileID: 1545725833}
+  - component: {fileID: 1545725834}
+  m_Layer: 5
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1545725832
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545725831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 72881934}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5.02, y: 0}
+  m_SizeDelta: {x: 3, y: 3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &1545725833
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545725831}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24920654, y: -0.038339138}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.7189026, y: 4.910598}
+  m_EdgeRadius: 0
+--- !u!114 &1545725834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545725831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9976be0610fd2469b4005f4a6e1478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1563273305 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1422984410780526141, guid: adf25147b460745439eb225c3108b428, type: 3}
@@ -4895,6 +4972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83083e484226684b9440f39f1dbb11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UserAlternateAlternateLine: Whew... one down, much more to go.
   UserLine1: The case is locked.
   UserAlternateLine1: It worked.
   textLabel: {fileID: 1264581988}
@@ -7056,6 +7134,11 @@ PrefabInstance:
       value: You obtained a stalk of bamboo.
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: UserCaseLine2
+      value: Woah! Where did this door appear from? I guess this leads to the next
+        exhibit of the museum.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: StorehouseDoor
       value: 
       objectReference: {fileID: 1567706199}
@@ -7069,6 +7152,10 @@ PrefabInstance:
       value: Dang, that sucks. If I had a sword I'd give it to you.
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: mountainTopDoor
+      value: 
+      objectReference: {fileID: 1545725831}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: StoreEnterButton
       value: 
       objectReference: {fileID: 392487612}
@@ -7076,6 +7163,10 @@ PrefabInstance:
       propertyPath: BackFromSmallMark
       value: 
       objectReference: {fileID: 1146018542}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: backgroundWithDoor
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c9902f8519e6de4d902466b15a835c3, type: 3}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda1AlternateLine2
       value: It's at the top of the mountain. I opened the gate for you so you should
@@ -7085,6 +7176,10 @@ PrefabInstance:
       propertyPath: Panda3AlternateLine1
       value: OMG THANK YOU!!! HERE'S A GOLD COIN!
       objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: mountainTopBackground
+      value: 
+      objectReference: {fileID: 276697477}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda1AlternateUserLine1
       value: Yes I did. So about that Pheonix artifact fragment.

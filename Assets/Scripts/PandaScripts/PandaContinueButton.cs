@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,6 +47,14 @@ public class PandaContinueButton : MonoBehaviour
     private int Panda1Line = 2;
     private int Panda2Line = 2;
     private int Panda3Line = 2;
+
+    //stuff when you obtain the fragment
+    private int fragment1Line = 0;
+    [SerializeField] private string UserCaseLine2;
+    [SerializeField] private SpriteRenderer mountainTopBackground;
+    [SerializeField] private Sprite backgroundWithDoor;
+    [SerializeField] private GameObject mountainTopDoor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -247,6 +256,19 @@ public class PandaContinueButton : MonoBehaviour
             fragment1case.case1clicked = false;
             PandaDialogueBox.SetActive(false);
             frag1case.SetActive(true);
+            fragment1Line = 2;
+            enableUI();
+        }
+        //lines when u click on the fragment
+        if (fragment1case.case1clicked && fragment1Line == 2){
+            mountainTopBackground.sprite = backgroundWithDoor;
+            SpeakerLabel.text = Username.username;
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserCaseLine2, textLabel);
+            fragment1Line += 1;
+        }
+        else if (fragment1case.case1clicked && fragment1Line == 3){
+            mountainTopDoor.GetComponent<BoxCollider2D>().enabled = true;
+            PandaDialogueBox.SetActive(false);
             enableUI();
         }
     }

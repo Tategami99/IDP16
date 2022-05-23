@@ -67,6 +67,12 @@ public class CobraContinue : MonoBehaviour
     [SerializeField] private string userLineFindCactus1;
     private bool cactusClicked;
 
+    //user obtains the second fragment
+    [SerializeField] private GameObject FoxExhibitDoor;
+    [SerializeField] private List<string> userLinesFoxExhibitGo = new List<string>();
+    private int userLinesFoxExhibitGoIndex = 0;
+    private bool frag2Obtained = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -180,6 +186,13 @@ public class CobraContinue : MonoBehaviour
         SpeakerLabel.text = Username.username;
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineFindCactus1, textLabel);
     }
+    public void foxDoor(){
+        frag2Obtained = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinesFoxExhibitGo[userLinesFoxExhibitGoIndex], textLabel);
+        userLinesFoxExhibitGoIndex += 1;
+    }
 
     private void OnMouseDown() {
         if (statueDoorClicked){
@@ -246,6 +259,14 @@ public class CobraContinue : MonoBehaviour
             back1.GetComponent<BoxCollider2D>().enabled = true;
             back2.GetComponent<BoxCollider2D>().enabled = true;
             back3.GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
+        }
+        if (frag2Obtained && userLinesFoxExhibitGoIndex < 2){
+            PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinesRainGo[userLinesRainGoIndex], textLabel);
+            userLinesRainGoIndex += 1;
+        }
+        else if (frag2Obtained && userLinesFoxExhibitGoIndex == 2){
             doneTalking();
         }
     }
