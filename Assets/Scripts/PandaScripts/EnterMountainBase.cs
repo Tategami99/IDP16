@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnterMountainBase : MonoBehaviour
 {
+    [SerializeField] private GameObject leftArrow;
+    [SerializeField] private GameObject rightArrow;
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject Gate;
     Vector2 mountainBase = new Vector2 (0, -11);
@@ -19,6 +21,8 @@ public class EnterMountainBase : MonoBehaviour
         
     }
     void OnMouseDown() {
+        leftArrow.SetActive(false);
+        rightArrow.SetActive(false);
         Camera.transform.position = mountainBase;
         Debug.Log("worked");
     }

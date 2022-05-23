@@ -13,7 +13,7 @@ public class cEnterKey : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        frag2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class cEnterKey : MonoBehaviour
     void OnMouseDown()
     {
         if (c9key.cobraStatueCode == "9"){
+            CobraTime.Cpuzzle3Time = CobraTime.cobraTimeSec;
             Debug.Log("unlocked");
             insideBackground.sprite = insideWithDoor;
             Camera.transform.position = inside;

@@ -5,8 +5,11 @@ using TMPro;
 
 public class upArrow : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer fractionImage;
+    [SerializeField] private Sprite Of13;
+    [SerializeField] private Sprite Of23;
+    [SerializeField] private Sprite Of33;
     [SerializeField] private GameObject cont;
-    [SerializeField] private TMP_Text fraction;
     public static int xC = 0;
     public static int yC = 0;
     public static int numSolved = 0;
@@ -27,21 +30,36 @@ public class upArrow : MonoBehaviour
     {
         
     }
+
+    public void changeFraction(){
+        if (numSolved == 1){
+            fractionImage.sprite = Of13;
+        }
+        else if (numSolved == 2){
+            fractionImage.sprite = Of23;
+            CobraTime.Cpuzzle1Time = CobraTime.cobraTimeSec;
+        }
+        else if (numSolved == 3){
+            fractionImage.sprite = Of33;
+            CobraTime.Cpuzzle2Time = CobraTime.cobraTimeSec;
+        }
+    }
+
     public void checkSolved(){
         if (xC == 5 && yC == 7 && fsSolved != true){
             fsSolved = true;
             numSolved += 1;
-            fraction.text = numSolved + "/3";
+            changeFraction();
         }
         if (xC == -6 && yC == -10 && stSolved != true){
             stSolved = true;
             numSolved += 1;
-            fraction.text = numSolved + "/3";
+            changeFraction();
         }
         if (xC == -4 && yC == 8 && feSolved != true){
             feSolved = true;
             numSolved += 1;
-            fraction.text = numSolved + "/3";
+            changeFraction();
         }
         if (numSolved == 1 && firstMessageShown == false){
             firstMessageShown = true;
