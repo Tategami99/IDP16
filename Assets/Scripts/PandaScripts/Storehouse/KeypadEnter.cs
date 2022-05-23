@@ -39,11 +39,11 @@ public class KeypadEnter : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForStorehouse, textLabel);
             StorehouseDoor.locked = false;
         }
-        else if (Keypad1.StorehousePasscode == "16" && GoDoorsHouse.EnteredFromDoorsHouse){
+        else if (Keypad1.StorehousePasscode == "12" && GoDoorsHouse.EnteredFromDoorsHouse){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForDoorsHouse, textLabel);
             DoorsHouseDoor.DoorsHouselocked = false;
         }
-        else if (key1.fragment1Code == "1611441"){
+        else if (key1.fragment1Code == "13152114201914"){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForFragment1Case, textLabel);
             fragment1case.case1unlocked = true;
         }

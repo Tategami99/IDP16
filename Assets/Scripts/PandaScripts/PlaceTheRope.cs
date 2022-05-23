@@ -5,6 +5,8 @@ using TMPro;
 
 public class PlaceTheRope : MonoBehaviour
 {
+    [SerializeField] private GameObject leftArrow;
+    [SerializeField] private GameObject rightArrow;
     [SerializeField] private string NarratorLine1;
     [SerializeField] private string NarratorAlternateLine1;
     [SerializeField] private TMP_Text textLabel;
@@ -33,6 +35,8 @@ public class PlaceTheRope : MonoBehaviour
         if (placement == 1){
             Debug.Log("place");
             Camera.transform.position = path;
+            leftArrow.SetActive(false);
+            rightArrow.SetActive(false);
         }
         if (AddRope.ropeObtained && placement == 0){
             PlaceRopeClicked = true;

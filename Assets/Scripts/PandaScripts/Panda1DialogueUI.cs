@@ -5,7 +5,8 @@ using TMPro;
 
 public class Panda1DialogueUI : MonoBehaviour
 {
-    [SerializeField] private string Panda1Line1;
+    [SerializeField] private SpriteRenderer background;
+    [SerializeField] private Sprite pandawbamboo;
     [SerializeField] private string UserLine1;
     [SerializeField] private string Panda1AlternateLine1;
     [SerializeField] private TMP_Text textLabel;
@@ -39,6 +40,7 @@ public class Panda1DialogueUI : MonoBehaviour
             SpeakerLabel.text = Username.username;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1AlternateLine1, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
+            background.sprite = pandawbamboo;
         }
         else{
             P1clicked = true;
