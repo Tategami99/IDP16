@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ClickMap : MonoBehaviour
 {
+    [SerializeField] private GameObject mapView;
     [SerializeField] private GameObject cont;
-    private int firsttime = 0;
+    private bool firsttime = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +19,13 @@ public class ClickMap : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        if (firsttime == 0){
-            GetComponent<UseMap>().useIt();
-            GetComponent<UseMap>().openMap();
-            firsttime += 1;
+        if (AddMap.mapAdded){
+            mapView.SetActive(true);
+            if (firsttime){
+                cont.GetComponent<CobraContinue>().mapClicked();
+                firsttime = false;
+            }
         }
-        else{
-            GetComponent<UseMap>().openMap();
-        }
+        Debug.Log("clicked");
     }
 }

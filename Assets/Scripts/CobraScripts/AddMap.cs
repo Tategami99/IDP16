@@ -12,6 +12,7 @@ public class AddMap : MonoBehaviour
     [SerializeField] private GameObject slot3;
     [SerializeField] private GameObject slot4;
     [SerializeField] private GameObject slot5;
+    public static bool mapAdded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +27,11 @@ public class AddMap : MonoBehaviour
     public void OnMouseDown() {
         if (AddItemToInventory.slot1full == false){
             mapLocation = 1;
-            slot1.AddComponent(typeof(ClickMap));
+            mapAdded = true;
         }
         else if (AddItemToInventory.slot2full == false){
             mapLocation = 2;
-            slot2.AddComponent(typeof(ClickMap));
+            mapAdded = true;
         }
         else if (AddItemToInventory.slot3full == false){
             mapLocation = 3;

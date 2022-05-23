@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ToRainforest : MonoBehaviour
 {
+    [SerializeField] private GameObject mapView;
     [SerializeField] private GameObject rainforestHighlight;
     [SerializeField] private GameObject cont;
     private int firsttime = 0;
@@ -24,6 +25,7 @@ public class ToRainforest : MonoBehaviour
         if (firsttime != 0 && ToStatue.playerLocation != 2){
             Camera.transform.position = Rainforest;
             ToStatue.playerLocation = 2;
+            mapView.SetActive(false);
         }
         else if (firsttime == 0 && ToStatue.playerLocation != 2){
             Camera.transform.position = Rainforest;
@@ -31,6 +33,7 @@ public class ToRainforest : MonoBehaviour
             cont.GetComponent<CobraContinue>().enterRainforest();
             firsttime += 1;
             rainforestHighlight.SetActive(false);
+            mapView.SetActive(false);
         }
     }
 }

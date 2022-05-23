@@ -42,6 +42,24 @@ public class CobraContinue : MonoBehaviour
     private int userLinesRainGoIndex = 0;
     private bool rainforestEntered = false;
 
+    //user makes the fraction 1/3
+    [SerializeField] private string userLineOofT1;
+    [SerializeField] private GameObject up;
+    [SerializeField] private GameObject down;
+    [SerializeField] private GameObject left;
+    [SerializeField] private GameObject right;
+    [SerializeField] private GameObject reset;
+    [SerializeField] private GameObject backToOutside;
+    private bool OofTactive = false;
+
+    //user makes the fraction 2/3
+    [SerializeField] private string userLineTofT1;
+    private bool TofTactive = false;
+
+    //user makes the fraction 3/3
+    [SerializeField] private string userLineThofT1;
+    private bool ThofTactive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,13 +118,51 @@ public class CobraContinue : MonoBehaviour
         statue.GetComponent<BoxCollider2D>().enabled = false;
         mapClickedFirstTime = true;
         resetDialogue();
+        SpeakerLabel.text = Username.username;
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineMapClick1, textLabel);
     }
     public void enterRainforest(){
         rainforestEntered = true;
         resetDialogue();
+        SpeakerLabel.text = Username.username;
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinesRainGo[userLinesRainGoIndex], textLabel);
         userLinesRainGoIndex += 1;
+    }
+    public void OofTDialogue(){
+        OofTactive = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineOofT1, textLabel);
+        up.GetComponent<BoxCollider2D>().enabled = false;
+        down.GetComponent<BoxCollider2D>().enabled = false;
+        left.GetComponent<BoxCollider2D>().enabled = false;
+        right.GetComponent<BoxCollider2D>().enabled = false;
+        reset.GetComponent<BoxCollider2D>().enabled = false;
+        backToOutside.GetComponent<BoxCollider2D>().enabled = false;
+    }
+    public void TofTDialogue(){
+        TofTactive = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineTofT1, textLabel);
+        up.GetComponent<BoxCollider2D>().enabled = false;
+        down.GetComponent<BoxCollider2D>().enabled = false;
+        left.GetComponent<BoxCollider2D>().enabled = false;
+        right.GetComponent<BoxCollider2D>().enabled = false;
+        reset.GetComponent<BoxCollider2D>().enabled = false;
+        backToOutside.GetComponent<BoxCollider2D>().enabled = false;
+    }
+    public void ThofTDialogue(){
+        ThofTactive = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineThofT1, textLabel);
+        up.GetComponent<BoxCollider2D>().enabled = false;
+        down.GetComponent<BoxCollider2D>().enabled = false;
+        left.GetComponent<BoxCollider2D>().enabled = false;
+        right.GetComponent<BoxCollider2D>().enabled = false;
+        reset.GetComponent<BoxCollider2D>().enabled = false;
+        backToOutside.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     private void OnMouseDown() {
@@ -136,6 +192,36 @@ public class CobraContinue : MonoBehaviour
         }
         else if (rainforestEntered && userLinesRainGoIndex == 3){
             rainforestEntered = false;
+            doneTalking();
+        }
+        if (OofTactive){
+            OofTactive = false;
+            up.GetComponent<BoxCollider2D>().enabled = true;
+            down.GetComponent<BoxCollider2D>().enabled = true;
+            left.GetComponent<BoxCollider2D>().enabled = true;
+            right.GetComponent<BoxCollider2D>().enabled = true;
+            reset.GetComponent<BoxCollider2D>().enabled = true;
+            backToOutside.GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
+        }
+        if (TofTactive){
+            TofTactive = false;
+            up.GetComponent<BoxCollider2D>().enabled = true;
+            down.GetComponent<BoxCollider2D>().enabled = true;
+            left.GetComponent<BoxCollider2D>().enabled = true;
+            right.GetComponent<BoxCollider2D>().enabled = true;
+            reset.GetComponent<BoxCollider2D>().enabled = true;
+            backToOutside.GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
+        }
+        if (ThofTactive){
+            ThofTactive = false;
+            up.GetComponent<BoxCollider2D>().enabled = true;
+            down.GetComponent<BoxCollider2D>().enabled = true;
+            left.GetComponent<BoxCollider2D>().enabled = true;
+            right.GetComponent<BoxCollider2D>().enabled = true;
+            reset.GetComponent<BoxCollider2D>().enabled = true;
+            backToOutside.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
     }
