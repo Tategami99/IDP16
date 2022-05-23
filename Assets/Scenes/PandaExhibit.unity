@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc46739e3bbec4348b0f553b29d77929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: {fileID: 1875662169452928332}
+  slot1: {fileID: 0}
   slot2: {fileID: 1875662169452928331}
   slot3: {fileID: 1875662169452928330}
   slot4: {fileID: 1875662169452928329}
@@ -2643,7 +2643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72cad193e55ad05458ee3fb1a4b62ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: {fileID: 1875662169452928332}
+  slot1: {fileID: 1422984411638869058}
   slot2: {fileID: 1875662169452928331}
   slot3: {fileID: 1875662169452928330}
   slot4: {fileID: 1875662169452928329}
@@ -3562,7 +3562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6119969c173d664da57e44d0e6da6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: {fileID: 1875662169452928332}
+  slot1: {fileID: 1422984411638869058}
   slot2: {fileID: 1875662169452928331}
   slot3: {fileID: 1875662169452928330}
   slot4: {fileID: 1875662169452928329}
@@ -4601,7 +4601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6119969c173d664da57e44d0e6da6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: {fileID: 1875662169452928332}
+  slot1: {fileID: 1422984411638869058}
   slot2: {fileID: 1875662169452928331}
   slot3: {fileID: 1875662169452928330}
   slot4: {fileID: 1875662169452928329}
@@ -5037,7 +5037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943d3ea421646264b8c284b5ee1a54c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: {fileID: 1875662169452928332}
+  slot1: {fileID: 1422984411638869058}
   slot2: {fileID: 1875662169452928331}
   slot3: {fileID: 1875662169452928330}
   slot4: {fileID: 1875662169452928329}
@@ -6305,7 +6305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f39dca93b7076489b57cdd96a04cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: {fileID: 1875662169452928332}
+  slot1: {fileID: 1422984411638869058}
   slot2: {fileID: 1875662169452928331}
   slot3: {fileID: 1875662169452928330}
   slot4: {fileID: 1875662169452928329}
@@ -7244,6 +7244,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1422984409740134395, guid: adf25147b460745439eb225c3108b428, type: 3}
   m_PrefabInstance: {fileID: 1422984411638869056}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1422984411638869058 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5102159414447034525, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 1422984411638869056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1875662169452928328 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 971157873570058997, guid: adf25147b460745439eb225c3108b428, type: 3}
@@ -7262,11 +7267,6 @@ SpriteRenderer:
 --- !u!212 &1875662169452928331 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6345400616686612693, guid: adf25147b460745439eb225c3108b428, type: 3}
-  m_PrefabInstance: {fileID: 1422984411638869056}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1875662169452928332 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6136058213400933554, guid: adf25147b460745439eb225c3108b428, type: 3}
   m_PrefabInstance: {fileID: 1422984411638869056}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2695449803720141564

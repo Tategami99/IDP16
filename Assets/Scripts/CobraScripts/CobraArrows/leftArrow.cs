@@ -20,5 +20,8 @@ public class leftArrow : MonoBehaviour
     private void OnMouseDown() {
         upArrow.xC -= 1;
         up.GetComponent<upArrow>().checkSolved();
+        if (upArrow.numSolved == 3){
+            DoorStatueCobra.statueDoorLocked = false;
+        }
     }
 }

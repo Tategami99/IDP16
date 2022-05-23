@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ToRainforest : MonoBehaviour
 {
+    [SerializeField] private GameObject desert;
+    [SerializeField] private GameObject statue;
+    [SerializeField] private GameObject x;
     [SerializeField] private GameObject mapView;
     [SerializeField] private GameObject rainforestHighlight;
     [SerializeField] private GameObject cont;
@@ -34,6 +37,9 @@ public class ToRainforest : MonoBehaviour
             firsttime += 1;
             rainforestHighlight.SetActive(false);
             mapView.SetActive(false);
+            x.GetComponent<BoxCollider2D>().enabled = true;
+            desert.GetComponent<BoxCollider2D>().enabled = true;
+            statue.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 }

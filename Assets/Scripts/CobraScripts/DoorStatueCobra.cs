@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DoorStatueCobra : MonoBehaviour
 {
+    [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject cont;
-    private bool statueDoorLocked = true;
+    public static bool statueDoorLocked = true;
+    Vector2 insideStatue = new Vector2 (0, -11);
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class DoorStatueCobra : MonoBehaviour
             cont.GetComponent<CobraContinue>().whenStatueDoorClicked();
         }
         else{
-            Debug.Log("teehee nothing for now");
+            Camera.transform.position = insideStatue;
         }
     }
 }

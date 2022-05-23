@@ -60,6 +60,13 @@ public class CobraContinue : MonoBehaviour
     [SerializeField] private string userLineThofT1;
     private bool ThofTactive = false;
 
+    //user clicks on one of the cacti for the firsttime
+    [SerializeField] private GameObject back1;
+    [SerializeField] private GameObject back2;
+    [SerializeField] private GameObject back3;
+    [SerializeField] private string userLineFindCactus1;
+    private bool cactusClicked;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -164,6 +171,15 @@ public class CobraContinue : MonoBehaviour
         reset.GetComponent<BoxCollider2D>().enabled = false;
         backToOutside.GetComponent<BoxCollider2D>().enabled = false;
     }
+    public void clickCactus(){
+        cactusClicked = true;
+        back1.GetComponent<BoxCollider2D>().enabled = false;
+        back2.GetComponent<BoxCollider2D>().enabled = false;
+        back3.GetComponent<BoxCollider2D>().enabled = false;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineFindCactus1, textLabel);
+    }
 
     private void OnMouseDown() {
         if (statueDoorClicked){
@@ -187,6 +203,7 @@ public class CobraContinue : MonoBehaviour
             doneTalking();
         }
         if (rainforestEntered && userLinesRainGoIndex < 3){
+            PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinesRainGo[userLinesRainGoIndex], textLabel);
             userLinesRainGoIndex += 1;
         }
@@ -222,6 +239,13 @@ public class CobraContinue : MonoBehaviour
             right.GetComponent<BoxCollider2D>().enabled = true;
             reset.GetComponent<BoxCollider2D>().enabled = true;
             backToOutside.GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
+        }
+        if (cactusClicked){
+            cactusClicked = false;
+            back1.GetComponent<BoxCollider2D>().enabled = true;
+            back2.GetComponent<BoxCollider2D>().enabled = true;
+            back3.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
     }

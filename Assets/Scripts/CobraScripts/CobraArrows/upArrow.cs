@@ -60,5 +60,8 @@ public class upArrow : MonoBehaviour
     private void OnMouseDown() {
         yC += 1;
         checkSolved();
+        if (numSolved == 3){
+            DoorStatueCobra.statueDoorLocked = false;
+        }
     }
 }

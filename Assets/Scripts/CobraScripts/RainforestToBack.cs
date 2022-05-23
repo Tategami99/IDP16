@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class rightArrow : MonoBehaviour
+public class RainforestToBack : MonoBehaviour
 {
-    [SerializeField] private GameObject up;
+    [SerializeField] private GameObject Camera;
+    Vector2 rainforest = new Vector2 (18, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +18,6 @@ public class rightArrow : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        upArrow.xC += 1;
-        up.GetComponent<upArrow>().checkSolved();
-        if (upArrow.numSolved == 3){
-            DoorStatueCobra.statueDoorLocked = false;
-        }
+        Camera.transform.position = rainforest;
     }
 }

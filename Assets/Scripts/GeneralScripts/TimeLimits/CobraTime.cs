@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CobraTime : MonoBehaviour
 {
-    static int CobraTimeSec;
+    [SerializeField] private TMP_Text TimerText;
+    public static float totalTimeLeft = 1800;
+    public static int cobraTimeSec = 0;
     private int nextUpdate = 1;
+    public static int Cpuzzle1Time;
+    public static int Cpuzzle2Time;
+    public static int Cpuzzle3Time;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +25,17 @@ public class CobraTime : MonoBehaviour
             Debug.Log(Time.time + ">= Cobra " + nextUpdate);
             nextUpdate = Mathf.FloorToInt(Time.time) + 1;
             everyCsecond();
+            updateTimer();
         }
     }
     void everyCsecond(){
-        CobraTimeSec += 1;
+        cobraTimeSec += 1;
+        totalTimeLeft -= 1;
+    }
+    void updateTimer(){
+        float minutes = Mathf.FloorToInt(((totalTimeLeft - PandaTime.pandaTimeSec) / 60) % 60);
+        float seconds = Mathf.FloorToInt((totalTimeLeft - PandaTime.pandaTimeSec) % 60);
+        TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
     }
 }
