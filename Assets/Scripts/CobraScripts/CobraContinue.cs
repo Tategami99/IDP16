@@ -68,6 +68,8 @@ public class CobraContinue : MonoBehaviour
     private bool cactusClicked;
 
     //user obtains the second fragment
+    [SerializeField] private SpriteRenderer insideBackground;
+    [SerializeField] private Sprite insideWithDoor;
     [SerializeField] private GameObject FoxExhibitDoor;
     [SerializeField] private List<string> userLinesFoxExhibitGo = new List<string>();
     private int userLinesFoxExhibitGoIndex = 0;

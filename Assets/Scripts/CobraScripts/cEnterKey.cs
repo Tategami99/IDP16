@@ -9,11 +9,12 @@ public class cEnterKey : MonoBehaviour
     [SerializeField] private GameObject Camera;
     Vector2 inside = new Vector2 (0, -11);
     [SerializeField] private SpriteRenderer insideBackground;
-    [SerializeField] private Sprite insideWithDoor;
+    [SerializeField] private Sprite insideWithFragment;
+    [SerializeField] private GameObject keypad;
     // Start is called before the first frame update
     void Start()
     {
-        frag2.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -24,9 +25,10 @@ public class cEnterKey : MonoBehaviour
     void OnMouseDown()
     {
         if (c9key.cobraStatueCode == "9"){
+            keypad.SetActive(false);
             CobraTime.Cpuzzle3Time = CobraTime.cobraTimeSec;
             Debug.Log("unlocked");
-            insideBackground.sprite = insideWithDoor;
+            insideBackground.sprite = insideWithFragment;
             Camera.transform.position = inside;
             frag2.SetActive(true);
         }
