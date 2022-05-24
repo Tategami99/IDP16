@@ -51,6 +51,7 @@ public class DoorsHouseDoor : MonoBehaviour
             SpeakerLabel.text = "";
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserAlternateLineDoorsHouse, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
+            firsttime += 1;
         }
     }
 }

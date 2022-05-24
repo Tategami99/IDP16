@@ -5,6 +5,7 @@ using TMPro;
 
 public class KeypadEnter : MonoBehaviour
 {
+    [SerializeField] private GameObject cont;
     [SerializeField] private string CorrectForStorehouse;
     [SerializeField] private string CorrectForDoorsHouse;
     [SerializeField] private string CorrectForFragment1Case;
@@ -52,5 +53,6 @@ public class KeypadEnter : MonoBehaviour
         }
         self.GetComponent<BoxCollider2D>().enabled = false;
         enterDown.SetActive(false);
+        cont.GetComponent<PandaContinueButton>().disableUI();
     }
 }

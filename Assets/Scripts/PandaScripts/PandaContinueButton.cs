@@ -43,14 +43,20 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private GameObject PlaceRope;
     [SerializeField] private GameObject BackFromSmallMark;
     [SerializeField] private GameObject frag1case;
+    [SerializeField] private GameObject enterFragDown;
+    [SerializeField] private GameObject mark;
+    [SerializeField] private GameObject case1Keypad;
+    [SerializeField] private GameObject caseEnterKey;
+    [SerializeField] private GameObject enterCaseDown;
     public static bool storehouseClicked = false;
     private int Panda1Line = 2;
     private int Panda2Line = 2;
     private int Panda3Line = 2;
 
     //stuff when you obtain the fragment
-    private int fragment1Line = 0;
+    private int fragment1Line = 2;
     [SerializeField] private string UserCaseLine2;
+    [SerializeField] private string UserCaseLine3;
     [SerializeField] private SpriteRenderer mountainTopBackground;
     [SerializeField] private Sprite backgroundWithDoor;
     [SerializeField] private GameObject mountainTopDoor;
@@ -59,6 +65,7 @@ public class PandaContinueButton : MonoBehaviour
     void Start()
     {
         PandaDialogueBox.SetActive(false);
+        mountainTopDoor.SetActive(false);
     }
 
     // Update is called once per frame
@@ -92,6 +99,7 @@ public class PandaContinueButton : MonoBehaviour
                 SpeakerLabel.text = "Panda";
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1Line1, textLabel);
                 Panda1Line += 1;
+                Debug.Log("run second line");
             }
         }
         else if (Panda1Line == 3 && Panda1DialogueUI.P1clicked){
@@ -177,7 +185,11 @@ public class PandaContinueButton : MonoBehaviour
             KeypadEnter.KeypadEnterClicked = false;
             PandaDialogueBox.SetActive(false);
             StoreEnterButton.GetComponent<BoxCollider2D>().enabled = true;
+            caseEnterKey.GetComponent<BoxCollider2D>().enabled = true;
             enterDown.SetActive(true);
+            enterCaseDown.SetActive(true);
+            enterFragDown.SetActive(true);
+            enableUI();
         }
         
         // Panda 3 lines
@@ -251,25 +263,36 @@ public class PandaContinueButton : MonoBehaviour
             enableUI();
         }
         
-        //lines when u click on the fragment case
-        if (fragment1case.case1clicked){
-            fragment1case.case1clicked = false;
-            PandaDialogueBox.SetActive(false);
-            frag1case.SetActive(true);
-            fragment1Line = 2;
-            enableUI();
-        }
         //lines when u click on the fragment
-        if (fragment1case.case1clicked && fragment1Line == 2){
-            mountainTopBackground.sprite = backgroundWithDoor;
+        if (fragment1case.case1clicked && fragment1Line == 2 && fragment1case.case1unlocked){
             SpeakerLabel.text = Username.username;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserCaseLine2, textLabel);
+            fragment1Line += 2;
+            Debug.Log("happened");
+            
+        }
+        else if (fragment1case.case1clicked && fragment1Line == 3 && fragment1case.case1unlocked){
+            mountainTopBackground.sprite = backgroundWithDoor;
             fragment1Line += 1;
         }
-        else if (fragment1case.case1clicked && fragment1Line == 3){
-            mountainTopDoor.GetComponent<BoxCollider2D>().enabled = true;
+        else if (fragment1case.case1clicked && fragment1Line == 4 && fragment1case.case1unlocked){
+            mountainTopBackground.sprite = backgroundWithDoor;
+            SpeakerLabel.text = Username.username;
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserCaseLine3, textLabel);
+            fragment1Line += 1;
+        }
+        else if (fragment1case.case1clicked && fragment1Line == 5 && fragment1case.case1unlocked){
+            fragment1case.case1clicked = false;
+            mountainTopDoor.SetActive(true);
+            Debug.Log("enabled");
             PandaDialogueBox.SetActive(false);
             enableUI();
+        }
+        else if (fragment1case.case1unlocked == false && fragment1case.case1clicked){
+            frag1case.GetComponent<BoxCollider2D>().enabled = true;
+            mark.GetComponent<BoxCollider2D>().enabled = true;
+            case1Keypad.GetComponent<BoxCollider2D>().enabled = true;
+            PandaDialogueBox.SetActive(false);
         }
     }
 }

@@ -19,5 +19,6 @@ public class GoCobraExhibit : MonoBehaviour
     void OnMouseDown()
     {
         SceneManager.LoadScene("CobraExhibit");
+        Debug.Log("clicked");
     }
 }

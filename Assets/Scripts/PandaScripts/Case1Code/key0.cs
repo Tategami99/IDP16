@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class key4 : MonoBehaviour
+public class key0 : MonoBehaviour
 {
     [SerializeField] private TMP_Text caseCode;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class key4 : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        key1.fragment1Code += "4";
-        caseCode.text += "4";
+        key1.fragment1Code += "0";
+        caseCode.text += "0";
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class ExitDoorsFront : MonoBehaviour
 {
     [SerializeField] private GameObject Camera;
-    [SerializeField] private GameObject LeftArrow;
     [SerializeField] private GameObject RightArrow;
     Vector2 left = new Vector2 (-18, 0);
     [SerializeField]  private GameObject wall;
@@ -26,7 +25,6 @@ public class ExitDoorsFront : MonoBehaviour
         wall.SetActive(false);
         GoDoorsHouse.EnteredFromDoorsHouse = false;
         Camera.transform.position = left;
-        LeftArrow.SetActive(true);
         RightArrow.SetActive(true);
     }
 }
