@@ -1,25 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using LootLocker.Requests;
 
 public class controller : MonoBehaviour
 {
-    public InputField MemberID, PlayerScore;
+    
+    private string PlayerName = Username.username;
+    private int Score = PandaTime.pandaTimeSec + CobraTime.cobraTimeSec + FoxTime.foxTimeSec;
     public int ID;
 
     private void Start(){
-        LootLockerSDKManager.StartSession(Username.username, (response) =>{
+        StartCoroutine(LoginRoutine());
+    }
+    
+    IEnumerator LoginRoutine(){
+        bool done = false;
+        LootLockerSDKManager.StartGuestSession((response) =>{
             if (response.success){
-                Debug.Log("success");
+                Debug.Log("yay");
+                PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
+                done = true;
             }
             else{
-                Debug.Log("failed")
+                Debug.Log("boo");
+                done = true;
             }
         });
-    }
-    public void submitScore(){
-        LootLockerSDKManager.SubmitScore(MemberID.text, (response)
+        yield return new WaitWhile(() => done == false);
     }
 }
