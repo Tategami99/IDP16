@@ -1375,10 +1375,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cont: {fileID: 1264581990}
-  CorrectForStorehouse: I think that unlocked the storehouse.
-  CorrectForDoorsHouse: I think that unlocked the locked house.
+  CorrectForStorehouse: '[I think that unlocked the storehouse.]'
+  CorrectForDoorsHouse: '[I think that unlocked the locked house.]'
   CorrectForFragment1Case: e
-  Inorrect: That doesn't seem right.
+  Inorrect: '[That doesn''t seem right.]'
   textLabel: {fileID: 1264581988}
   SpeakerLabel: {fileID: 1264581987}
   PandaDialogueBox: {fileID: 1264581989}
@@ -7746,11 +7746,11 @@ PrefabInstance:
       objectReference: {fileID: 1161288581}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: NarratorLine1
-      value: You obtained a gold coin.
+      value: '*You obtained a gold coin.*'
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: NarratorLine2
-      value: You obtained a stalk of bamboo.
+      value: '*You obtained a stalk of bamboo.*'
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: UserCaseLine2
@@ -7777,6 +7777,10 @@ PrefabInstance:
       propertyPath: Panda2UserLine1
       value: Bamboo?! I'd love to-- wait, I don't have any money on me. Hmm... would
         it be alright to come back.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda3UserLine2
+      value: '[What''s up with all the pandas here being sad today?]'
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda3UserLine3
