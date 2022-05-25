@@ -247,7 +247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 31899c4a79f49644499ffcce8c66deb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff4f665265127004b8cd4cdf325136c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1013,7 +1013,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: fb619fbd1b56d8d4296086e40d9cc5b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac9de39e9b2dc3f4e8753ddfd0e591f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5285,7 +5285,7 @@ MonoBehaviour:
   self: {fileID: 1730457361}
   cont: {fileID: 1264581990}
   background: {fileID: 276697477}
-  open: {fileID: 21300000, guid: 49975a6725c7b674093bb501604f7714, type: 3}
+  open: {fileID: 21300000, guid: 3352944ca05ea054f918cb9dcd51a779, type: 3}
   keypad: {fileID: 437792635}
   mark: {fileID: 1838285360}
 --- !u!61 &1730457364
@@ -7797,7 +7797,7 @@ PrefabInstance:
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: backgroundWithDoor
       value: 
-      objectReference: {fileID: 21300000, guid: 4c9902f8519e6de4d902466b15a835c3, type: 3}
+      objectReference: {fileID: 21300000, guid: a7201ecf1d7050045b14759a8d8738e8, type: 3}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda1AlternateLine2
       value: It's at the top of the mountain. I opened the gate for you so you should
