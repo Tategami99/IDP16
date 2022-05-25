@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class SendToGoogle : MonoBehaviour
 {
@@ -11,15 +12,22 @@ public class SendToGoogle : MonoBehaviour
     private string pandaTimeData;
     private string cobraTimeData;
     private string foxTimeData;
+    [SerializeField] private GameObject question1, question2, question3, question4, question5;
+    private string q1, q2, q3, q4, q5;
     [SerializeField] private string BASE_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSejNerHnQXybWlzSdexKIFLAGkBoeoTfX7I78LbmY9WDMF1cQ/formResponse";
 
-    IEnumerator Post(string nameData, string totalData, string pandaData, string cobraData, string foxData){
+    IEnumerator Post(string nameData, string totalData, string pandaData, string cobraData, string foxData, string ques1, string ques2, string ques3, string ques4, string ques5){
         WWWForm form = new WWWForm();
         form.AddField("entry.467118400", nameData);
         form.AddField("entry.1677874481", totalData);
         form.AddField("entry.1779163284", pandaData);
         form.AddField("entry.595491149", cobraData);
         form.AddField("entry.1554875559", foxData);
+        form.AddField("entry.2125946185", ques1);
+        form.AddField("entry.1412969754", ques2);
+        form.AddField("entry.1450572400", ques3);
+        form.AddField("entry.244538232", ques4);
+        form.AddField("entry.1102387264", ques5);
         UnityWebRequest www = UnityWebRequest.Post(BASE_URL, form);
         yield return www.SendWebRequest();
 
@@ -38,8 +46,13 @@ public class SendToGoogle : MonoBehaviour
         pandaTimeData = PandaTime.pandaTimeSec.ToString();
         cobraTimeData = CobraTime.cobraTimeSec.ToString();
         foxTimeData = FoxTime.foxTimeSec.ToString();
+        q1 = getAnswers.experience;
+        q2 = getAnswers.entertaining;
+        q3 = getAnswers.difficult;
+        q4 = getAnswers.improve;
+        q5 = getAnswers.issues;
 
-        StartCoroutine(Post(usernameData, totalTimeData, pandaTimeData, cobraTimeData, foxTimeData));
+        StartCoroutine(Post(usernameData, totalTimeData, pandaTimeData, cobraTimeData, foxTimeData, q1, q2, q3, q4, q5));
     }
     /*
     WWWForm form = new WWWForm();
