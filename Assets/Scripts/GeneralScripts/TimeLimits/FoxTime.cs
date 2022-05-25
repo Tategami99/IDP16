@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoxTime : MonoBehaviour
 {
-    static int FoxTimeSec;
+    public static int foxTimeSec = 0;
     private int nextUpdate = 1;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,6 @@ public class FoxTime : MonoBehaviour
         }
     }
     void everyFsecond(){
-        FoxTimeSec += 1;
+        foxTimeSec += 1;
     }
 }
