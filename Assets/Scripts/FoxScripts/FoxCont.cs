@@ -23,6 +23,16 @@ public class FoxCont : MonoBehaviour
     [SerializeField] private string userLinePenalty1;
     private bool penaltyStarted = false;
 
+    //user clicks on the cave gate
+    [SerializeField] private string userLineGate1;
+    [SerializeField] private GameObject gate;
+    private bool gateUnlocked = false;
+
+    //user submits sign password
+    [SerializeField] private string userLineSign1;
+    [SerializeField] private string userAlternateLineSign1;
+    [SerializeField] private GameObject enterSpace, enterButton, clearButton, exitButton;
+    private bool signEntered = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +73,28 @@ public class FoxCont : MonoBehaviour
         thirdPath.GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinePenalty1, textLabel);
     }
+    public void gateLockedDialogue(){
+        gateUnlocked = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        gate.GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineGate1, textLabel);
+    }
+    public void signEnterDialogue(){
+        signEntered = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        enterSpace.SetActive(false);
+        enterButton.SetActive(false);
+        clearButton.SetActive(false);
+        exitButton.GetComponent<BoxCollider2D>().enabled = false;
+        if (SignPassword.signPass == "foxy"){
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineSign1, textLabel);
+        }
+        else{
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userAlternateLineSign1, textLabel);
+        }
+    }
 
     private void OnMouseDown() {
         if (foxStarted){
@@ -77,6 +109,19 @@ public class FoxCont : MonoBehaviour
             firstPath.GetComponent<BoxCollider2D>().enabled = true;
             secondPath.GetComponent<BoxCollider2D>().enabled = true;
             thirdPath.GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
+        }
+        if (gateUnlocked){
+            gateUnlocked = false;
+            gate.GetComponent<PolygonCollider2D>().enabled = true;
+            doneTalking();
+        }
+        if (signEntered){
+            signEntered = false;
+            enterSpace.SetActive(true);
+            enterButton.SetActive(true);
+            clearButton.SetActive(true);
+            exitButton.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
     }
