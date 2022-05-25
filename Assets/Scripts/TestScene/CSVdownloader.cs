@@ -1,4 +1,5 @@
-using System.Collections;
+
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 // CSVDownloader.cs
@@ -63,3 +64,4 @@ public static class CSVdownloader
         return equalsIndex;
     }
 }
+*/
