@@ -1,5 +1,3 @@
-/*
-using SimpleJSON;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +10,7 @@ public class OMG : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(ObtainSheetData());
     }
 
     // Update is called once per frame
@@ -27,16 +25,8 @@ public class OMG : MonoBehaviour
             Debug.Log("Error:" + www.error);
         }
         else{
-            string updateText = "";
             string json = www.downloadHandler.text;
             Debug.Log(json);
-            var o = JSON.Parse(json);
-            foreach (var item in o["feed"]["entry"]){
-                var itemo =JsonUtility.Parse(item.ToString());
-                updateText += itemo[0]["gsx$name"]["$t"] + ": " + itemo[0]["gsx$qty"]["$t"]
-            }
-            outputArea.text = updateText;
         }
     }
 }
-*/
