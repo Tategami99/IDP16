@@ -41,7 +41,7 @@ public class SendToGoogle : MonoBehaviour
     }
 
     public void Send(){
-        usernameData = Username.username;
+        usernameData = Username.username + "N" + PlayerPrefs.GetString("PlayerID");
         TotalTimeInt = PandaTime.pandaTimeSec + CobraTime.cobraTimeSec + FoxTime.foxTimeSec;
         totalTimeData = TotalTimeInt.ToString();
         pandaTimeData = PandaTime.pandaTimeSec.ToString();
