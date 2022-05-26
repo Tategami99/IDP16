@@ -33,6 +33,15 @@ public class FoxCont : MonoBehaviour
     [SerializeField] private string userAlternateLineSign1;
     [SerializeField] private GameObject enterSpace, enterButton, clearButton, exitButton;
     private bool signEntered = false;
+
+    //user submits fox password
+    [SerializeField] private List<string> foxStatueDialogue = new List<string>();
+    [SerializeField] private List<GameObject> foxEnterSpace = new List<GameObject>();
+    [SerializeField] private List<GameObject> foxEnterButton = new List<GameObject>();
+    [SerializeField] private List<GameObject> foxExitButton = new List<GameObject>();
+    [SerializeField] private List<GameObject> foxClearButton = new List<GameObject>();
+    private int foxIndex = 0;
+    private bool foxEnterClicked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +104,16 @@ public class FoxCont : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userAlternateLineSign1, textLabel);
         }
     }
+    public void foxEnterDialogue(){
+        foxEnterClicked = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        foxEnterSpace[foxIndex].SetActive(false);
+        foxEnterButton[foxIndex].SetActive(false);
+        foxClearButton[foxIndex].SetActive(false);
+        foxExitButton[foxIndex].GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:foxStatueDialogue[foxIndex], textLabel);
+    }
 
     private void OnMouseDown() {
         if (foxStarted){
@@ -122,6 +141,18 @@ public class FoxCont : MonoBehaviour
             enterButton.SetActive(true);
             clearButton.SetActive(true);
             exitButton.GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
+        }
+        if (foxEnterClicked){
+            foxEnterClicked = false;
+            foxEnterSpace[foxIndex].SetActive(true);
+            foxEnterButton[foxIndex].SetActive(true);
+            foxClearButton[foxIndex].SetActive(true);
+            foxExitButton[foxIndex].GetComponent<BoxCollider2D>().enabled = true;
+            if (foxIndex == 3){
+                Debug.Log("solved");
+            }
+            foxIndex += 1;
             doneTalking();
         }
     }

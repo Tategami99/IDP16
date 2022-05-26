@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class submitS3 : MonoBehaviour
 {
+    [SerializeField] private GameObject cont;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class submitS3 : MonoBehaviour
         if (statuePasswords.s3pass == "cactus" || statuePasswords.s3pass == "Cactus" || statuePasswords.s3pass == "CACTUS"){
             Debug.Log("correct");
             statuePasswords.numCorrect += 1;
+            cont.GetComponent<FoxCont>().foxEnterDialogue();
         }
     }
 }
