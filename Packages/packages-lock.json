@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "com.lootlocker.lootlockersdk": {
-      "version": "file:C:/Users/Kyle Bautista/Downloads/unity-sdk-main/unity-sdk-main",
+      "version": "https://github.com/LootLocker/unity-sdk.git",
       "depth": 0,
-      "source": "local",
+      "source": "git",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "2.0.0"
-      }
+      },
+      "hash": "a1d3c8d0c13c78a28fbf1bb3871b4c0947f9d095"
     },
     "com.unity.2d.animation": {
       "version": "7.0.4",

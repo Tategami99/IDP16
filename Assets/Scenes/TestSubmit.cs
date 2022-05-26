@@ -17,6 +17,6 @@ public class TestSubmit : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("Leaderboard");
     }
 }
