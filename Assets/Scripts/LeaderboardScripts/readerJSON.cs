@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class readerJSON : MonoBehaviour
 {
-    public TextAsset textJSon;
+    IEnumerator ObtainSheetData()
     [System.Serializable]
     public class data{
         public string Username;
