@@ -12,11 +12,11 @@ public class SendToGoogle : MonoBehaviour
     private string pandaTimeData;
     private string cobraTimeData;
     private string foxTimeData;
-    [SerializeField] private GameObject question1, question2, question3, question4, question5;
-    private string q1, q2, q3, q4, q5;
+    [SerializeField] private GameObject question1, question2, question3, question4, question5, question6;
+    private string q1, q2, q3, q4, q5, q6;
     [SerializeField] private string BASE_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSejNerHnQXybWlzSdexKIFLAGkBoeoTfX7I78LbmY9WDMF1cQ/formResponse";
 
-    IEnumerator Post(string nameData, string totalData, string pandaData, string cobraData, string foxData, string ques1, string ques2, string ques3, string ques4, string ques5){
+    IEnumerator Post(string nameData, string totalData, string pandaData, string cobraData, string foxData, string ques1, string ques2, string ques3, string ques4, string ques5, string ques6){
         WWWForm form = new WWWForm();
         form.AddField("entry.467118400", nameData);
         form.AddField("entry.1677874481", totalData);
@@ -28,6 +28,7 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.1450572400", ques3);
         form.AddField("entry.244538232", ques4);
         form.AddField("entry.1102387264", ques5);
+        form.AddField("entry.336416648", ques6);
         UnityWebRequest www = UnityWebRequest.Post(BASE_URL, form);
         yield return www.SendWebRequest();
 
@@ -51,8 +52,9 @@ public class SendToGoogle : MonoBehaviour
         q3 = getAnswers.difficult;
         q4 = getAnswers.improve;
         q5 = getAnswers.issues;
+        q6 = getAnswers.mood;
 
-        StartCoroutine(Post(usernameData, totalTimeData, pandaTimeData, cobraTimeData, foxTimeData, q1, q2, q3, q4, q5));
+        StartCoroutine(Post(usernameData, totalTimeData, pandaTimeData, cobraTimeData, foxTimeData, q1, q2, q3, q4, q5, q6));
     }
     /*
     WWWForm form = new WWWForm();
