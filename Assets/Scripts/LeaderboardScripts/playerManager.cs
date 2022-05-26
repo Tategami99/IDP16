@@ -5,7 +5,6 @@ using LootLocker.Requests;
 
 public class playerManager : MonoBehaviour
 {
-    private string memberID = Username.username;
     public Leaderboard leaderboard;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +13,8 @@ public class playerManager : MonoBehaviour
     }
     IEnumerator SetUpRoutine(){
         yield return LoginRoutine();
+    }
+    IEnumerator scoreRoutine(){
         yield return leaderboard.fetchHighScores();
     }
 
@@ -22,8 +23,9 @@ public class playerManager : MonoBehaviour
         LootLockerSDKManager.StartGuestSession((response)=>{
             if (response.success){
                 Debug.Log("Player was logged in");
-                PlayerPrefs.SetString("PlayerID", memberID);
+                PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
                 done = true;
+                GetComponent<toAgent>().beginning();
             }
             else{
                 Debug.Log("could not start session");
@@ -36,6 +38,9 @@ public class playerManager : MonoBehaviour
 
     public void startLogin(){
         StartCoroutine(SetUpRoutine());
+    }
+    public void scoreFetch(){
+        StartCoroutine(scoreRoutine());
     }
     // Update is called once per frame
     void Update()

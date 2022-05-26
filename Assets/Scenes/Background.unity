@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 54772545}
   - component: {fileID: 54772548}
   - component: {fileID: 54772549}
+  - component: {fileID: 54772550}
+  - component: {fileID: 54772551}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -254,6 +256,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textLabel: {fileID: 184402424}
+--- !u!114 &54772550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54772543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5f5f3db30dc8b459cf0c59533e6757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sender: {fileID: 982671589}
+--- !u!114 &54772551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54772543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4308692520c392d439dd044f7629eb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboard: {fileID: 0}
 --- !u!1 &184402422
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,9 +601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'To my favorite agent:
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class goFox1 : MonoBehaviour
+public class goFox3 : MonoBehaviour
 {
     [SerializeField] private GameObject Camera;
-    private Vector2 fox = new Vector2 (18, 11);
+    private Vector2 fox = new Vector2 (18, -11);
     // Start is called before the first frame update
     void Start()
     {

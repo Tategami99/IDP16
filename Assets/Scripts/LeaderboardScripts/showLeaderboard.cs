@@ -18,8 +18,9 @@ public class showLeaderboard : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        GetComponent<playerManager>().startLogin();
+        GetComponent<playerManager>().scoreFetch();
         StartCoroutine(callLead());
+        Debug.Log(PandaTime.pandaTimeSec);
     }
     IEnumerator callLead(){
         yield return new WaitForSecondsRealtime(1);

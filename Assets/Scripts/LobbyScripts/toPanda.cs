@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class goFox1 : MonoBehaviour
+public class toPanda : MonoBehaviour
 {
-    [SerializeField] private GameObject Camera;
-    private Vector2 fox = new Vector2 (18, 11);
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +17,6 @@ public class goFox1 : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        Camera.transform.position = fox;
+        SceneManager.LoadScene("PandaExhibit");
     }
 }

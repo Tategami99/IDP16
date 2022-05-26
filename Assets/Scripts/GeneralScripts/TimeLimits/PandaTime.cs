@@ -21,9 +21,9 @@ public class PandaTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= nextUpdate){
+        if (Time.timeSinceLevelLoad >= nextUpdate){
             Debug.Log(Time.time + ">= Panda " + nextUpdate);
-            nextUpdate = Mathf.FloorToInt(Time.time) + 1;
+            nextUpdate = Mathf.FloorToInt(Time.timeSinceLevelLoad) + 1;
             everyPsecond();
             updateTimer();
         }
