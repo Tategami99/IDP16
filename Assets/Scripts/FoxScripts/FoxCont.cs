@@ -40,8 +40,15 @@ public class FoxCont : MonoBehaviour
     [SerializeField] private List<GameObject> foxEnterButton = new List<GameObject>();
     [SerializeField] private List<GameObject> foxExitButton = new List<GameObject>();
     [SerializeField] private List<GameObject> foxClearButton = new List<GameObject>();
+    [SerializeField] private GameObject threeStatues, goldenStatue;
+    [SerializeField] private GameObject Camera;
+    private Vector2 golden = new Vector2 (18, 0);
     private int foxIndex = 0;
     private bool foxEnterClicked = false;
+
+    //user clicks on the fragment
+    [SerializeField] private List<string> foxFragmentDialogue = new List<string>();
+    [SerializeField] private GameObject 
     // Start is called before the first frame update
     void Start()
     {
@@ -112,6 +119,12 @@ public class FoxCont : MonoBehaviour
         foxEnterButton[foxIndex].SetActive(false);
         foxClearButton[foxIndex].SetActive(false);
         foxExitButton[foxIndex].GetComponent<BoxCollider2D>().enabled = false;
+        if (foxIndex == 2){
+            SpeakerLabel.text = ""
+            threeStatues.SetActive(false);
+            goldenStatue.SetActive(true);
+            Camera.transform.position = golden;
+        }
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:foxStatueDialogue[foxIndex], textLabel);
     }
 
@@ -149,7 +162,7 @@ public class FoxCont : MonoBehaviour
             foxEnterButton[foxIndex].SetActive(true);
             foxClearButton[foxIndex].SetActive(true);
             foxExitButton[foxIndex].GetComponent<BoxCollider2D>().enabled = true;
-            if (foxIndex == 3){
+            if (foxIndex == 2){
                 Debug.Log("solved");
             }
             foxIndex += 1;
