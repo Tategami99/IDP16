@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject errorMessage;
+    private bool leaderUnlocked = false;
     public void PlayGame()
     {
         SceneManager.LoadScene(1); // loads the panda level
@@ -13,5 +15,19 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void LeaderboardGame(){
+        if (leaderUnlocked){
+            SceneManager.LoadScene("Leaderboard");
+        }
+        else{
+            StartCoroutine(callError());
+        }
+    }
+
+    IEnumerator callError(){
+        errorMessage.SetActive(true);
+        yield return new WaitForSecondsRealtime(1);
+        errorMessage.SetActive(false);
     }
 }

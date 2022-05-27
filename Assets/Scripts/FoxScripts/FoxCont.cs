@@ -13,6 +13,7 @@ public class FoxCont : MonoBehaviour
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject leftArrow;
     [SerializeField] private GameObject rightArrow;
+    [SerializeField] private GameObject hintButton;
 
     //user first enters fox exhibit
     [SerializeField] private GameObject firstPath, secondPath, thirdPath;
@@ -203,6 +204,11 @@ public class FoxCont : MonoBehaviour
         else if (foxEnterClicked && goldenIndex == 10){
             foxEnterClicked = false;
             fragment3.GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
+        }
+        if (penalizeFox.HintButtonClicked){
+            penalizeFox.HintButtonClicked = false;
+            hintButton.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
     }

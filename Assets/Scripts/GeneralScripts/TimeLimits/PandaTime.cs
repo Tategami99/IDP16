@@ -12,6 +12,7 @@ public class PandaTime : MonoBehaviour
     public static int Ppuzzle1Time;
     public static int Ppuzzle2Time;
     public static int Ppuzzle3Time;
+    public static int PhintsUsed = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class PandaTime : MonoBehaviour
     void Update()
     {
         if (Time.timeSinceLevelLoad >= nextUpdate){
-            Debug.Log(Time.time + ">= Panda " + nextUpdate);
+            Debug.Log(Time.timeSinceLevelLoad + ">= Panda " + nextUpdate);
             nextUpdate = Mathf.FloorToInt(Time.timeSinceLevelLoad) + 1;
             everyPsecond();
             updateTimer();

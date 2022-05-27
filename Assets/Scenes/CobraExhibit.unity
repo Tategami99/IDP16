@@ -1291,6 +1291,59 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.25, y: 2.25}
   m_EdgeRadius: 0
+--- !u!1 &576614058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984410290878269, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 716250456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &576614059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984411505047222, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 716250456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &576614060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984411144711383, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 716250456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &576614061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984410370861259, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 716250456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &576614062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984411668409654, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 716250456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &576614063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576614062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f704a858924b949946ad308ba84869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThHints: {fileID: 576614061}
+  TwHints: {fileID: 576614060}
+  OHint: {fileID: 576614059}
+  NoHints: {fileID: 576614058}
+  textLabel: {fileID: 716250461}
+  SpeakerLabel: {fileID: 716250460}
+  PandaDialogueBox: {fileID: 716250462}
+  PandaContinue: {fileID: 716250458}
+  self: {fileID: 576614062}
+  Hints3Line: Maybe the number is the distance between the two points on the left
+    and right cactus.
+  Hints2Line: Maybe the number of cacti is what the location on the point is scaled
+    by.
+  Hint1Line: Maybe the arrows have something to do with the location of the point
+    on the cactus.
+  Hints0Line: I can't seem to think of anything.
 --- !u!1 &614550405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2695449803973264129, guid: deb144a4837e25a489ebcadd0a151973, type: 3}
@@ -1506,12 +1559,32 @@ PrefabInstance:
       propertyPath: x
       value: 
       objectReference: {fileID: 21300000, guid: abb442a3f95fb874a8b9971dc04cf675, type: 3}
+    - target: {fileID: 1422984411668409656, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Hint1Line
+      value: Maybe the number is the distance between the two points on the left
+        and right cactus.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422984411668409656, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Hints0Line
+      value: I can't seem to think of anything.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422984411668409656, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Hints2Line
+      value: Maybe the number of cacti is what the location of the point is scaled
+        by.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422984411668409656, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Hints3Line
+      value: Maybe the arrows have something to do with the location of the point
+        on the cactus.
+      objectReference: {fileID: 0}
     - target: {fileID: 9142865179571084629, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+    - {fileID: 1422984411668409656, guid: adf25147b460745439eb225c3108b428, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: adf25147b460745439eb225c3108b428, type: 3}
 --- !u!20 &716250457 stripped
 Camera:
@@ -1574,6 +1647,7 @@ MonoBehaviour:
   UI: {fileID: 716250459}
   leftArrow: {fileID: 1105502683}
   rightArrow: {fileID: 1304294194}
+  hintButton: {fileID: 576614062}
   door: {fileID: 890103444}
   map: {fileID: 1893046173}
   userLineCobra1: I wonder what this cobra statue is for.
@@ -1606,6 +1680,8 @@ MonoBehaviour:
   back2: {fileID: 1944002185}
   back3: {fileID: 2057768809}
   userLineFindCactus1: This looks like a coordinate plane.
+  insideBackground: {fileID: 0}
+  insideWithDoor: {fileID: 0}
   FoxExhibitDoor: {fileID: 0}
   userLinesFoxExhibitGo:
   - Yes I found it.

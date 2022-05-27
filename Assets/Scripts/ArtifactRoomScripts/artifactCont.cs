@@ -13,6 +13,7 @@ public class artifactCont : MonoBehaviour
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject leftArrow;
     [SerializeField] private GameObject rightArrow;
+    [SerializeField] private GameObject hintButton;
 
     //user first enters room
     [SerializeField] private GameObject tablet;
@@ -22,8 +23,10 @@ public class artifactCont : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hintButton.SetActive(false);
         leftArrow.SetActive(false);
         rightArrow.SetActive(false);
+        firstEnterRoom();
     }
 
     // Update is called once per frame

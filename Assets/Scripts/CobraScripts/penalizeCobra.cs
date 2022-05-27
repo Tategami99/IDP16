@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using  TMPro;
 
-public class NumOHint : MonoBehaviour
+public class penalizeCobra : MonoBehaviour
 {
     public GameObject ThHints;
     public GameObject TwHints;
@@ -47,27 +47,27 @@ public class NumOHint : MonoBehaviour
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
         if (number == 3){
-            PandaTime.totalTimeLeft -= 25;
-            PandaTime.pandaTimeSec += 25;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
+            CobraTime.totalTimeLeft -= 45;
+            CobraTime.cobraTimeSec += 45;
+            Debug.Log(CobraTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
             ThHints.SetActive(false);
             TwHints.SetActive(true);
             number -= 1;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hint1Line, textLabel);
         }
         else if(number == 2){
-            PandaTime.totalTimeLeft -= 20;
-            PandaTime.pandaTimeSec += 20;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
+            CobraTime.totalTimeLeft -= 45;
+            CobraTime.cobraTimeSec += 45;
+            Debug.Log(CobraTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
             TwHints.SetActive(false);
             OHint.SetActive(true);
             number -= 1;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints2Line, textLabel);
         }
         else if(number == 1){
-            PandaTime.totalTimeLeft -= 30;
-            PandaTime.pandaTimeSec += 30;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
+            CobraTime.totalTimeLeft -= 45;
+            CobraTime.cobraTimeSec += 45;
+            Debug.Log(CobraTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
             OHint.SetActive(false);
             NoHints.SetActive(true);
             number -= 1;

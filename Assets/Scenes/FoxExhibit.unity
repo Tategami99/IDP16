@@ -717,6 +717,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167024253}
   m_CullTransparentMesh: 1
+--- !u!1 &198134842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984411668409654, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 1342534168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &198134843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984410290878269, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 1342534168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &198134844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984411505047222, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 1342534168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &198134845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984411144711383, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 1342534168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &198134846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984410370861259, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 1342534168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &198134847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198134842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0e337378009d04c934064871f08de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThHints: {fileID: 198134846}
+  TwHints: {fileID: 198134845}
+  OHint: {fileID: 198134844}
+  NoHints: {fileID: 198134843}
+  textLabel: {fileID: 1342534175}
+  SpeakerLabel: {fileID: 1342534174}
+  PandaDialogueBox: {fileID: 1342534176}
+  PandaContinue: {fileID: 1342534170}
+  self: {fileID: 198134842}
+  Hints3Line: What was that thing that happens when I shout in a cave called.
+  Hints2Line: Two of these riddles seem like they have something to do with foxes.
+  Hint1Line: Maybe the letters these berries form have something to do with the reversed
+    paw prints.
+  Hints0Line: I can't seem to think of anything.
 --- !u!1 &383879821
 GameObject:
   m_ObjectHideFlags: 0
@@ -3111,6 +3162,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: abb442a3f95fb874a8b9971dc04cf675, type: 3}
     m_RemovedComponents:
     - {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+    - {fileID: 1422984411668409656, guid: adf25147b460745439eb225c3108b428, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: adf25147b460745439eb225c3108b428, type: 3}
 --- !u!20 &1342534169 stripped
 Camera:
@@ -4500,6 +4552,7 @@ MonoBehaviour:
   UI: {fileID: 1342534173}
   leftArrow: {fileID: 1342534172}
   rightArrow: {fileID: 1342534171}
+  hintButton: {fileID: 198134842}
   firstPath: {fileID: 1205480409}
   secondPath: {fileID: 1490536437}
   thirdPath: {fileID: 591000632}

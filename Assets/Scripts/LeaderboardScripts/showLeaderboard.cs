@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class showLeaderboard : MonoBehaviour
 {
-    private int total = PandaTime.pandaTimeSec + CobraTime.cobraTimeSec + FoxTime.foxTimeSec;
-    public Leaderboard leaderboard;
+    [SerializeField] private TMP_Text playerAgentNum;
+    [SerializeField] private GameObject area;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +19,11 @@ public class showLeaderboard : MonoBehaviour
         
     }
     private void OnMouseDown() {
+        area.SetActive(false);
         GetComponent<playerManager>().scoreFetch();
-        StartCoroutine(callLead());
         Debug.Log(PandaTime.pandaTimeSec);
+        area.SetActive(true);
+        playerAgentNum.text = PlayerPrefs.GetString("PlayerID");
     }
-    IEnumerator callLead(){
-        yield return new WaitForSecondsRealtime(1);
-        yield return leaderboard.submitScore(total);
-    }
+    
 }

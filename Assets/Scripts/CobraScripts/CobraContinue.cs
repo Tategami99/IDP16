@@ -13,6 +13,7 @@ public class CobraContinue : MonoBehaviour
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject leftArrow;
     [SerializeField] private GameObject rightArrow;
+    [SerializeField] private GameObject hintButton;
 
     //user first enters
     [SerializeField] private GameObject door;
@@ -269,6 +270,11 @@ public class CobraContinue : MonoBehaviour
             userLinesRainGoIndex += 1;
         }
         else if (frag2Obtained && userLinesFoxExhibitGoIndex == 2){
+            doneTalking();
+        }
+        if (penalizeCobra.HintButtonClicked){
+            penalizeCobra.HintButtonClicked = false;
+            hintButton.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
     }
