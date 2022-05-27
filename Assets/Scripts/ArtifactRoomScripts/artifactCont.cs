@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class artifactCont : MonoBehaviour
 {
@@ -14,11 +15,21 @@ public class artifactCont : MonoBehaviour
     [SerializeField] private GameObject leftArrow;
     [SerializeField] private GameObject rightArrow;
     [SerializeField] private GameObject hintButton;
+    private Vector2 win = new Vector2 (-18, 0);
+    [SerializeField] private GameObject Camera;
 
     //user first enters room
     [SerializeField] private GameObject tablet;
     [SerializeField] private string userLineArtifact1;
     private bool startedUp;
+
+    //user fill in stone tablet
+    [SerializeField] private string userCompleteLine1;
+    
+    private bool tabletFilled = false;
+
+    //survey
+    [SerializeField] private GameObject survey;
 
     // Start is called before the first frame update
     void Start()
@@ -58,12 +69,25 @@ public class artifactCont : MonoBehaviour
         tablet.SetActive(false);
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineArtifact1, textLabel);
     }
+    public void tabletComplete(){
+        Camera.transform.position = win;
+        tabletFilled = true;
+        resetDialogue();
+        SpeakerLabel.text = "";
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userCompleteLine1, textLabel);
+        
+    }
 
     private void OnMouseDown() {
         if (startedUp){
             startedUp = false;
             tablet.SetActive(true);
             doneTalking();
+        }
+        if (tabletFilled){
+            tabletFilled = false;
+            doneTalking();
+            survey.GetComponent<toTheSurvey>().survey();
         }
     }
 }
