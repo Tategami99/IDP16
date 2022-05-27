@@ -26,6 +26,7 @@ public class playerManager : MonoBehaviour
                 PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
                 done = true;
                 GetComponent<toAgent>().beginning();
+                Username.LoggedIn = true;
             }
             else{
                 Debug.Log("could not start session");

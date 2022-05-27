@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,4 +30,4 @@ public class controller : MonoBehaviour
         yield return new WaitWhile(() => done == false);
     }
 }
-*/
+

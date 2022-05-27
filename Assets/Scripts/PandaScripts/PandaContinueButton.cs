@@ -53,6 +53,7 @@ public class PandaContinueButton : MonoBehaviour
     private int Panda1Line = 2;
     private int Panda2Line = 2;
     private int Panda3Line = 2;
+    [SerializeField] private GameObject v1Arrow;
 
     //stuff when you obtain the fragment
     private int fragment1Line = 2;
@@ -61,6 +62,10 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private SpriteRenderer mountainTopBackground;
     [SerializeField] private Sprite backgroundWithDoor;
     [SerializeField] private GameObject mountainTopDoor;
+
+    private bool DiaryOpen = false;
+    [SerializeField] private GameObject diary;
+    [SerializeField] private string diaryLine1;
 
     // Start is called before the first frame update
     void Start()
@@ -82,12 +87,30 @@ public class PandaContinueButton : MonoBehaviour
     public void enableUI(){
         UI.SetActive(true);
     }
+    public void openDiary(){
+        DiaryOpen = true;
+        PandaDialogueBox.SetActive(true);
+        PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
+        textLabel.text = "";
+        SpeakerLabel.text = "";
+        SpeakerLabel.text = "Diary";
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:diaryLine1, textLabel);
+        v1Arrow.SetActive(false);
+        diary.SetActive(false);
+    }
 
     public void OnMouseDown(){
         Debug.Log("clicked");
         PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
         textLabel.text = "";
         SpeakerLabel.text = "";
+        if (DiaryOpen){
+            DiaryOpen = false;
+            PandaDialogueBox.SetActive(false);
+            v1Arrow.SetActive(true);
+            diary.SetActive(true);
+            enableUI();
+        }
         // Panda 1 lines
         if (Panda1Line == 2 && Panda1DialogueUI.P1clicked){
             if (Panda1DialogueUI.infoObtained){

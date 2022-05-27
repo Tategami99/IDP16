@@ -15,6 +15,7 @@ public class getAnswers : MonoBehaviour
     public static string improve;
     public static string issues;
     public static string mood;
+    [SerializeField] private GameObject selected;
     
     // Start is called before the first frame update
     void Start()
@@ -68,18 +69,28 @@ public class getAnswers : MonoBehaviour
         Debug.Log(mood);
     }
     public void one(){
+        selected.SetActive(true);
+        selected.transform.position = new Vector3 (-3, 0, 5);
         experience = "1";
     }
     public void two(){
+        selected.SetActive(true);
+        selected.transform.position = new Vector3 (-1.5f, 0, 5);
         experience = "2";
     }
     public void three(){
+        selected.SetActive(true);
+        selected.transform.position = new Vector3 (0, 0, 5);
         experience = "3";
     }
     public void four(){
+        selected.SetActive(true);
+        selected.transform.position = new Vector3 (1.5f, 0, 5);
         experience = "4";
     }
     public void five(){
+        selected.SetActive(true);
+        selected.transform.position = new Vector3 (3, 0, 0);
         experience = "5";
     }
     public void enteP(){

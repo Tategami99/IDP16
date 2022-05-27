@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Username : MonoBehaviour
 {
+    public static bool LoggedIn = false;
     public static string username = "Test";
 
     public void ReadStringInput(string name)

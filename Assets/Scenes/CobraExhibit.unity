@@ -2633,7 +2633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e122bb72d62b24f95276ce559982ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cont: {fileID: 0}
+  cont: {fileID: 716250458}
   Camera: {fileID: 658847191}
 --- !u!212 &1111558409
 SpriteRenderer:
@@ -2764,7 +2764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a561e51998a2d147bf6d3c0959f4404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cont: {fileID: 0}
+  cont: {fileID: 716250458}
   Camera: {fileID: 658847191}
 --- !u!212 &1161270528
 SpriteRenderer:
