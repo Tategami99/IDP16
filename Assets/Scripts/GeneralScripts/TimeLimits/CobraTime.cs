@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CobraTime : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class CobraTime : MonoBehaviour
             nextUpdate = Mathf.FloorToInt(Time.timeSinceLevelLoad) + 1;
             everyCsecond();
             updateTimer();
+            if (totalTimeLeft == 0){
+                SceneManager.LoadScene("LoseScreen");
+            }
+        }
+        if (totalTimeLeft == 0){
+                SceneManager.LoadScene("LoseScreen");
         }
     }
     void everyCsecond(){

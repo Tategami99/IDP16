@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PandaTime : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class PandaTime : MonoBehaviour
             nextUpdate = Mathf.FloorToInt(Time.timeSinceLevelLoad) + 1;
             everyPsecond();
             updateTimer();
+        }
+        if (totalTimeLeft == 0){
+                SceneManager.LoadScene("LoseScreen");
         }
     }
     void everyPsecond(){

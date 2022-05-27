@@ -1395,7 +1395,8 @@ MonoBehaviour:
   Camera: {fileID: 7246148}
   tablet: {fileID: 1807369107}
   userLineArtifact1: Almost there.
-  userCompleteLine1: You go home and celebrate getting the artifact.
+  userCompleteLine1: You end up retrieving the artifact, and safely making it home.
+    You sleep soundly in your bed with the artifact clutched between your arms.
   survey: {fileID: 1653225442}
 --- !u!1 &482797109 stripped
 GameObject:
