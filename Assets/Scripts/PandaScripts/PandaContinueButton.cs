@@ -96,7 +96,7 @@ public class PandaContinueButton : MonoBehaviour
                 Panda1Line += 1;
             }
             else{
-                SpeakerLabel.text = "Panda";
+                SpeakerLabel.text = "Hungry Panda";
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1Line1, textLabel);
                 Panda1Line += 1;
                 Debug.Log("run second line");
@@ -104,7 +104,7 @@ public class PandaContinueButton : MonoBehaviour
         }
         else if (Panda1Line == 3 && Panda1DialogueUI.P1clicked){
             if (Panda1DialogueUI.infoObtained){
-                SpeakerLabel.text = "Panda";
+                SpeakerLabel.text = "Hungry Panda";
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1AlternateLine2, textLabel);
                 Panda1Line += 1;
             }
@@ -156,7 +156,7 @@ public class PandaContinueButton : MonoBehaviour
         }
         else if (Panda2Line == 3 && Panda2.P2clicked){
             if (Panda2.bambooObtained){
-                SpeakerLabel.text = "Panda 2";
+                SpeakerLabel.text = "Broke Panda";
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda2AlternatePandaLine2, textLabel);
                 Panda2Line += 1;
             }
@@ -194,7 +194,7 @@ public class PandaContinueButton : MonoBehaviour
         
         // Panda 3 lines
         if (Panda3Line == 2 && Panda3.P3clicked){
-            SpeakerLabel.text = "Panda 3";
+            SpeakerLabel.text = "Rich Panda";
             if (Panda3.coinObtained){
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda3AlternateLine1, textLabel);
             }
@@ -215,7 +215,7 @@ public class PandaContinueButton : MonoBehaviour
             }
         }
         else if (Panda3Line == 4 && Panda3.P3clicked){
-            SpeakerLabel.text = "Panda 3";
+            SpeakerLabel.text = "Rich Panda";
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda3Line2, textLabel);
             Panda3Line += 1;
         }

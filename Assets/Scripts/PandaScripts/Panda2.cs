@@ -33,7 +33,7 @@ public class Panda2 : MonoBehaviour
             PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
             textLabel.text = "";
             SpeakerLabel.text = "";
-            SpeakerLabel.text = "Panda 2";
+            SpeakerLabel.text = "Broke Panda";
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda2Line1, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
@@ -44,7 +44,7 @@ public class Panda2 : MonoBehaviour
             PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
             textLabel.text = "";
             SpeakerLabel.text = "";
-            SpeakerLabel.text = "Panda 2";
+            SpeakerLabel.text = "Broke Panda";
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda2Line1, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
         }

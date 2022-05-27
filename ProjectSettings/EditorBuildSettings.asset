@@ -24,6 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/CobraExhibit.unity
     guid: 4fc0c8c0ca1ce0d48bf47522553c5cb5
   - enabled: 1
+    path: Assets/Scenes/FoxExhibit.unity
+    guid: eb9fcda183bea60418d04cc67ddc8eae
+  - enabled: 1
+    path: Assets/Scenes/ArtifactRoom.unity
+    guid: 9d829f3d289306f4c932ca63184f84e5
+  - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 36a35e17eaae9d449a3659474aff3ba6
   - enabled: 1

@@ -5,6 +5,7 @@ using UnityEngine;
 public class submitS3 : MonoBehaviour
 {
     [SerializeField] private GameObject cont;
+    private bool firsttime = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,13 @@ public class submitS3 : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        if (statuePasswords.s3pass == "cactus" || statuePasswords.s3pass == "Cactus" || statuePasswords.s3pass == "CACTUS"){
-            Debug.Log("correct");
-            statuePasswords.numCorrect += 1;
-            cont.GetComponent<FoxCont>().foxEnterDialogue();
+        if (firsttime){
+            if (statuePasswords.s3pass == "echo" || statuePasswords.s3pass == "ECHO" || statuePasswords.s3pass == "Echo"){
+                Debug.Log("correct");
+                statuePasswords.numCorrect += 1;
+                firsttime = false;
+                cont.GetComponent<FoxCont>().foxEnterDialogue();
+        }
         }
     }
 }

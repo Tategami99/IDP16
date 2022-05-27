@@ -5,6 +5,7 @@ using UnityEngine;
 public class submitS2 : MonoBehaviour
 {
     [SerializeField] private GameObject cont;
+    private bool firsttime = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,13 @@ public class submitS2 : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        if (statuePasswords.s2pass == "howl" || statuePasswords.s2pass == "Howl" || statuePasswords.s2pass == "HOWL"){
-            Debug.Log("correct");
-            statuePasswords.numCorrect += 1;
-            cont.GetComponent<FoxCont>().foxEnterDialogue();
+        if (firsttime){
+            if (statuePasswords.s2pass == "howl" || statuePasswords.s2pass == "Howl" || statuePasswords.s2pass == "HOWL"){
+                Debug.Log("correct");
+                statuePasswords.numCorrect += 1;
+                firsttime = false;
+                cont.GetComponent<FoxCont>().foxEnterDialogue();
+        }
         }
     }
 }

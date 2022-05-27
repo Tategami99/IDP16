@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,4 +23,3 @@ public class toAgent : MonoBehaviour
         sender.text = "To agent " + agentNum + ":";
     }
 }
-*/

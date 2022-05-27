@@ -46,14 +46,30 @@ public class FoxCont : MonoBehaviour
     private int foxIndex = 0;
     private bool foxEnterClicked = false;
 
+    //user conversation with golden fox
+    private List<string> goldenStatueSpeaker = new List<string>();
+    private int goldenIndex = 0;
+
     //user clicks on the fragment
     [SerializeField] private List<string> foxFragmentDialogue = new List<string>();
-    [SerializeField] private GameObject 
+    [SerializeField] private GameObject fragment3;
     // Start is called before the first frame update
     void Start()
     {
         leftArrow.SetActive(false);
         rightArrow.SetActive(false);
+
+        //speakers when talking with golden fox
+        goldenStatueSpeaker.Add(Username.username);
+        goldenStatueSpeaker.Add("Golden Fox");
+        goldenStatueSpeaker.Add(Username.username);
+        goldenStatueSpeaker.Add("Golden Fox");
+        goldenStatueSpeaker.Add(Username.username);
+        goldenStatueSpeaker.Add("Golden Fox");
+        goldenStatueSpeaker.Add("Golden Fox");
+        goldenStatueSpeaker.Add(Username.username);
+        goldenStatueSpeaker.Add("Golden Fox");
+        goldenStatueSpeaker.Add("Golden Fox");
     }
     public void disableUI(){
         UI.SetActive(false);
@@ -120,15 +136,25 @@ public class FoxCont : MonoBehaviour
         foxClearButton[foxIndex].SetActive(false);
         foxExitButton[foxIndex].GetComponent<BoxCollider2D>().enabled = false;
         if (foxIndex == 2){
-            SpeakerLabel.text = ""
+            SpeakerLabel.text = "";
             threeStatues.SetActive(false);
             goldenStatue.SetActive(true);
             Camera.transform.position = golden;
         }
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:foxStatueDialogue[foxIndex], textLabel);
     }
+    private void goldenConvo(){
+        PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
+        textLabel.text = "";
+        SpeakerLabel.text = "";
+        SpeakerLabel.text = goldenStatueSpeaker[goldenIndex];
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:foxStatueDialogue[foxIndex], textLabel);
+        foxIndex += 1;
+        goldenIndex += 1;
+    }
 
     private void OnMouseDown() {
+        Debug.Log("clicked");
         if (foxStarted){
             foxStarted = false;
             firstPath.GetComponent<BoxCollider2D>().enabled = true;
@@ -156,16 +182,27 @@ public class FoxCont : MonoBehaviour
             exitButton.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
-        if (foxEnterClicked){
+        if (foxEnterClicked && foxIndex < 3){
             foxEnterClicked = false;
             foxEnterSpace[foxIndex].SetActive(true);
             foxEnterButton[foxIndex].SetActive(true);
             foxClearButton[foxIndex].SetActive(true);
             foxExitButton[foxIndex].GetComponent<BoxCollider2D>().enabled = true;
-            if (foxIndex == 2){
-                Debug.Log("solved");
-            }
             foxIndex += 1;
+            if (foxIndex != 3){
+                doneTalking();
+            }
+            else{
+                foxEnterClicked = true;
+            }
+            Debug.Log("foxIndex " + foxIndex);
+        }
+        else if (foxEnterClicked && foxIndex > 2 && goldenIndex < 10){
+            goldenConvo();
+        }
+        else if (foxEnterClicked && goldenIndex == 10){
+            foxEnterClicked = false;
+            fragment3.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
     }

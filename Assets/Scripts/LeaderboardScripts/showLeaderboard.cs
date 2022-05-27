@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,4 +27,3 @@ public class showLeaderboard : MonoBehaviour
         yield return leaderboard.submitScore(total);
     }
 }
-*/
