@@ -3949,8 +3949,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d733a05a845764492ce17d988f8038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserLineDoorsHouse: It seems I have to enter a number to unlock the door.
-  UserAlternateLineDoorsHouse: You enter the house and find a sword.
+  UserLineDoorsHouse: '[It seems I have to enter a number to unlock the door.]'
+  UserAlternateLineDoorsHouse: '[You enter the house and find a sword.]'
   textLabel: {fileID: 1264581988}
   SpeakerLabel: {fileID: 1264581987}
   PandaDialogueBox: {fileID: 1264581989}

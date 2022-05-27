@@ -1567,6 +1567,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1264581996, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda1TypeSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508378, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_Name
       value: UICamera Variant
@@ -1589,11 +1593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1726,32 +1730,32 @@ MonoBehaviour:
   hintButton: {fileID: 576614062}
   door: {fileID: 890103444}
   map: {fileID: 1893046173}
-  userLineCobra1: I wonder what this cobra statue is for.
+  userLineCobra1: '[I wonder what this cobra statue is for.]'
   statueDoor: {fileID: 890103444}
-  userLineDoor1: I wonder what I got to do to unlock this.
-  userLineMap1: You obtained a map.
+  userLineDoor1: '[I wonder what I have to do to unlock this.]'
+  userLineMap1: '*You obtained a map.*'
   x: {fileID: 566358288}
   desert: {fileID: 223393994}
   rainforest: {fileID: 2011200653}
   statue: {fileID: 1788473555}
-  userLineMapClick1: Woah, this seems to be the layout of the cobra exhibit. The
-    rainforest is highlighted. This must be the first place I have to go.
+  userLineMapClick1: '[Woah, this seems to be the layout of the cobra exhibit. The
+    rainforest is highlighted. I''ll go there first.]'
   userLinesRainGo:
-  - What happened?!
-  - I guess I don't need to walk. I could just point to a location on the map and
-    teleport there.
-  - I think I should start off by exploring this area first.
-  userLineOofT1: So this must be the way to get out of the temple. The fraction goes
-    from 0/3 to 1/3.
+  - '[What happened?!]'
+  - '[Looks like I don''t need to walk. I could just point to a location on the map
+    and teleport there.]'
+  - '[I think I should start off by exploring this area first.]'
+  userLineOofT1: '[So this must be the way to get into the cobra statue. Looks like
+    I''m 1/3 of the way there.]'
   up: {fileID: 1586072087}
   down: {fileID: 348591061}
   left: {fileID: 733536625}
   right: {fileID: 249612032}
   reset: {fileID: 1243567241}
   backToOutside: {fileID: 193255725}
-  userLineTofT1: Now the fraction is 2/3.
-  userLineThofT1: Yay, I solved it and now the fraction is 3/3. Hopefully I can open
-    the door now.
+  userLineTofT1: '[Now I''m 2/3 of the way there, awesome!]'
+  userLineThofT1: '[Nice, I solved it and now I think I''m finished. Time to head
+    back to the cobra statue.]'
   back1: {fileID: 1029702281}
   back2: {fileID: 1944002185}
   back3: {fileID: 2057768809}

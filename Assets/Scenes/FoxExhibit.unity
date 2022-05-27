@@ -3104,6 +3104,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1264581996, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda1TypeSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508378, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_Name
       value: UICamera Variant
@@ -4556,13 +4560,13 @@ MonoBehaviour:
   firstPath: {fileID: 1205480409}
   secondPath: {fileID: 1490536437}
   thirdPath: {fileID: 591000632}
-  userLineFoxEnter1: Where am I? Three paths? Going on the wrong one would likely
-    waste time.
-  userLinePenalty1: Dang, I went to the wrong path and wasted time.
-  userLineGate1: How will I get inside?
+  userLineFoxEnter1: '[Where am I? Three paths? Going on the wrong one would likely
+    waste time.]'
+  userLinePenalty1: '[Oops, I went to the wrong path and wasted time.]'
+  userLineGate1: '[How will I get inside?]'
   gate: {fileID: 1889578396}
-  userLineSign1: I think that worked.
-  userAlternateLineSign1: I don't think that worked.
+  userLineSign1: '[I think that worked.]'
+  userAlternateLineSign1: '[I don''t think that worked.]'
   enterSpace: {fileID: 124847604}
   enterButton: {fileID: 73453066}
   clearButton: {fileID: 1953835430}
