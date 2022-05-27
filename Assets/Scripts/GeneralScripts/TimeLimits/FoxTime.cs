@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FoxTime : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class FoxTime : MonoBehaviour
     public static int Fpuzzle1Time;
     public static int Fpuzzle2Time;
     public static int Fpuzzle3Time;
+    [SerializeField] private int testTime = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,9 @@ public class FoxTime : MonoBehaviour
             nextUpdate = Mathf.FloorToInt(Time.timeSinceLevelLoad) + 1;
             everyFsecond();
             updateTimer();
+        }
+        if (totalTimeLeft == 0 || testTime == 0){
+                SceneManager.LoadScene("LoseScreen");
         }
     }
     void everyFsecond(){
