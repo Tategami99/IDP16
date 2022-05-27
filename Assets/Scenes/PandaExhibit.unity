@@ -4932,9 +4932,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccfd97744d682347a8d5b70aa29012a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserLineStorehouse: It seems I have to enter a number to unlock the door...
-  UserAlternateLineStorehouse: You enter the storehouse and find a magnifying glass
-    and some rope.
+  UserLineStorehouse: '[It seems I have to enter a number to unlock the door...]'
+  UserAlternateLineStorehouse: '*You enter the storehouse and find a magnifying glass
+    and some rope.*'
   textLabel: {fileID: 1264581988}
   SpeakerLabel: {fileID: 1264581987}
   PandaDialogueBox: {fileID: 1264581989}
@@ -4954,7 +4954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8451fb23dccf4eb8be77037d056f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panda1TypeSpeed: 15
+  Panda1TypeSpeed: 25
   Panda1Continue: {fileID: 1264581990}
 --- !u!61 &1567706203
 BoxCollider2D:
@@ -5527,7 +5527,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 4
   m_TargetDisplay: 0
@@ -7831,6 +7831,10 @@ PrefabInstance:
       propertyPath: Panda2AlternatePandaLine2
       value: Thank you so much and here's your bamboo. You don't know how much this
         means to me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264581996, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: Panda1TypeSpeed
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1422984409638505433, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalScale.x
