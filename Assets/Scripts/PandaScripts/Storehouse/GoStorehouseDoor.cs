@@ -9,6 +9,7 @@ public class GoStorehouseDoor : MonoBehaviour
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject LeftArrow;
     [SerializeField] private GameObject RightArrow;
+    [SerializeField] private GameObject storeHandle;
     Vector2 door = new Vector2 (0, 11);
     Vector2 DoorsHouseFront = new Vector2 (-18, 11);
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class GoStorehouseDoor : MonoBehaviour
         }
         LeftArrow.SetActive(false);
         RightArrow.SetActive(false);
+        storeHandle.SetActive(true);
         Keypad1.StorehousePasscode = "";
     }
 }

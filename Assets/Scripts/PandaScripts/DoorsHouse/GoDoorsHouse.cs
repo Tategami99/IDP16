@@ -11,6 +11,8 @@ public class GoDoorsHouse : MonoBehaviour
     public static bool EnteredFromDoorsHouse = false;
     [SerializeField]  private GameObject wall;
     [SerializeField]  private GameObject label;
+
+    [SerializeField] private GameObject doorHandle;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class GoDoorsHouse : MonoBehaviour
         
     }
     void OnMouseDown() {
+        doorHandle.SetActive(true);
         EnteredFromDoorsHouse = true;
         Debug.Log("clicked");
         Camera.transform.position = door;
