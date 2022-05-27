@@ -56,7 +56,7 @@ public class upArrow : MonoBehaviour
             numSolved += 1;
             changeFraction();
         }
-        if (xC == -4 && yC == 8 && feSolved != true){
+        if (xC == 4 && yC == -8 && feSolved != true){
             feSolved = true;
             numSolved += 1;
             changeFraction();
