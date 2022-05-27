@@ -1429,8 +1429,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cont: {fileID: 1264581990}
-  CorrectForStorehouse: '[I think that unlocked the storehouse.]'
-  CorrectForDoorsHouse: '[I think that unlocked the locked house.]'
+  CorrectForStorehouse: '[I think that unlocked the storehouse. I should try opening
+    the door.]'
+  CorrectForDoorsHouse: '[I think that unlocked the locked house. I should try opening
+    the door.]'
   CorrectForFragment1Case: e
   Inorrect: '[That doesn''t seem right.]'
   textLabel: {fileID: 1264581988}
@@ -7476,7 +7478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8451fb23dccf4eb8be77037d056f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panda1TypeSpeed: 15
+  Panda1TypeSpeed: 25
   Panda1Continue: {fileID: 1264581990}
 --- !u!114 &2053926661
 MonoBehaviour:
@@ -8282,12 +8284,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: UserCaseLine2
-      value: Whew! One down, much more to go.
+      value: '[Whew! One down, much more to go.]'
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: UserCaseLine3
-      value: Woah! Where did this door appear from? I guess this leads to the next
-        exhibit of the museum.
+      value: '[Woah! Where did this door appear from? I guess this leads to the next
+        exhibit of the museum.]'
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: enterCaseDown
