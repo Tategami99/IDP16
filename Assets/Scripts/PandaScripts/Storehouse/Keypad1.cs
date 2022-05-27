@@ -21,6 +21,6 @@ public class Keypad1 : MonoBehaviour
     private void OnMouseDown() {
         StorehousePasscode += "1";
         Debug.Log(StorehousePasscode);
-        caseCodedepotleft.text = "1";
+        caseCodedepotleft.text += "1";
     }
 }
