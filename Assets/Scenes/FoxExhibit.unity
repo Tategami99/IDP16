@@ -4572,12 +4572,13 @@ MonoBehaviour:
   clearButton: {fileID: 1953835430}
   exitButton: {fileID: 787186277}
   foxStatueDialogue:
-  - Okay... seems simple enough. Two more to go!
-  - Alright, only one more.
-  - The three statues disintegrate and a golden statue appears.
-  - What's this....
-  - Finally, someone has arrived. Welcome, traveler.
-  - Woah a talking statue. What must I do to collect the Artifact fragment, Fox?
+  - '[Okay... seems simple enough. Two more to go!]'
+  - '[Alright, only one more.]'
+  - '*The three statues disintegrate and a golden fox statue appears.*'
+  - '[What''s this....]'
+  - Ah, someone has arrived. Welcome, traveler.
+  - Woah, a talking statue. What must I do to collect the Artifact fragment, Mr.
+    Fox?
   - Traveler, do you know why your journey through this museum has been so difficult?
   - No.
   - The Phoenix fragments you have collected have enchanted each exhibit you have
@@ -4585,7 +4586,7 @@ MonoBehaviour:
     each exhibit to its original form.
   - For that, we thank you. Our museum will be open to the public once more, and
     our legacy will be preserved.
-  - Wow... your're welcome?
+  - Wow... you're welcome?
   - Unfortunately, the foxes' time here in the museum is coming to an end. Our exhibit
     will be replaced with a newer one
   - And for that, we give our artifact to you. Thank you once again.
