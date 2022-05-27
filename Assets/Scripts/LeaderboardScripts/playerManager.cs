@@ -25,7 +25,6 @@ public class playerManager : MonoBehaviour
                 Debug.Log("Player was logged in");
                 PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
                 done = true;
-                GetComponent<toAgent>().beginning();
                 Username.LoggedIn = true;
             }
             else{
