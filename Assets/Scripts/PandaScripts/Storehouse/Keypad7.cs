@@ -18,6 +18,7 @@ public class Keypad7 : MonoBehaviour
         
     }
     private void OnMouseDown() {
+        Keypad1.StorehousePasscode += "7";
         depotCode.text += "7";
     }
 }
