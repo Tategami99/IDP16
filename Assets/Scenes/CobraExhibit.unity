@@ -438,6 +438,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 658847191}
+--- !u!1 &190492424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190492425}
+  - component: {fileID: 190492426}
+  - component: {fileID: 190492427}
+  m_Layer: 5
+  m_Name: FoxDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &190492425
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190492424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 952966524}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.74, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &190492426
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190492424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.36435533, y: 0.43722677}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.5463953, y: 6.6353655}
+  m_EdgeRadius: 0
+--- !u!114 &190492427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190492424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3fa6a8ae99dc44e894f788db549277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &193255725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2266,7 @@ RectTransform:
   - {fileID: 2091266085}
   - {fileID: 1383603702}
   - {fileID: 1911834387}
+  - {fileID: 190492425}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3410,6 +3487,11 @@ RectTransform:
   m_AnchoredPosition: {x: 18, y: 11}
   m_SizeDelta: {x: 17.75, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1404142343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422984410780526139, guid: adf25147b460745439eb225c3108b428, type: 3}
+  m_PrefabInstance: {fileID: 716250456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1485710041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,6 +4092,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapView: {fileID: 1802686271}
   cont: {fileID: 716250458}
+  inventory: {fileID: 1404142343}
+  x: {fileID: 566358288}
 --- !u!1 &1788473555
 GameObject:
   m_ObjectHideFlags: 0
@@ -4430,6 +4514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1911834387}
   - component: {fileID: 1911834388}
+  - component: {fileID: 1911834389}
   m_Layer: 5
   m_Name: Fragment2
   m_TagString: Untagged
@@ -4483,6 +4568,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3040352, y: 2.1757708}
   m_EdgeRadius: 0
+--- !u!114 &1911834389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911834386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a022ca65fdbbd418da081ef68842ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 190492424}
+  render: {fileID: 1383603703}
+  withDoor: {fileID: 21300000, guid: 8cf94552011329e408a0eadf7a20c2e2, type: 3}
 --- !u!1 &1916209866
 GameObject:
   m_ObjectHideFlags: 0
@@ -4979,6 +5079,7 @@ MonoBehaviour:
   desert: {fileID: 223393994}
   statue: {fileID: 1788473555}
   x: {fileID: 566358288}
+  inventory: {fileID: 1404142343}
   mapView: {fileID: 1802686271}
   rainforestHighlight: {fileID: 1583164873}
   cont: {fileID: 716250458}

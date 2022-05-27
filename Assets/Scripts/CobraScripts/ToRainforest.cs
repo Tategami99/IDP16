@@ -6,7 +6,7 @@ public class ToRainforest : MonoBehaviour
 {
     [SerializeField] private GameObject desert;
     [SerializeField] private GameObject statue;
-    [SerializeField] private GameObject x;
+    [SerializeField] private GameObject x, inventory;
     [SerializeField] private GameObject mapView;
     [SerializeField] private GameObject rainforestHighlight;
     [SerializeField] private GameObject cont;
@@ -31,6 +31,8 @@ public class ToRainforest : MonoBehaviour
             mapView.SetActive(false);
         }
         else if (firsttime == 0 && ToStatue.playerLocation != 2){
+            inventory.SetActive(true);
+            x.SetActive(true);
             Camera.transform.position = Rainforest;
             ToStatue.playerLocation = 2;
             cont.GetComponent<CobraContinue>().enterRainforest();

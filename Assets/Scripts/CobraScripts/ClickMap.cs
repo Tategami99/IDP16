@@ -6,6 +6,7 @@ public class ClickMap : MonoBehaviour
 {
     [SerializeField] private GameObject mapView;
     [SerializeField] private GameObject cont;
+    [SerializeField] private GameObject inventory, x;
     private bool firsttime = true;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class ClickMap : MonoBehaviour
             mapView.SetActive(true);
             if (firsttime){
                 cont.GetComponent<CobraContinue>().mapClicked();
+                inventory.SetActive(false);
+                x.SetActive(false);
                 firsttime = false;
             }
         }

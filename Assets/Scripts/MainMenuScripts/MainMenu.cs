@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject errorMessage;
-    private bool leaderUnlocked = false;
+    public static bool leaderUnlocked = false;
     public void PlayGame()
     {
         SceneManager.LoadScene(1); // loads the panda level

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GoStorehouseDoor : MonoBehaviour
 {
+    [SerializeField] private TMP_Text textBox;
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject LeftArrow;
     [SerializeField] private GameObject RightArrow;
@@ -21,6 +23,7 @@ public class GoStorehouseDoor : MonoBehaviour
         
     }
     void OnMouseDown() {
+        textBox.text = "";
         Debug.Log("clicked");
         if (GoDoorsHouse.EnteredFromDoorsHouse){
             Camera.transform.position = DoorsHouseFront;

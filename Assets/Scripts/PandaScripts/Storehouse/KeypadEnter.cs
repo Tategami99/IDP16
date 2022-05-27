@@ -36,7 +36,7 @@ public class KeypadEnter : MonoBehaviour
         textLabel.text = "";
         SpeakerLabel.text = "";
         SpeakerLabel.text = Username.username;
-        if (Keypad1.StorehousePasscode == "222318218111824228" && GoDoorsHouse.EnteredFromDoorsHouse == false && ToCase1Keypad.enteredFromcase1 == false){
+        if (Keypad1.StorehousePasscode == "78191823" && GoDoorsHouse.EnteredFromDoorsHouse == false && ToCase1Keypad.enteredFromcase1 == false){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForStorehouse, textLabel);
             StorehouseDoor.locked = false;
         }
