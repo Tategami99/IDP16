@@ -5302,6 +5302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccfd97744d682347a8d5b70aa29012a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterDown: {fileID: 0}
   UserLineStorehouse: '[It seems I have to enter a number to unlock the door...]'
   UserAlternateLineStorehouse: '*You enter the storehouse and find a magnifying glass
     and some rope.*'
@@ -5762,6 +5763,7 @@ MonoBehaviour:
   PandaContinue: {fileID: 1264581990}
   self: {fileID: 1734470225}
   cont: {fileID: 1264581990}
+  storeBuilding: {fileID: 0}
 --- !u!61 &1734470229
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6304,7 +6306,7 @@ RectTransform:
   m_GameObject: {fileID: 1878851426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1807468635}
@@ -6312,7 +6314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.09, y: 4.36}
+  m_AnchoredPosition: {x: 0.09, y: 3.79}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1878851428
@@ -6356,7 +6358,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: 3545be1d93151bc4c8c6568120787d95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f85829367ca9b944eb842ac80fc6818a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7573,8 +7575,9 @@ MonoBehaviour:
   cont: {fileID: 1264581990}
   CorrectForStorehouse: e
   CorrectForDoorsHouse: e
-  CorrectForFragment1Case: It unlocked the case! I knew it would never be this easy.
-  Inorrect: That doesn't seem right.
+  CorrectForFragment1Case: '[It unlocked the case! Let me see if I can open the glass
+    pane now.]'
+  Inorrect: '[That doesn''t seem right.]'
   textLabel: {fileID: 1264581988}
   SpeakerLabel: {fileID: 1264581987}
   PandaDialogueBox: {fileID: 1264581989}
@@ -7671,7 +7674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8451fb23dccf4eb8be77037d056f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panda1TypeSpeed: 15
+  Panda1TypeSpeed: 25
   Panda1Continue: {fileID: 1264581990}
 --- !u!1 &2126263781
 GameObject:
