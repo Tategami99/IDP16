@@ -212,7 +212,6 @@ public class PandaContinueButton : MonoBehaviour
             PandaDialogueBox.SetActive(false);
             StoreEnterButton.GetComponent<BoxCollider2D>().enabled = true;
             caseEnterKey.GetComponent<BoxCollider2D>().enabled = true;
-            enterDown.SetActive(true);
             enterCaseDown.SetActive(true);
             enterFragDown.SetActive(true);
             enableUI();
