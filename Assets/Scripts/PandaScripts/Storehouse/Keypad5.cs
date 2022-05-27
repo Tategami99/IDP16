@@ -18,7 +18,7 @@ public class Keypad5 : MonoBehaviour
         
     }
     private void OnMouseDown() {
+        textBox.text += "5";
         Keypad1.StorehousePasscode += "5";
-        Keypad1.StorehousePassCode += "5";
     }
 }
