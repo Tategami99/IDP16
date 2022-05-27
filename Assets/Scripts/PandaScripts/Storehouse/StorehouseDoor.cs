@@ -5,6 +5,7 @@ using TMPro;
 
 public class StorehouseDoor : MonoBehaviour
 {
+    [SerializeField] private GameObject enterDown;
     [SerializeField] private string UserLineStorehouse;
     [SerializeField] private string UserAlternateLineStorehouse;
     [SerializeField] private TMP_Text textLabel;
@@ -40,6 +41,7 @@ public class StorehouseDoor : MonoBehaviour
             SpeakerLabel.text = Username.username;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserLineStorehouse, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
+            storeDown.SetActive(false);
         }
         else if (locked == false && firsttime ==0){
             GetComponent<AddRope>().ropeAdd();
@@ -53,6 +55,7 @@ public class StorehouseDoor : MonoBehaviour
             SpeakerLabel.text = "";
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserAlternateLineStorehouse, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
+            storeDown.SetActive(false);
             firsttime += 1;
         }
     }
