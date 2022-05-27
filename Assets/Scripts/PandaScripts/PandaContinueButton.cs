@@ -49,6 +49,7 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private GameObject caseEnterKey;
     [SerializeField] private GameObject enterCaseDown;
     public static bool storehouseClicked = false;
+    [SerializeField] private GameObject storehouseBuilding;
     private int Panda1Line = 2;
     private int Panda2Line = 2;
     private int Panda3Line = 2;
@@ -113,6 +114,7 @@ public class PandaContinueButton : MonoBehaviour
                 PandaDialogueBox.SetActive(false);
                 PandaN1.GetComponent<BoxCollider2D>().enabled = true;
                 Panda1Line = 2;
+                storehouseBuilding.SetActive(true);
                 enableUI();
             }
         }
@@ -129,6 +131,7 @@ public class PandaContinueButton : MonoBehaviour
             PandaN1.GetComponent<BoxCollider2D>().enabled = false;
             Panda1Line += 1;
             Gate.SetActive(true);
+            storehouseBuilding.SetActive(true);
             enableUI();
         }
 

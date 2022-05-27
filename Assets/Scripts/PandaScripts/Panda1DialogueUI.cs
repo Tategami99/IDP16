@@ -15,6 +15,7 @@ public class Panda1DialogueUI : MonoBehaviour
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
     [SerializeField] private GameObject cont;
+    [SerializeField] private GameObject storeBuilding;
     public static bool P1clicked = false;
     public static bool infoObtained = false;
     // Start is called before the first frame update
@@ -53,6 +54,7 @@ public class Panda1DialogueUI : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserLine1, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
+        storeBuilding.SetActive(false);
         cont.GetComponent<PandaContinueButton>().disableUI();
     }
 }
