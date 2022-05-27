@@ -182,7 +182,7 @@ public class PandaContinueButton : MonoBehaviour
         }
         else if (Panda2Line == 3 && Panda2.P2clicked){
             if (Panda2.bambooObtained){
-                SpeakerLabel.text = "Broke Panda";
+                SpeakerLabel.text = "Needy Panda";
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda2AlternatePandaLine2, textLabel);
                 Panda2Line += 1;
             }
