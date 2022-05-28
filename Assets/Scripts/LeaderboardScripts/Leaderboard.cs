@@ -18,7 +18,8 @@ public class Leaderboard : MonoBehaviour
     public IEnumerator submitScore(int scoreToUpload){
         bool done = false;
         string memberID = PlayerPrefs.GetString("PlayerID");
-        LootLockerSDKManager.SubmitScore(memberID, scoreToUpload, leaderboardID,(response)=>{
+        if (MainMenu.played){
+            LootLockerSDKManager.SubmitScore(memberID, scoreToUpload, leaderboardID,(response)=>{
             if (response.success){
                 Debug.Log("upload score success");
                 done = true;
@@ -27,8 +28,9 @@ public class Leaderboard : MonoBehaviour
                 Debug.Log("failed: " + response.Error);
                 done = true;
             }
-        });
-        yield return new WaitWhile(() => done == false);
+            });
+            yield return new WaitWhile(() => done == false);
+        }
     }
     public IEnumerator fetchHighScores(){
         bool done = false;
@@ -45,7 +47,7 @@ public class Leaderboard : MonoBehaviour
                     else{
                         tempPlayerNames += members[i].player.id;
                     }
-                    tempPlayerScores += members[i].score + "\n";
+                    tempPlayerScores += string.Format("{0:00}:{1:00}", Mathf.FloorToInt((members[i].score / 60) % 60), Mathf.FloorToInt(members[i].score % 60)) + "\n";
                     tempPlayerNames += "\n";
                 }
                 done = true;
