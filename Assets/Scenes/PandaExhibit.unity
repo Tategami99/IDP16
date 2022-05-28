@@ -1568,7 +1568,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &387293219
 Canvas:
   m_ObjectHideFlags: 0
@@ -8217,8 +8217,9 @@ MonoBehaviour:
   cont: {fileID: 1264581990}
   CorrectForStorehouse: e
   CorrectForDoorsHouse: e
-  CorrectForFragment1Case: It unlocked the case! I knew it would never be this easy.
-  Inorrect: That doesn't seem right.
+  CorrectForFragment1Case: '[It unlocked the case!  Let''s see if I can open the
+    glass pane.]'
+  Inorrect: '[That doesn''t seem right.]'
   textLabel: {fileID: 1264581988}
   SpeakerLabel: {fileID: 1264581987}
   PandaDialogueBox: {fileID: 1264581989}
@@ -9002,8 +9003,8 @@ PrefabInstance:
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: diaryLine1
       value: This place isn't what it seems. One moment I was in the museum and the
-        next thing I know I'm being chased by pandas. If anyone is reading this,
-        escape.
+        next thing I know I'm in a village with talking pandas. If anyone is reading
+        this, escape.
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda1Line1
