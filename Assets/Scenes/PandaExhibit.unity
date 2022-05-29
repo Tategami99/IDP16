@@ -3523,7 +3523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8451fb23dccf4eb8be77037d056f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panda1TypeSpeed: 15
+  Panda1TypeSpeed: 25
   Panda1Continue: {fileID: 1264581990}
 --- !u!61 &912246550
 BoxCollider2D:
@@ -6367,7 +6367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8451fb23dccf4eb8be77037d056f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panda1TypeSpeed: 15
+  Panda1TypeSpeed: 25
   Panda1Continue: {fileID: 1264581990}
 --- !u!114 &1734470231
 MonoBehaviour:
@@ -8122,7 +8122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8451fb23dccf4eb8be77037d056f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panda1TypeSpeed: 15
+  Panda1TypeSpeed: 25
   Panda1Continue: {fileID: 1264581990}
 --- !u!114 &2053926661
 MonoBehaviour:
