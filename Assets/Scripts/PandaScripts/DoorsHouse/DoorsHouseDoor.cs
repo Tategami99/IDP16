@@ -13,6 +13,7 @@ public class DoorsHouseDoor : MonoBehaviour
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
     [SerializeField] private GameObject doorDown;
+    [SerializeField] private GameObject highlight;
     Vector2 InTheDoorsHouse = new Vector2 (-18, 22);
     public static bool DoorsHouselocked = true;
     private int firsttime = 0;
@@ -41,6 +42,7 @@ public class DoorsHouseDoor : MonoBehaviour
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
         else if (DoorsHouselocked == false && firsttime == 0){
+            highlight.SetActive(false);
             GetComponent<AddSword>().swordAdd();
             doorDown.SetActive(false);
             Debug.Log("clicked");

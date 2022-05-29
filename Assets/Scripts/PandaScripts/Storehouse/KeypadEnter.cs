@@ -16,6 +16,8 @@ public class KeypadEnter : MonoBehaviour
     [SerializeField] private GameObject PandaContinue;
     [SerializeField] private GameObject self;
     [SerializeField] private GameObject enterDown;
+    [SerializeField] private GameObject highlight;
+    [SerializeField] private GameObject highlight2;
     public static bool KeypadEnterClicked = false;
     // Start is called before the first frame update
     void Start()
@@ -39,14 +41,17 @@ public class KeypadEnter : MonoBehaviour
         if (Keypad1.StorehousePasscode == "78191823" && GoDoorsHouse.EnteredFromDoorsHouse == false && ToCase1Keypad.enteredFromcase1 == false){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForStorehouse, textLabel);
             StorehouseDoor.locked = false;
+            highlight.SetActive(true);
         }
         else if (Keypad1.StorehousePasscode == "12" && GoDoorsHouse.EnteredFromDoorsHouse){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForDoorsHouse, textLabel);
             DoorsHouseDoor.DoorsHouselocked = false;
+            highlight.SetActive(true);
         }
         else if (key1.fragment1Code == "13152114201914"){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForFragment1Case, textLabel);
             fragment1case.case1unlocked = true;
+            highlight2.SetActive(true);
         }
         else{
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Inorrect, textLabel);

@@ -27,8 +27,9 @@ public class CobraContinue : MonoBehaviour
     private bool statueDoorClicked = false;
 
     //user obtains map
+    [SerializeField] private GameObject invenHighlight1, invenHighlight2;
     [SerializeField] private string userLineMap1;
-    private bool mapisObtained = false;
+    public static bool mapisObtained = false;
 
     //user clicks on map
     [SerializeField] private GameObject x;
@@ -76,6 +77,11 @@ public class CobraContinue : MonoBehaviour
     private int userLinesFoxExhibitGoIndex = 0;
     private bool frag2Obtained = false;
 
+    //user first enters temple
+    [SerializeField] private string userLineTemple1;
+    [SerializeField] private GameObject templeDown;
+    private bool templeEntered = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -113,6 +119,13 @@ public class CobraContinue : MonoBehaviour
         door.GetComponent<BoxCollider2D>().enabled = false;
         map.GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineCobra1, textLabel);
+    }
+    public void firstEnterTemple(){
+        templeEntered = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        templeDown.SetActive(false);
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineTemple1, textLabel);
     }
 
     public void whenStatueDoorClicked(){
@@ -154,7 +167,7 @@ public class CobraContinue : MonoBehaviour
         left.GetComponent<BoxCollider2D>().enabled = false;
         right.GetComponent<BoxCollider2D>().enabled = false;
         reset.GetComponent<BoxCollider2D>().enabled = false;
-        backToOutside.GetComponent<BoxCollider2D>().enabled = false;
+        backToOutside.SetActive(false);
     }
     public void TofTDialogue(){
         TofTactive = true;
@@ -166,7 +179,7 @@ public class CobraContinue : MonoBehaviour
         left.GetComponent<BoxCollider2D>().enabled = false;
         right.GetComponent<BoxCollider2D>().enabled = false;
         reset.GetComponent<BoxCollider2D>().enabled = false;
-        backToOutside.GetComponent<BoxCollider2D>().enabled = false;
+        backToOutside.SetActive(false);
     }
     public void ThofTDialogue(){
         ThofTactive = true;
@@ -178,7 +191,7 @@ public class CobraContinue : MonoBehaviour
         left.GetComponent<BoxCollider2D>().enabled = false;
         right.GetComponent<BoxCollider2D>().enabled = false;
         reset.GetComponent<BoxCollider2D>().enabled = false;
-        backToOutside.GetComponent<BoxCollider2D>().enabled = false;
+        backToOutside.SetActive(false);
     }
     public void clickCactus(){
         cactusClicked = true;
@@ -209,8 +222,15 @@ public class CobraContinue : MonoBehaviour
             door.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
+        if (templeEntered){
+            templeEntered = false;
+            templeDown.SetActive(true);
+            doneTalking();
+        }
         if (mapisObtained){
             mapisObtained = false;
+            invenHighlight1.SetActive(true);
+            invenHighlight2.SetActive(true);
             doneTalking();
         }
         if (mapClickedFirstTime){
@@ -234,7 +254,7 @@ public class CobraContinue : MonoBehaviour
             left.GetComponent<BoxCollider2D>().enabled = true;
             right.GetComponent<BoxCollider2D>().enabled = true;
             reset.GetComponent<BoxCollider2D>().enabled = true;
-            backToOutside.GetComponent<BoxCollider2D>().enabled = true;
+            backToOutside.SetActive(true);
             doneTalking();
         }
         if (TofTactive){
@@ -244,7 +264,7 @@ public class CobraContinue : MonoBehaviour
             left.GetComponent<BoxCollider2D>().enabled = true;
             right.GetComponent<BoxCollider2D>().enabled = true;
             reset.GetComponent<BoxCollider2D>().enabled = true;
-            backToOutside.GetComponent<BoxCollider2D>().enabled = true;
+            backToOutside.SetActive(true);
             doneTalking();
         }
         if (ThofTactive){
@@ -254,7 +274,7 @@ public class CobraContinue : MonoBehaviour
             left.GetComponent<BoxCollider2D>().enabled = true;
             right.GetComponent<BoxCollider2D>().enabled = true;
             reset.GetComponent<BoxCollider2D>().enabled = true;
-            backToOutside.GetComponent<BoxCollider2D>().enabled = true;
+            backToOutside.SetActive(true);
             doneTalking();
         }
         if (cactusClicked){

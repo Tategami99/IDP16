@@ -17,6 +17,7 @@ public class PlaceTheRope : MonoBehaviour
     [SerializeField] private GameObject cont;
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject withRope;
+    [SerializeField] private GameObject highlight;
     Vector2 path = new Vector2 (36, -11);
     public static bool PlaceRopeClicked = false;
     private int placement = 0;
@@ -39,6 +40,7 @@ public class PlaceTheRope : MonoBehaviour
             rightArrow.SetActive(false);
         }
         if (AddRope.ropeObtained && placement == 0){
+            highlight.SetActive(false);
             PlaceRopeClicked = true;
             Debug.Log("clicked");
             PandaDialogueBox.SetActive(true);

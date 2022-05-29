@@ -15,6 +15,8 @@ public class StorehouseDoor : MonoBehaviour
     [SerializeField] private GameObject self;
     [SerializeField] private GameObject Camera;
     [SerializeField] private GameObject storeDown;
+    [SerializeField] private GameObject highlight;
+    [SerializeField] private GameObject highlight2;
     Vector2 InTheStorehouse = new Vector2 (18, 22);
     public static bool locked = true;
     private int firsttime = 0;
@@ -44,6 +46,8 @@ public class StorehouseDoor : MonoBehaviour
             storeDown.SetActive(false);
         }
         else if (locked == false && firsttime ==0){
+            highlight2.SetActive(true);
+            highlight.SetActive(false);
             GetComponent<AddRope>().ropeAdd();
             GetComponent<AddMagnifyingGlass>().magniAdd();
             storeDown.SetActive(false);

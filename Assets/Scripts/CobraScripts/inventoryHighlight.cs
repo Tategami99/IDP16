@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToTemple : MonoBehaviour
+public class inventoryHighlight : MonoBehaviour
 {
-    [SerializeField] private GameObject Camera, cont;
-    Vector2 temple = new Vector2 (18, 11);
     private bool firsttime = true;
+    [SerializeField] private GameObject highlight;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +18,8 @@ public class ToTemple : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        Camera.transform.position = temple;
         if (firsttime){
-            cont.GetComponent<CobraContinue>().firstEnterTemple();
+            highlight.SetActive(false);
             firsttime = false;
         }
     }

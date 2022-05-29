@@ -18,6 +18,7 @@ public class fragment1case : MonoBehaviour
     [SerializeField] private Sprite open;
     [SerializeField] private GameObject keypad;
     [SerializeField] private GameObject mark;
+    [SerializeField] private GameObject highlight;
     public static bool case1clicked = false;
     public static bool case1unlocked = false;
     private int firsttime = 0;
@@ -34,6 +35,7 @@ public class fragment1case : MonoBehaviour
     }
     public void OnMouseDown(){
         if (case1unlocked && firsttime == 0){
+            highlight.SetActive(false);
             case1clicked = true;
             Debug.Log("clicked");
             PandaDialogueBox.SetActive(true);

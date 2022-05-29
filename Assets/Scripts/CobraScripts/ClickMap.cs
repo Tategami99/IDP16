@@ -6,7 +6,7 @@ public class ClickMap : MonoBehaviour
 {
     [SerializeField] private GameObject mapView;
     [SerializeField] private GameObject cont;
-    [SerializeField] private GameObject inventory, x;
+    [SerializeField] private GameObject inventory, x, highlight;
     private bool firsttime = true;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class ClickMap : MonoBehaviour
                 inventory.SetActive(false);
                 x.SetActive(false);
                 firsttime = false;
+                highlight.SetActive(false);
             }
         }
         Debug.Log("clicked");
