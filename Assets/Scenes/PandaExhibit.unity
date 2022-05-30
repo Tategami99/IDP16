@@ -2324,8 +2324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftArrow: {fileID: 145356662}
   rightArrow: {fileID: 1838788086}
-  NarratorLine1: I probably need a rope to get up to the path.
-  NarratorAlternateLine1: You placed the rope.
+  NarratorLine1: '[I probably need a rope to get up to the path.]'
+  NarratorAlternateLine1: '*You placed the rope.*'
   textLabel: {fileID: 1264581988}
   SpeakerLabel: {fileID: 1264581987}
   PandaDialogueBox: {fileID: 1264581989}
@@ -2347,7 +2347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a8451fb23dccf4eb8be77037d056f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panda1TypeSpeed: 15
+  Panda1TypeSpeed: 25
   Panda1Continue: {fileID: 1264581990}
 --- !u!1 &444969342
 GameObject:
