@@ -48,6 +48,7 @@ public class FoxCont : MonoBehaviour
     private bool foxEnterClicked = false;
 
     //user conversation with golden fox
+    [SerializeField] private GameObject highlight;
     private List<string> goldenStatueSpeaker = new List<string>();
     private int goldenIndex = 0;
 
@@ -204,6 +205,7 @@ public class FoxCont : MonoBehaviour
         else if (foxEnterClicked && goldenIndex == 10){
             foxEnterClicked = false;
             fragment3.GetComponent<BoxCollider2D>().enabled = true;
+            highlight.SetActive(true);
             doneTalking();
         }
         if (penalizeFox.HintButtonClicked){

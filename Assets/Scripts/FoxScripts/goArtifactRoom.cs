@@ -6,7 +6,7 @@ public class goArtifactRoom : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer foxBackground;
     [SerializeField] private Sprite artifactDoor;
-    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject door, highlight;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,7 @@ public class goArtifactRoom : MonoBehaviour
         
     }
     private void OnMouseDown() {
+        highlight.SetActive(false);
         foxBackground.sprite = artifactDoor;
         door.SetActive(true);
     }

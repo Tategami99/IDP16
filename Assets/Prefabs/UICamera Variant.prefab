@@ -75,6 +75,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1875662170489859994, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875662170489859994, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875662170489859994, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1875662170489859995, guid: 48dfba2bf223acd4d8f71778880afe8a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -308,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1041755550b9c6f4eb003c06f4c99786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frag: {fileID: 0}
   Panda1Line1: I'll answer your question if you give me some bamboo.
   Panda1AlternateUserLine1: 
   Panda1AlternateLine2: 
@@ -342,6 +355,21 @@ MonoBehaviour:
   PlaceRope: {fileID: 0}
   BackFromSmallMark: {fileID: 0}
   frag1case: {fileID: 0}
+  enterFragDown: {fileID: 0}
+  exitkeypad: {fileID: 0}
+  mark: {fileID: 0}
+  case1Keypad: {fileID: 0}
+  caseEnterKey: {fileID: 0}
+  enterCaseDown: {fileID: 0}
+  storehouseBuilding: {fileID: 0}
+  v1Arrow: {fileID: 0}
+  UserCaseLine2: 
+  UserCaseLine3: 
+  mountainTopBackground: {fileID: 0}
+  backgroundWithDoor: {fileID: 0}
+  mountainTopDoor: {fileID: 0}
+  diary: {fileID: 0}
+  diaryLine1: 
 --- !u!114 &1264581996
 MonoBehaviour:
   m_ObjectHideFlags: 0
