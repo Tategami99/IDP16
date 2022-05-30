@@ -6,7 +6,6 @@ using TMPro;
 
 public class c5key : MonoBehaviour
 {
-    public static string cobraStatueCode = "";
     [SerializeField] TMP_Text cobraCase;
     [SerializeField] private AudioSource key;
     // Start is called before the first frame update
@@ -22,7 +21,7 @@ public class c5key : MonoBehaviour
     }
     void OnMouseDown()
     {
-        cobraStatueCode += "5";
+        c9key.cobraStatueCode += "5";
         cobraCase.text += "5";
         key.Play();
 

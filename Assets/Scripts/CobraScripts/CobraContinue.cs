@@ -74,6 +74,7 @@ public class CobraContinue : MonoBehaviour
     [SerializeField] private Sprite insideWithDoor;
     [SerializeField] private GameObject FoxExhibitDoor;
     [SerializeField] private List<string> userLinesFoxExhibitGo = new List<string>();
+    [SerializeField] private AudioSource fragSound;
     private int userLinesFoxExhibitGoIndex = 0;
     private bool frag2Obtained = false;
 
@@ -81,6 +82,16 @@ public class CobraContinue : MonoBehaviour
     [SerializeField] private string userLineTemple1;
     [SerializeField] private GameObject templeDown;
     private bool templeEntered = false;
+
+    //user enters the correct code
+    [SerializeField] private string userLineCode1;
+    [SerializeField] private GameObject frag2, insideDown;
+    private bool codeEnteredCorrect = false;
+
+    //user enters the wrong code
+    [SerializeField] private string userLineAlternateCode1;
+    [SerializeField] private GameObject buttons, keypadDown;
+    private bool codeEnteredWrong = false;
 
     // Start is called before the first frame update
     void Start()
@@ -202,8 +213,27 @@ public class CobraContinue : MonoBehaviour
         SpeakerLabel.text = Username.username;
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineFindCactus1, textLabel);
     }
+    public void codeCorrect(){
+        codeEnteredCorrect = true;
+        insideDown.GetComponent<BoxCollider2D>().enabled = false;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineCode1, textLabel);
+    }
+    public void codeWrong(){
+        codeEnteredWrong = true;
+        buttons.SetActive(false);
+        keypadDown.GetComponent<BoxCollider2D>().enabled = false;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineAlternateCode1, textLabel);
+    }
     public void foxDoor(){
         frag2Obtained = true;
+        fragSound.Play();
+        insideBackground.sprite = insideWithDoor;
+        frag2.SetActive(false);
+        insideDown.GetComponent<BoxCollider2D>().enabled = false;
         resetDialogue();
         SpeakerLabel.text = Username.username;
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinesFoxExhibitGo[userLinesFoxExhibitGoIndex], textLabel);
@@ -284,12 +314,27 @@ public class CobraContinue : MonoBehaviour
             back3.GetComponent<BoxCollider2D>().enabled = true;
             doneTalking();
         }
+        if (codeEnteredCorrect){
+            codeEnteredCorrect = false;
+            insideDown.GetComponent<BoxCollider2D>().enabled = true;
+            frag2.SetActive(true);
+            doneTalking();
+        }
+        if (codeEnteredWrong){
+            codeEnteredWrong = false;
+            buttons.SetActive(true);
+            keypadDown.GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
+        }
         if (frag2Obtained && userLinesFoxExhibitGoIndex < 2){
             PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinesRainGo[userLinesRainGoIndex], textLabel);
-            userLinesRainGoIndex += 1;
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinesFoxExhibitGo[userLinesFoxExhibitGoIndex], textLabel);
+            userLinesFoxExhibitGoIndex += 1;
         }
         else if (frag2Obtained && userLinesFoxExhibitGoIndex == 2){
+            frag2Obtained = false;
+            insideDown.GetComponent<BoxCollider2D>().enabled = true;
+            FoxExhibitDoor.SetActive(true);
             doneTalking();
         }
         if (penalizeCobra.HintButtonClicked){

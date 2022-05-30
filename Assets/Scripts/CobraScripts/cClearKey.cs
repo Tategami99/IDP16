@@ -1,30 +1,24 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class c1key : MonoBehaviour
+public class cClearKey : MonoBehaviour
 {
-    [SerializeField] TMP_Text cobraCase;
-    [SerializeField] private AudioSource key;
+    [SerializeField] private TMP_Text code;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-    void OnMouseDown()
-    {
-        c9key.cobraStatueCode += "1";
-        cobraCase.text += "1";
-        key.Play();
-
+    private void OnMouseDown() {
+        code.text = "";
+        c9key.cobraStatueCode = "";
     }
 }
-

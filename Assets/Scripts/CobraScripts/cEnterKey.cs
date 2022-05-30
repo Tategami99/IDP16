@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class cEnterKey : MonoBehaviour
 {
-    [SerializeField] private GameObject frag2;
     [SerializeField] private GameObject cont;
     [SerializeField] private GameObject Camera;
     Vector2 inside = new Vector2 (0, -11);
@@ -32,7 +31,10 @@ public class cEnterKey : MonoBehaviour
             Debug.Log("unlocked");
             insideBackground.sprite = insideWithFragment;
             Camera.transform.position = inside;
-            frag2.SetActive(true);
+            cont.GetComponent<CobraContinue>().codeCorrect();
+        }
+        else{
+            cont.GetComponent<CobraContinue>().codeWrong();
         }
     }
 }
