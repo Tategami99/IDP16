@@ -10,9 +10,9 @@ public class CobraTime : MonoBehaviour
     public static float totalTimeLeft = 1800;
     public static int cobraTimeSec = 0;
     private int nextUpdate = 1;
-    public static int Cpuzzle1Time;
-    public static int Cpuzzle2Time;
-    public static int Cpuzzle3Time;
+    public static int Cpuzzle1Time = 0;
+    public static int Cpuzzle2Time = 0;
+    public static int Cpuzzle3Time = 0;
     // Start is called before the first frame update
     void Start()
     {

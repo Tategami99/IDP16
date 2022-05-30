@@ -25,6 +25,8 @@ public class cEnterKey : MonoBehaviour
     void OnMouseDown()
     {
         if (c9key.cobraStatueCode == "9"){
+            CobraTime.Cpuzzle3Time = CobraTime.cobraTimeSec - CobraTime.Cpuzzle2Time - CobraTime.Cpuzzle1Time;
+            Debug.Log(CobraTime.Cpuzzle3Time + "-3");
             keypad.SetActive(false);
             CobraTime.Cpuzzle3Time = CobraTime.cobraTimeSec;
             Debug.Log("unlocked");

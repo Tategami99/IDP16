@@ -15,7 +15,7 @@ public class getAnswers : MonoBehaviour
     public static string improve;
     public static string issues;
     public static string mood;
-    [SerializeField] private GameObject selected;
+    [SerializeField] private GameObject selected, selected2, selected3;
     
     // Start is called before the first frame update
     void Start()
@@ -90,25 +90,37 @@ public class getAnswers : MonoBehaviour
     }
     public void five(){
         selected.SetActive(true);
-        selected.transform.position = new Vector3 (3, 0, 0);
+        selected.transform.position = new Vector3 (3, 0, 5);
         experience = "5";
     }
     public void enteP(){
         entertaining = "Panda Exhibit";
+        selected2.SetActive(true);
+        selected2.transform.position = new Vector3(0, 1, 5);
     }
     public void enteC(){
         entertaining = "Cobra Exhibit";
+        selected2.SetActive(true);
+        selected2.transform.position = new Vector3(0, -0.5f, 5);
     }
     public void enteF(){
         entertaining = "Fox Exhibit";
+        selected2.SetActive(true);
+        selected2.transform.position = new Vector3(0, -2, 5);
     }
     public void difP(){
         difficult = "Panda Exhibit";
+        selected3.SetActive(true);
+        selected3.transform.position = new Vector3(0, 1, 5);
     }
     public void difC(){
         difficult = "Cobra Exhibit";
+        selected3.SetActive(true);
+        selected3.transform.position = new Vector3(0, -0.5f, 5);
     }
     public void difF(){
         difficult = "Fox Exhibit";
+        selected3.SetActive(true);
+        selected3.transform.position = new Vector3(0, -2, 5);
     }
 }

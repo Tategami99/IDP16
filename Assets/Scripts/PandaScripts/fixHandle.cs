@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoKeypad : MonoBehaviour
+public class fixHandle : MonoBehaviour
 {
-    [SerializeField] private GameObject Camera, storehandle;
-    Vector2 goKey = new Vector2 (18, 11);
+    [SerializeField] private GameObject handle;
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -17,7 +17,6 @@ public class GoKeypad : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        Camera.transform.position = goKey;
-        storehandle.SetActive(true);
+        handle.SetActive(false);
     }
 }

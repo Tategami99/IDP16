@@ -44,9 +44,9 @@ public class SendToGoogle : MonoBehaviour
         usernameData = Username.username + "N" + PlayerPrefs.GetString("PlayerID");
         TotalTimeInt = PandaTime.pandaTimeSec + CobraTime.cobraTimeSec + FoxTime.foxTimeSec;
         totalTimeData = TotalTimeInt.ToString();
-        pandaTimeData = PandaTime.pandaTimeSec.ToString();
-        cobraTimeData = CobraTime.cobraTimeSec.ToString();
-        foxTimeData = FoxTime.foxTimeSec.ToString();
+        pandaTimeData = PandaTime.pandaTimeSec.ToString() + "-" + PandaTime.Ppuzzle1Time + ", " + PandaTime.Ppuzzle2Time + ", " + PandaTime.Ppuzzle3Time;
+        cobraTimeData = CobraTime.cobraTimeSec.ToString() + "-" + CobraTime.Cpuzzle1Time + ", " + CobraTime.Cpuzzle2Time + ", " + CobraTime.Cpuzzle3Time;
+        foxTimeData = FoxTime.foxTimeSec.ToString() + "-" + FoxTime.Fpuzzle1Time + ", " + FoxTime.Fpuzzle2Time + ", " + FoxTime.Fpuzzle3Time;
         q1 = getAnswers.experience;
         q2 = getAnswers.entertaining;
         q3 = getAnswers.difficult;

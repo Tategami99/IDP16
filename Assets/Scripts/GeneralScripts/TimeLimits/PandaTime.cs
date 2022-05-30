@@ -10,9 +10,9 @@ public class PandaTime : MonoBehaviour
     public static float totalTimeLeft = 1800;
     public static int pandaTimeSec = 0;
     private int nextUpdate = 1;
-    public static int Ppuzzle1Time;
-    public static int Ppuzzle2Time;
-    public static int Ppuzzle3Time;
+    public static int Ppuzzle1Time = 0;
+    public static int Ppuzzle2Time = 0;
+    public static int Ppuzzle3Time = 0;
     public static int PhintsUsed = 0;
     // Start is called before the first frame update
     void Start()

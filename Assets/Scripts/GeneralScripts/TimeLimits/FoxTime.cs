@@ -10,9 +10,9 @@ public class FoxTime : MonoBehaviour
     public static float totalTimeLeft = 1800;
     public static int foxTimeSec = 0;
     private int nextUpdate = 1;
-    public static int Fpuzzle1Time;
-    public static int Fpuzzle2Time;
-    public static int Fpuzzle3Time;
+    public static int Fpuzzle1Time = 0;
+    public static int Fpuzzle2Time = 0;
+    public static int Fpuzzle3Time = 0;
     [SerializeField] private int testTime = 1;
     // Start is called before the first frame update
     void Start()

@@ -43,7 +43,7 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private GameObject PlaceRope;
     [SerializeField] private GameObject BackFromSmallMark;
     [SerializeField] private GameObject frag1case;
-    [SerializeField] private GameObject enterFragDown;
+    [SerializeField] private GameObject enterFragDown, exitkeypad;
     [SerializeField] private GameObject mark;
     [SerializeField] private GameObject case1Keypad;
     [SerializeField] private GameObject caseEnterKey;
@@ -214,6 +214,7 @@ public class PandaContinueButton : MonoBehaviour
             caseEnterKey.GetComponent<BoxCollider2D>().enabled = true;
             enterCaseDown.SetActive(true);
             enterFragDown.SetActive(true);
+            exitkeypad.SetActive(true);
             enableUI();
         }
         

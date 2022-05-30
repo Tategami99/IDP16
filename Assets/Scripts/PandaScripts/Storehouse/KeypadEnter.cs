@@ -42,16 +42,22 @@ public class KeypadEnter : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForStorehouse, textLabel);
             StorehouseDoor.locked = false;
             highlight.SetActive(true);
+            PandaTime.Ppuzzle1Time = PandaTime.pandaTimeSec - PandaTime.Ppuzzle2Time;
+            Debug.Log(PandaTime.Ppuzzle1Time + "-1");
         }
         else if (Keypad1.StorehousePasscode == "12" && GoDoorsHouse.EnteredFromDoorsHouse){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForDoorsHouse, textLabel);
             DoorsHouseDoor.DoorsHouselocked = false;
             highlight.SetActive(true);
+            PandaTime.Ppuzzle2Time = PandaTime.pandaTimeSec - PandaTime.Ppuzzle1Time;
+            Debug.Log(PandaTime.Ppuzzle2Time + "-2");
         }
         else if (key1.fragment1Code == "13152114201914"){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForFragment1Case, textLabel);
             fragment1case.case1unlocked = true;
             highlight2.SetActive(true);
+            PandaTime.Ppuzzle3Time = PandaTime.pandaTimeSec - PandaTime.Ppuzzle2Time - PandaTime.Ppuzzle1Time;
+            Debug.Log(PandaTime.Ppuzzle3Time + "-3");
         }
         else{
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Inorrect, textLabel);

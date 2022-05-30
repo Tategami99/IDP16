@@ -37,11 +37,9 @@ public class upArrow : MonoBehaviour
         }
         else if (numSolved == 2){
             fractionImage.sprite = Of23;
-            CobraTime.Cpuzzle1Time = CobraTime.cobraTimeSec;
         }
         else if (numSolved == 3){
             fractionImage.sprite = Of33;
-            CobraTime.Cpuzzle2Time = CobraTime.cobraTimeSec;
         }
     }
 
@@ -68,10 +66,14 @@ public class upArrow : MonoBehaviour
         if (numSolved == 2 && secondMessageShown == false){
             secondMessageShown = true;
             cont.GetComponent<CobraContinue>().TofTDialogue();
+            CobraTime.Cpuzzle1Time = CobraTime.cobraTimeSec;
+            Debug.Log(CobraTime.Cpuzzle1Time + "-1");
         }
         if (numSolved == 3 && thirdMessageShown == false){
             thirdMessageShown = true;
             cont.GetComponent<CobraContinue>().ThofTDialogue();
+            CobraTime.Cpuzzle2Time = CobraTime.cobraTimeSec - CobraTime.Cpuzzle1Time;
+            Debug.Log(CobraTime.Cpuzzle2Time + "-2");
         }
         Debug.Log("(" + xC + "," + yC + ")");
     }

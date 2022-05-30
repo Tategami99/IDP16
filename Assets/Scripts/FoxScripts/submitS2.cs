@@ -24,6 +24,7 @@ public class submitS2 : MonoBehaviour
                 statuePasswords.numCorrect += 1;
                 firsttime = false;
                 cont.GetComponent<FoxCont>().foxEnterDialogue();
+                FoxTime.Fpuzzle2Time = FoxTime.foxTimeSec - FoxTime.Fpuzzle1Time;
         }
         }
     }

@@ -18,6 +18,7 @@ public class GoCobraExhibit : MonoBehaviour
     }
     void OnMouseDown()
     {
+        Debug.Log(PandaTime.pandaTimeSec + "-total  actualTotal= " + PandaTime.Ppuzzle1Time + PandaTime.Ppuzzle2Time + PandaTime.Ppuzzle3Time);
         SceneManager.LoadScene("CobraExhibit");
         Debug.Log("clicked");
     }
