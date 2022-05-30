@@ -36,5 +36,6 @@ public class GoStorehouseDoor : MonoBehaviour
         RightArrow.SetActive(false);
         storeHandle.SetActive(true);
         Keypad1.StorehousePasscode = "";
+        Keypad0.num = 0;
     }
 }

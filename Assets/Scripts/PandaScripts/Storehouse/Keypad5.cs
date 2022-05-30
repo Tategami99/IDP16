@@ -6,6 +6,7 @@ using TMPro;
 public class Keypad5 : MonoBehaviour
 {
     [SerializeField] private TMP_Text textBox;
+    [SerializeField] private AudioSource key;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,12 @@ public class Keypad5 : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        textBox.text += "5";
-        Keypad1.StorehousePasscode += "5";
+        if (Keypad0.num <= 8){
+            Keypad1.StorehousePasscode += "5";
+            Debug.Log(Keypad1.StorehousePasscode);
+            textBox.text += "5";
+            key.Play();
+            Keypad0.num += 1;
+        }
     }
 }

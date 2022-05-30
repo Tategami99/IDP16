@@ -6,6 +6,7 @@ using TMPro;
 public class key6 : MonoBehaviour
 {
     [SerializeField] private TMP_Text caseCode;
+    [SerializeField] private AudioSource key;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,11 @@ public class key6 : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        key1.fragment1Code += "6";
-        caseCode.text += "6";
+        if (key0.knum <= 14){
+            key.Play();
+            key1.fragment1Code += "6";
+            caseCode.text += "6";
+            key0.knum += 1;
+        };
     }
 }

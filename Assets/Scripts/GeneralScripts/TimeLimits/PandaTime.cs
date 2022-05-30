@@ -14,6 +14,7 @@ public class PandaTime : MonoBehaviour
     public static int Ppuzzle2Time = 0;
     public static int Ppuzzle3Time = 0;
     public static int PhintsUsed = 0;
+    [SerializeField] private int testTime = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class PandaTime : MonoBehaviour
             everyPsecond();
             updateTimer();
         }
-        if (totalTimeLeft == 0){
+        if (totalTimeLeft == 0 || testTime == 0){
                 SceneManager.LoadScene("LoseScreen");
         }
     }

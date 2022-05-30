@@ -36,7 +36,7 @@ public class changeLoseScreen : MonoBehaviour
     IEnumerator check(){
         if (firsttime){
             firsttime = false;
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(6);
             loseButton.SetActive(true);
             
         }

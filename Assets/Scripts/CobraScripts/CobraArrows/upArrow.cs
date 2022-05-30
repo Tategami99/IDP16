@@ -10,6 +10,7 @@ public class upArrow : MonoBehaviour
     [SerializeField] private Sprite Of23;
     [SerializeField] private Sprite Of33;
     [SerializeField] private GameObject cont;
+    [SerializeField] private AudioSource arrowClick;
     public static int xC = 0;
     public static int yC = 0;
     public static int numSolved = 0;
@@ -44,6 +45,7 @@ public class upArrow : MonoBehaviour
     }
 
     public void checkSolved(){
+        arrowClick.Play();
         if (xC == 5 && yC == 7 && fsSolved != true){
             fsSolved = true;
             numSolved += 1;

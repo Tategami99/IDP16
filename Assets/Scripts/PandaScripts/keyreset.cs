@@ -20,5 +20,6 @@ public class keyreset : MonoBehaviour
     private void OnMouseDown() {
         key1.fragment1Code = "";
         caseCode.text = "";
+        key0.knum = 0;
     }
 }

@@ -17,6 +17,7 @@ public class StorehouseDoor : MonoBehaviour
     [SerializeField] private GameObject storeDown;
     [SerializeField] private GameObject highlight;
     [SerializeField] private GameObject highlight2;
+    [SerializeField] private AudioSource doorLocked, notLocked;
     Vector2 InTheStorehouse = new Vector2 (18, 22);
     public static bool locked = true;
     private int firsttime = 0;
@@ -33,6 +34,7 @@ public class StorehouseDoor : MonoBehaviour
     }
     public void OnMouseDown(){
         if (locked){
+            doorLocked.Play();
             storeDown.SetActive(false);
             Debug.Log("clicked");
             PandaContinueButton.storehouseClicked = true;
@@ -46,6 +48,7 @@ public class StorehouseDoor : MonoBehaviour
             storeDown.SetActive(false);
         }
         else if (locked == false && firsttime ==0){
+            notLocked.Play();
             highlight2.SetActive(true);
             highlight.SetActive(false);
             GetComponent<AddRope>().ropeAdd();

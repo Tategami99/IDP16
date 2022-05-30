@@ -6,6 +6,7 @@ using TMPro;
 
 public class PandaContinueButton : MonoBehaviour
 {
+    [SerializeField] private AudioSource frag;
     // lines talking w/ panda 1
     [SerializeField] private string Panda1Line1;
     [SerializeField] private string Panda1AlternateUserLine1;
@@ -302,6 +303,7 @@ public class PandaContinueButton : MonoBehaviour
             fragment1Line += 1;
         }
         else if (fragment1case.case1clicked && fragment1Line == 4 && fragment1case.case1unlocked){
+            frag.Play();
             mountainTopBackground.sprite = backgroundWithDoor;
             SpeakerLabel.text = Username.username;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:UserCaseLine3, textLabel);

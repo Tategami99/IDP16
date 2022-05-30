@@ -21,5 +21,6 @@ public class KeypadReset : MonoBehaviour
         Keypad1.StorehousePasscode = "";
         Debug.Log(Keypad1.StorehousePasscode);
         caseCodedepotleft.text = "";
+        Keypad0.num = 0;
     }
 }
