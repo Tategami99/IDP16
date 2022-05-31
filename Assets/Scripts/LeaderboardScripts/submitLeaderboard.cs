@@ -15,15 +15,19 @@ public class submitLeaderboard : MonoBehaviour
         else{
             total = 1800;
         }
+        if (MainMenu.played){
+            StartCoroutine(callLead());
+            Debug.Log("submitted");
+        }
+        else{
+            Debug.Log("not submitted");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-    private void OnMouseDown() {
-        StartCoroutine(callLead());
     }
     IEnumerator callLead(){
         yield return new WaitForSecondsRealtime(1);

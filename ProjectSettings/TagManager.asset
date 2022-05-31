@@ -44,3 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Questions
+    uniqueID: 2996264325
+    locked: 0
+  - name: Sprite
+    uniqueID: 3996594165
+    locked: 0
+  - name: Text
+    uniqueID: 4229066315
+    locked: 0

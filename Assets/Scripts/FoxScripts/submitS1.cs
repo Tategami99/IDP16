@@ -19,7 +19,7 @@ public class submitS1 : MonoBehaviour
     }
     private void OnMouseDown() {
         if (firsttime){
-            if (statuePasswords.s1pass == "arctic fox" || statuePasswords.s1pass == "Arctic Fox" || statuePasswords.s1pass == "ARCTIC Fox"){
+            if (statuePasswords.s1pass == "arctic fox" || statuePasswords.s1pass == "Arctic Fox" || statuePasswords.s1pass == "ARCTIC FOX"){
                 Debug.Log("correct");
                 statuePasswords.numCorrect += 1;
                 firsttime = false;

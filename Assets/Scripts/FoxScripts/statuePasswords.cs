@@ -10,15 +10,15 @@ public class statuePasswords : MonoBehaviour
     public static string s3pass;
     
     public void reads1(string v1){
-        s1pass = v1;
+        s1pass = v1.ToUpper();
         Debug.Log(s1pass);
     }
     public void reads2(string v2){
-        s2pass = v2;
+        s2pass = v2.ToUpper();
         Debug.Log(s2pass);
     }
     public void reads3(string v3){
-        s3pass = v3;
+        s3pass = v3.ToUpper();
         Debug.Log(s3pass);
     }
 }

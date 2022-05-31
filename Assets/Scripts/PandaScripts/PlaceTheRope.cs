@@ -21,6 +21,7 @@ public class PlaceTheRope : MonoBehaviour
     Vector2 path = new Vector2 (36, -11);
     public static bool PlaceRopeClicked = false;
     private int placement = 0;
+    [SerializeField] private GameObject UI;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class PlaceTheRope : MonoBehaviour
         if (placement == 1){
             Debug.Log("place");
             Camera.transform.position = path;
+            UI.SetActive(true);
             leftArrow.SetActive(false);
             rightArrow.SetActive(false);
         }

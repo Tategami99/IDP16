@@ -122,7 +122,7 @@ public class FoxCont : MonoBehaviour
         enterButton.SetActive(false);
         clearButton.SetActive(false);
         exitButton.GetComponent<BoxCollider2D>().enabled = false;
-        if (SignPassword.signPass == "foxy"){
+        if (SignPassword.signPass == "foxy" || SignPassword.signPass == "FOXY" || SignPassword.signPass == "Foxy"){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineSign1, textLabel);
         }
         else{

@@ -18,5 +18,6 @@ public class GoMainMenu : MonoBehaviour
     }
     private void OnMouseDown() {
         SceneManager.LoadScene(0);
+        MainMenu.played = false;
     }
 }

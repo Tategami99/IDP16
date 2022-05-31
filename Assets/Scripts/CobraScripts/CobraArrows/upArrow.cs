@@ -5,7 +5,7 @@ using TMPro;
 
 public class upArrow : MonoBehaviour
 {
-    [SerializeField] private TMP_Text label, label2;
+    [SerializeField] private TMP_Text coorLabel;
     [SerializeField] private SpriteRenderer fractionImage;
     [SerializeField] private Sprite Of13;
     [SerializeField] private Sprite Of23;
@@ -47,6 +47,7 @@ public class upArrow : MonoBehaviour
 
     public void checkSolved(){
         arrowClick.Play();
+        coorLabel.text = ("(" + xC.ToString() + "," + yC.ToString() + ")");
         if (xC == 5 && yC == 7 && fsSolved != true){
             fsSolved = true;
             numSolved += 1;
@@ -82,8 +83,6 @@ public class upArrow : MonoBehaviour
     }
     private void OnMouseDown() {
         yC += 1;
-        label.text = yC.ToString;
-        label2.text = yC.ToString;
         checkSolved();
         if (numSolved == 3){
             DoorStatueCobra.statueDoorLocked = false;

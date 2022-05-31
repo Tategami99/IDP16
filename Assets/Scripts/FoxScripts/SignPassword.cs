@@ -17,7 +17,7 @@ public class SignPassword : MonoBehaviour
         
     }
     public void readSignPassword(string value){
-        signPass = value;
+        signPass = value.ToUpper();
         Debug.Log(signPass);
     }
 }

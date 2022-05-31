@@ -2335,6 +2335,7 @@ MonoBehaviour:
   Camera: {fileID: 1582232282}
   withRope: {fileID: 1895293484}
   highlight: {fileID: 886362697}
+  UI: {fileID: 1161241591}
 --- !u!114 &441851967
 MonoBehaviour:
   m_ObjectHideFlags: 0
