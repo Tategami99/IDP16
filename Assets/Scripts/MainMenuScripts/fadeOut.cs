@@ -18,7 +18,6 @@ public class fadeOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("working");
         if (fadeOpeningIn){
             if (opening.alpha < 1){
                  opening.alpha += fadeSpeed;
