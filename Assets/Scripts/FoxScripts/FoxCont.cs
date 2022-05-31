@@ -16,7 +16,7 @@ public class FoxCont : MonoBehaviour
     [SerializeField] private GameObject hintButton;
 
     //user first enters fox exhibit
-    [SerializeField] private GameObject firstPath, secondPath, thirdPath;
+    [SerializeField] private GameObject paths;
     [SerializeField] private string userLineFoxEnter1;
     private bool foxStarted = false;
 
@@ -93,18 +93,14 @@ public class FoxCont : MonoBehaviour
         foxStarted = true;
         resetDialogue();
         SpeakerLabel.text = Username.username;
-        firstPath.GetComponent<BoxCollider2D>().enabled = false;
-        secondPath.GetComponent<BoxCollider2D>().enabled = false;
-        thirdPath.GetComponent<BoxCollider2D>().enabled = false;
+        paths.SetActive(false);
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineFoxEnter1, textLabel);
     }
     public void penaltyDialogue(){
         penaltyStarted = true;
         resetDialogue();
         SpeakerLabel.text = Username.username;
-        firstPath.GetComponent<BoxCollider2D>().enabled = false;
-        secondPath.GetComponent<BoxCollider2D>().enabled = false;
-        thirdPath.GetComponent<BoxCollider2D>().enabled = false;
+        paths.SetActive(false);
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLinePenalty1, textLabel);
     }
     public void gateLockedDialogue(){
@@ -159,16 +155,13 @@ public class FoxCont : MonoBehaviour
         Debug.Log("clicked");
         if (foxStarted){
             foxStarted = false;
-            firstPath.GetComponent<BoxCollider2D>().enabled = true;
-            secondPath.GetComponent<BoxCollider2D>().enabled = true;
-            thirdPath.GetComponent<BoxCollider2D>().enabled = true;
+            paths.SetActive(true);
+            
             doneTalking();
         }
         if (penaltyStarted){
             penaltyStarted = false;
-            firstPath.GetComponent<BoxCollider2D>().enabled = true;
-            secondPath.GetComponent<BoxCollider2D>().enabled = true;
-            thirdPath.GetComponent<BoxCollider2D>().enabled = true;
+            paths.SetActive(true);
             doneTalking();
         }
         if (gateUnlocked){

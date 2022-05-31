@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainScreen: {fileID: 1449935213}
   opening: {fileID: 658383672}
-  fadeSpeed: 0.001
+  fadeSpeed: 0.003
 --- !u!4 &25184360
 Transform:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class fadeFox : MonoBehaviour
 {
     [SerializeField] private CanvasGroup forest;
-    [SerializeField] private GameObject Cam, cont, dialBox;
+    [SerializeField] private GameObject Cam, cont, dialBox, paths;
     [SerializeField] private float forestSpeed;
     private bool fading = false;
     // Start is called before the first frame update
@@ -14,6 +14,7 @@ public class fadeFox : MonoBehaviour
         Cam.SetActive(false);
         dialBox.SetActive(false);
         fading = true;
+        paths.SetActive(false);
     }
 
     // Update is called once per frame

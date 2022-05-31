@@ -21,9 +21,12 @@ public class c7key : MonoBehaviour
     }
     void OnMouseDown()
     {
-        c9key.cobraStatueCode += "7";
-        cobraCase.text += "7";
-        key.Play();
+        if (c0key.cNum < 3){
+            c9key.cobraStatueCode += "7";
+            cobraCase.text += "7";
+            key.Play();
+            c0key.cNum += 1;
+        }
 
     }
 }

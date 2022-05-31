@@ -6,6 +6,7 @@ using TMPro;
 
 public class c0key : MonoBehaviour
 {
+    public static int cNum;
     [SerializeField] TMP_Text cobraCase;
     [SerializeField] private AudioSource key;
     // Start is called before the first frame update
@@ -21,9 +22,11 @@ public class c0key : MonoBehaviour
     }
     void OnMouseDown()
     {
-        c9key.cobraStatueCode += "0";
-        cobraCase.text += "0";
-        key.Play();
-
+        if (cNum < 3){
+            c9key.cobraStatueCode += "0";
+            cobraCase.text += "0";
+            key.Play();
+            cNum += 1;
+        }
     }
 }

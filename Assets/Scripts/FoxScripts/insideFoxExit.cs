@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class cClearKey : MonoBehaviour
+public class insideFoxExit : MonoBehaviour
 {
-    [SerializeField] private TMP_Text code;
+    [SerializeField] private GameObject Camera;
+    private Vector2 outside = new Vector2 (0, 11);
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +18,6 @@ public class cClearKey : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        code.text = "";
-        c9key.cobraStatueCode = "";
-        c0key.cNum = 0;
+        Camera.transform.position = outside;
     }
 }

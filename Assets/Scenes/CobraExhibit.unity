@@ -3278,7 +3278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statue: {fileID: 803877515}
-  fadeSpeed: 0.001
+  fadeSpeed: 0.003
   cont: {fileID: 716250458}
   Cam: {fileID: 716250459}
   dialBox: {fileID: 716250462}

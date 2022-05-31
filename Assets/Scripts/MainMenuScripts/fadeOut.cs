@@ -41,7 +41,7 @@ public class fadeOut : MonoBehaviour
         }
     }
     IEnumerator goUsername(){
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(1);
         SceneManager.LoadScene("Username");
         Debug.Log("done");
     }

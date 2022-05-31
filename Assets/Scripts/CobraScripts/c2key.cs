@@ -21,9 +21,12 @@ public class c2key : MonoBehaviour
     }
     void OnMouseDown()
     {
-        c9key.cobraStatueCode += "2";
-        cobraCase.text += "2";
-        key.Play();
+        if (c0key.cNum < 3){
+            c9key.cobraStatueCode += "2";
+            cobraCase.text += "2";
+            key.Play();
+            c0key.cNum += 1;
+        }
 
     }
 }
