@@ -25,7 +25,10 @@ public class submitS3 : MonoBehaviour
                 firsttime = false;
                 cont.GetComponent<FoxCont>().foxEnterDialogue();
                 FoxTime.Fpuzzle3Time = FoxTime.foxTimeSec - FoxTime.Fpuzzle2Time;
-        }
+            }
+            else{
+                cont.GetComponent<FoxCont>().enterWrong();
+            }
         }
     }
 }

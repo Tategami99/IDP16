@@ -47,6 +47,10 @@ public class FoxCont : MonoBehaviour
     private int foxIndex = 0;
     private bool foxEnterClicked = false;
 
+    //user submits wrong fox password
+    [SerializeField] private string wrongFox;
+    private bool foxWrong = false;
+
     //user conversation with golden fox
     [SerializeField] private GameObject highlight;
     private List<string> goldenStatueSpeaker = new List<string>();
@@ -141,6 +145,16 @@ public class FoxCont : MonoBehaviour
         }
         GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:foxStatueDialogue[foxIndex], textLabel);
     }
+    public void enterWrong(){
+        foxWrong = true;
+        resetDialogue();
+        SpeakerLabel.text = Username.username;
+        foxEnterSpace[0].SetActive(false);foxEnterSpace[1].SetActive(false);foxEnterSpace[2].SetActive(false);
+        foxEnterButton[0].SetActive(false);foxEnterButton[1].SetActive(false);foxEnterButton[2].SetActive(false);
+        foxClearButton[0].SetActive(false);foxClearButton[1].SetActive(false);foxClearButton[2].SetActive(false);
+        foxExitButton[0].GetComponent<BoxCollider2D>().enabled = false;foxExitButton[1].GetComponent<BoxCollider2D>().enabled = false;foxExitButton[2].GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:wrongFox, textLabel);
+    }
     private void goldenConvo(){
         PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
         textLabel.text = "";
@@ -191,6 +205,14 @@ public class FoxCont : MonoBehaviour
                 foxEnterClicked = true;
             }
             Debug.Log("foxIndex " + foxIndex);
+        }
+        if (foxWrong){
+            foxWrong = false;
+            foxEnterSpace[0].SetActive(true);foxEnterSpace[1].SetActive(true);foxEnterSpace[2].SetActive(true);
+            foxEnterButton[0].SetActive(true);foxEnterButton[1].SetActive(true);foxEnterButton[2].SetActive(true);
+            foxClearButton[0].SetActive(true);foxClearButton[1].SetActive(true);foxClearButton[2].SetActive(true);
+            foxExitButton[0].GetComponent<BoxCollider2D>().enabled = true;foxExitButton[1].GetComponent<BoxCollider2D>().enabled = true;foxExitButton[2].GetComponent<BoxCollider2D>().enabled = true;
+            doneTalking();
         }
         else if (foxEnterClicked && foxIndex > 2 && goldenIndex < 10){
             goldenConvo();

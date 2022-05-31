@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ObtainMap : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer background;
-    [SerializeField] private Sprite noMap;
+    [SerializeField] private SpriteRenderer background, slot1;
+    [SerializeField] private Sprite noMap, map;
     [SerializeField] private GameObject cont;
     // Start is called before the first frame update
     void Start()
@@ -21,5 +21,7 @@ public class ObtainMap : MonoBehaviour
     private void OnMouseDown() {
         cont.GetComponent<CobraContinue>().mapObtained();
         background.sprite = noMap;
+        slot1.sprite = map;
+        AddItemToInventory.slot1full = true;
     }
 }

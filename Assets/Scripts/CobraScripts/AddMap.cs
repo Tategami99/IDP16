@@ -25,24 +25,8 @@ public class AddMap : MonoBehaviour
         
     }
     public void OnMouseDown() {
-        if (AddItemToInventory.slot1full == false){
-            mapLocation = 1;
-            mapAdded = true;
-        }
-        else if (AddItemToInventory.slot2full == false){
-            mapLocation = 2;
-            mapAdded = true;
-        }
-        else if (AddItemToInventory.slot3full == false){
-            mapLocation = 3;
-        }
-        else if (AddItemToInventory.slot4full == false){
-            mapLocation = 4;
-        }
-        else if (AddItemToInventory.slot5full == false){
-            mapLocation = 5;
-        }
-        GetComponent<AddItemToInventory>().Add();
+        mapLocation = 1;
+        mapAdded = true;
         Debug.Log("ml= " + mapLocation);
         self.SetActive(false);
     }

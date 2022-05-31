@@ -5165,6 +5165,7 @@ MonoBehaviour:
   threeStatues: {fileID: 1986651489}
   goldenStatue: {fileID: 1764594650}
   Camera: {fileID: 1207630001}
+  wrongFox: '[That didn''t work.]'
   highlight: {fileID: 1476691857}
   foxFragmentDialogue: []
   fragment3: {fileID: 2108480652}

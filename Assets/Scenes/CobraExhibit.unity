@@ -128,11 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6894927041367779314, guid: adf25147b460745439eb225c3108b428, type: 3}
   m_PrefabInstance: {fileID: 716250456}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &51246137 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 971157873570058997, guid: adf25147b460745439eb225c3108b428, type: 3}
-  m_PrefabInstance: {fileID: 716250456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &100449047
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,11 +220,6 @@ SpriteRenderer:
 --- !u!1 &126277459 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3016363076787922960, guid: adf25147b460745439eb225c3108b428, type: 3}
-  m_PrefabInstance: {fileID: 716250456}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &126277461 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1070987591525498159, guid: adf25147b460745439eb225c3108b428, type: 3}
   m_PrefabInstance: {fileID: 716250456}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &155916063
@@ -4400,11 +4390,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7331326458297150485, guid: adf25147b460745439eb225c3108b428, type: 3}
   m_PrefabInstance: {fileID: 716250456}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &1322546703 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1250770677457479471, guid: adf25147b460745439eb225c3108b428, type: 3}
-  m_PrefabInstance: {fileID: 716250456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1338962624
 GameObject:
   m_ObjectHideFlags: 0
@@ -5291,11 +5276,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3228797118882683354, guid: adf25147b460745439eb225c3108b428, type: 3}
   m_PrefabInstance: {fileID: 716250456}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &1569976348 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6345400616686612693, guid: adf25147b460745439eb225c3108b428, type: 3}
-  m_PrefabInstance: {fileID: 716250456}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1569976351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6047,7 +6027,6 @@ GameObject:
   - component: {fileID: 1893046174}
   - component: {fileID: 1893046175}
   - component: {fileID: 1893046177}
-  - component: {fileID: 1893046178}
   - component: {fileID: 1893046179}
   m_Layer: 5
   m_Name: Map
@@ -6115,27 +6094,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 100449049}
-  noMap: {fileID: 21300000, guid: bf7ee3ac6e8413a41a3c8a0b2d197dee, type: 3}
-  cont: {fileID: 716250458}
---- !u!114 &1893046178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893046173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6119969c173d664da57e44d0e6da6b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   slot1: {fileID: 1778981739}
-  slot2: {fileID: 1569976348}
-  slot3: {fileID: 1322546703}
-  slot4: {fileID: 126277461}
-  slot5: {fileID: 51246137}
-  item: {fileID: 21300000, guid: 773a6c1b5dbe0824ca6cb7d222eb2dd8, type: 3}
-  item2: {fileID: 0}
+  noMap: {fileID: 21300000, guid: bf7ee3ac6e8413a41a3c8a0b2d197dee, type: 3}
+  map: {fileID: 21300000, guid: 773a6c1b5dbe0824ca6cb7d222eb2dd8, type: 3}
+  cont: {fileID: 716250458}
 --- !u!114 &1893046179
 MonoBehaviour:
   m_ObjectHideFlags: 0

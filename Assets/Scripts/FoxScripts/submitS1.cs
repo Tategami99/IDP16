@@ -24,7 +24,10 @@ public class submitS1 : MonoBehaviour
                 statuePasswords.numCorrect += 1;
                 firsttime = false;
                 cont.GetComponent<FoxCont>().foxEnterDialogue();
-        }
+            }
+            else{
+                cont.GetComponent<FoxCont>().enterWrong();
+            }
         }
     }
 }

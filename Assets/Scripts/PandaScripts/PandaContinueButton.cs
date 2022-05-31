@@ -136,7 +136,6 @@ public class PandaContinueButton : MonoBehaviour
             if (Panda1DialogueUI.infoObtained){
                 SpeakerLabel.text = Username.username;
                 GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Panda1AlternateUserLine1, textLabel);
-                Gate.SetActive(true);
                 Panda1Line += 1;
             }
             else{
