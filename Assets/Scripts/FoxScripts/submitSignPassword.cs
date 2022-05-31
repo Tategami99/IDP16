@@ -19,7 +19,7 @@ public class submitSignPassword : MonoBehaviour
         
     }
     private void OnMouseDown() {
-        if (SignPassword.signPass == "foxy"){
+        if (SignPassword.signPass == "foxy" || SignPassword.signPass == "Foxy" || SignPassword.signPass == "FOXY"){
             FoxTime.Fpuzzle1Time = FoxTime.foxTimeSec;
             Debug.Log(SignPassword.signPass);
             goCaveInside.gateLock = false;

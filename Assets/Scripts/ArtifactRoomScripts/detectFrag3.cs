@@ -9,7 +9,7 @@ public class detectFrag3 : MonoBehaviour
     [SerializeField] private SpriteRenderer self, f2, fr3; 
     [SerializeField] private Sprite f3sprite;
     [SerializeField] private GameObject f3;
-    [SerializeField] private GameObject finalBox;
+    [SerializeField] private GameObject finalBox, highlight;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,7 @@ public class detectFrag3 : MonoBehaviour
         if (detectFrag.numPlaced == 3){
             Debug.Log("complete");
             finalBox.SetActive(true);
+            highlight.SetActive(true);
             self.GetComponent<PolygonCollider2D>().enabled = false;
             f2.GetComponent<PolygonCollider2D>().enabled = false;
             fr3.GetComponent<PolygonCollider2D>().enabled = false;

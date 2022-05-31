@@ -20,7 +20,7 @@ public class toTheSurvey : MonoBehaviour
         StartCoroutine(wait());
     }
     IEnumerator wait(){
-        yield return new WaitForSecondsRealtime(8);
+        yield return new WaitForSecondsRealtime(3);
         SceneManager.LoadScene("TestScene"); 
     }
 }

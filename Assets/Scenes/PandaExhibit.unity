@@ -4954,6 +4954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1156327764}
   - component: {fileID: 1156327765}
+  - component: {fileID: 1156327766}
   m_Layer: 0
   m_Name: PandaTime
   m_TagString: Untagged
@@ -4990,6 +4991,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimerText: {fileID: 1510338226}
   testTime: 10
+--- !u!114 &1156327766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156327763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553c5fc1bccd4d4409c46286ef55975f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cont: {fileID: 1264581990}
 --- !u!1 &1161241591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1422984409740134394, guid: adf25147b460745439eb225c3108b428, type: 3}
@@ -10146,6 +10160,11 @@ PrefabInstance:
       propertyPath: StorehouseDoor
       value: 
       objectReference: {fileID: 1567706199}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: userLineStart1
+      value: Click on the arrows to explore different areas. Click on the pandas
+        and other areas of interest to discover puzzles and clues.
+      objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda2UserLine1
       value: Bamboo?! I'd love to-- wait, I don't have any money on me. Hmm... would

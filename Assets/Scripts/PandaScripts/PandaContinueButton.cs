@@ -68,10 +68,13 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private GameObject diary;
     [SerializeField] private string diaryLine1;
 
+    //start dialogue
+    [SerializeField] private string userLineStart1;
+    private bool started = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        PandaDialogueBox.SetActive(false);
         mountainTopDoor.SetActive(false);
     }
 
@@ -100,6 +103,16 @@ public class PandaContinueButton : MonoBehaviour
         diary.SetActive(false);
     }
 
+    public void startDialogue(){
+        started = true;
+        PandaDialogueBox.SetActive(true);
+        PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
+        textLabel.text ="";
+        SpeakerLabel.text = "";
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:userLineStart1, textLabel);
+        diary.SetActive(false);
+    }
+
     public void OnMouseDown(){
         Debug.Log("clicked");
         PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
@@ -109,6 +122,12 @@ public class PandaContinueButton : MonoBehaviour
             DiaryOpen = false;
             PandaDialogueBox.SetActive(false);
             v1Arrow.SetActive(true);
+            diary.SetActive(true);
+            enableUI();
+        }
+        if (started){
+            started = false;
+            PandaDialogueBox.SetActive(false);
             diary.SetActive(true);
             enableUI();
         }
