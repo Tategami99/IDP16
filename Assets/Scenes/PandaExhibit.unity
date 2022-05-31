@@ -10213,7 +10213,7 @@ PrefabInstance:
       objectReference: {fileID: 276697477}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda1AlternateUserLine1
-      value: Yes I did. So about that Pheonix artifact fragment.
+      value: Yes I did. So about that Phoenix artifact fragment.
       objectReference: {fileID: 0}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: Panda1AlternateUserLine2
