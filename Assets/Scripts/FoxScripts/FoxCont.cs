@@ -59,6 +59,8 @@ public class FoxCont : MonoBehaviour
     //user clicks on the fragment
     [SerializeField] private List<string> foxFragmentDialogue = new List<string>();
     [SerializeField] private GameObject fragment3;
+
+    [SerializeField] private GameObject timer;
     // Start is called before the first frame update
     void Start()
     {

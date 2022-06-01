@@ -29,17 +29,17 @@ public class FoxTime : MonoBehaviour
             everyFsecond();
             updateTimer();
         }
-        if (totalTimeLeft == 0 || testTime == 0){
+        if (PandaTime.totalTimeLeft == 0 || testTime == 0){
                 SceneManager.LoadScene("LoseScreen");
         }
     }
     void everyFsecond(){
         foxTimeSec += 1;
-        totalTimeLeft -= 1;
+        PandaTime.totalTimeLeft -= 1;
     }
     void updateTimer(){
-        float minutes = Mathf.FloorToInt(((totalTimeLeft - PandaTime.pandaTimeSec - CobraTime.cobraTimeSec) / 60) % 60);
-        float seconds = Mathf.FloorToInt((totalTimeLeft - PandaTime.pandaTimeSec - CobraTime.cobraTimeSec) % 60);
+        float minutes = Mathf.FloorToInt(((PandaTime.totalTimeLeft) / 60) % 60);
+        float seconds = Mathf.FloorToInt((PandaTime.totalTimeLeft) % 60);
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
     }

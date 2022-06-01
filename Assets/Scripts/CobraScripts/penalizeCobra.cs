@@ -47,27 +47,27 @@ public class penalizeCobra : MonoBehaviour
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
         if (number == 3){
-            CobraTime.totalTimeLeft -= 60;
+            PandaTime.totalTimeLeft -= 60;
             CobraTime.cobraTimeSec += 60;
-            Debug.Log(CobraTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
+            Debug.Log(PandaTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
             ThHints.SetActive(false);
             TwHints.SetActive(true);
             number -= 1;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hint1Line, textLabel);
         }
         else if(number == 2){
-            CobraTime.totalTimeLeft -= 60;
+            PandaTime.totalTimeLeft -= 60;
             CobraTime.cobraTimeSec += 60;
-            Debug.Log(CobraTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
+            Debug.Log(PandaTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
             TwHints.SetActive(false);
             OHint.SetActive(true);
             number -= 1;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints2Line, textLabel);
         }
         else if(number == 1){
-            CobraTime.totalTimeLeft -= 60;
+            PandaTime.totalTimeLeft -= 60;
             CobraTime.cobraTimeSec += 60;
-            Debug.Log(CobraTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
+            Debug.Log(PandaTime.totalTimeLeft + "+" + CobraTime.cobraTimeSec);
             OHint.SetActive(false);
             NoHints.SetActive(true);
             number -= 1;

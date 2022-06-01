@@ -72,6 +72,10 @@ public class PandaContinueButton : MonoBehaviour
     [SerializeField] private string userLineStart1;
     private bool started = false;
 
+    [SerializeField] private GameObject highlight, highlight2;
+ 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -236,6 +240,7 @@ public class PandaContinueButton : MonoBehaviour
             exitkeypad.SetActive(true);
             if (KeypadEnter.solved1 || KeypadEnter.solved2){
                 exitkeypad.SetActive(false);
+                highlight.SetActive(true);
             }
             enableUI();
         }

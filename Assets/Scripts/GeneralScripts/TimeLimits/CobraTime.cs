@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class CobraTime : MonoBehaviour
 {
     [SerializeField] private TMP_Text TimerText;
-    public static float totalTimeLeft = 1800;
     public static int cobraTimeSec = 0;
     private int nextUpdate = 1;
     public static int Cpuzzle1Time = 0;
@@ -27,21 +26,18 @@ public class CobraTime : MonoBehaviour
             nextUpdate = Mathf.FloorToInt(Time.timeSinceLevelLoad) + 1;
             everyCsecond();
             updateTimer();
-            if (totalTimeLeft == 0){
-                SceneManager.LoadScene("LoseScreen");
-            }
         }
-        if (totalTimeLeft == 0){
+        if (PandaTime.totalTimeLeft == 0){
                 SceneManager.LoadScene("LoseScreen");
         }
     }
     void everyCsecond(){
         cobraTimeSec += 1;
-        totalTimeLeft -= 1;
+        PandaTime.totalTimeLeft -= 1;
     }
     void updateTimer(){
-        float minutes = Mathf.FloorToInt(((totalTimeLeft - PandaTime.pandaTimeSec) / 60) % 60);
-        float seconds = Mathf.FloorToInt((totalTimeLeft - PandaTime.pandaTimeSec) % 60);
+        float minutes = Mathf.FloorToInt(((PandaTime.totalTimeLeft) / 60) % 60);
+        float seconds = Mathf.FloorToInt((PandaTime.totalTimeLeft) % 60);
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
     }

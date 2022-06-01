@@ -10103,6 +10103,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1730457361}
     - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
+      propertyPath: highlight
+      value: 
+      objectReference: {fileID: 6879971881947243384}
+    - target: {fileID: 1264581995, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: storeDown
       value: 
       objectReference: {fileID: 2138273846}

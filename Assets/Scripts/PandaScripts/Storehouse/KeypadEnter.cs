@@ -42,7 +42,6 @@ public class KeypadEnter : MonoBehaviour
         if (solved1 == false && Keypad1.StorehousePasscode == "78191823" && GoDoorsHouse.EnteredFromDoorsHouse == false && ToCase1Keypad.enteredFromcase1 == false){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForStorehouse, textLabel);
             StorehouseDoor.locked = false;
-            highlight.SetActive(true);
             PandaTime.Ppuzzle1Time = PandaTime.pandaTimeSec - PandaTime.Ppuzzle2Time;
             Debug.Log(PandaTime.Ppuzzle1Time + "-1");
             solved1 = true;
@@ -50,7 +49,6 @@ public class KeypadEnter : MonoBehaviour
         else if (solved2 == false && Keypad1.StorehousePasscode == "12" && GoDoorsHouse.EnteredFromDoorsHouse){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForDoorsHouse, textLabel);
             DoorsHouseDoor.DoorsHouselocked = false;
-            highlight.SetActive(true);
             PandaTime.Ppuzzle2Time = PandaTime.pandaTimeSec - PandaTime.Ppuzzle1Time;
             Debug.Log(PandaTime.Ppuzzle2Time + "-2");
             solved2 = true;
