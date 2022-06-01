@@ -18,6 +18,9 @@ public class ToTop : MonoBehaviour
         
     }
     private void OnMouseDown() {
+        top();
+    }
+    public void top(){
         Camera.transform.position = mountainTop;
     }
 }

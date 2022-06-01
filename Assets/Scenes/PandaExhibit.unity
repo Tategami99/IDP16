@@ -2239,6 +2239,8 @@ GameObject:
   - component: {fileID: 441851963}
   - component: {fileID: 441851966}
   - component: {fileID: 441851967}
+  - component: {fileID: 441851968}
+  - component: {fileID: 441851969}
   m_Layer: 5
   m_Name: PlaceRope
   m_TagString: Untagged
@@ -2325,7 +2327,7 @@ MonoBehaviour:
   leftArrow: {fileID: 145356662}
   rightArrow: {fileID: 1838788086}
   NarratorLine1: '[I probably need a rope to get up to the path.]'
-  NarratorAlternateLine1: '*You placed the rope.*'
+  NarratorAlternateLine1: '*You placed the rope and went to the top of the mountain.*'
   textLabel: {fileID: 1264581988}
   SpeakerLabel: {fileID: 1264581987}
   PandaDialogueBox: {fileID: 1264581989}
@@ -2350,6 +2352,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panda1TypeSpeed: 25
   Panda1Continue: {fileID: 1264581990}
+--- !u!114 &441851968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441851961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8714422dcf820f24ca399f1bba19851d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1582232282}
+--- !u!114 &441851969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441851961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8714422dcf820f24ca399f1bba19851d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1582232282}
 --- !u!1 &444969342
 GameObject:
   m_ObjectHideFlags: 0
@@ -10275,11 +10303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1422984410267508381, guid: adf25147b460745439eb225c3108b428, type: 3}
       propertyPath: m_LocalPosition.z

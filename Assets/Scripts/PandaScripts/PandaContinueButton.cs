@@ -185,6 +185,7 @@ public class PandaContinueButton : MonoBehaviour
             DoorhouseDoor.GetComponent<BoxCollider2D>().enabled = true;
             storeDown.SetActive(true);
             doorDown.SetActive(true);
+            exitkeypad.SetActive(true);
         }
 
         // Panda 2 lines
@@ -234,6 +235,15 @@ public class PandaContinueButton : MonoBehaviour
             enterCaseDown.SetActive(true);
             enterFragDown.SetActive(true);
             exitkeypad.SetActive(true);
+            enableUI();
+        }
+        if (KeypadEnter.KeypadEnterClicked2){
+            KeypadEnter.KeypadEnterClicked = false;
+            PandaDialogueBox.SetActive(false);
+            StoreEnterButton.GetComponent<BoxCollider2D>().enabled = true;
+            caseEnterKey.GetComponent<BoxCollider2D>().enabled = true;
+            enterCaseDown.SetActive(true);
+            enterFragDown.SetActive(true);
             enableUI();
         }
         

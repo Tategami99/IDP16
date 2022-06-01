@@ -20,7 +20,7 @@ public class PlaceTheRope : MonoBehaviour
     [SerializeField] private GameObject highlight;
     Vector2 path = new Vector2 (36, -11);
     public static bool PlaceRopeClicked = false;
-    private int placement = 0;
+    private bool placed = false;
     [SerializeField] private GameObject UI;
     // Start is called before the first frame update
     void Start()
@@ -34,26 +34,38 @@ public class PlaceTheRope : MonoBehaviour
          
     }
     public void OnMouseDown(){
+        /*
         if (placement == 1){
-            Debug.Log("place");
-            Camera.transform.position = path;
             UI.SetActive(true);
             leftArrow.SetActive(false);
             rightArrow.SetActive(false);
+            Debug.Log("place");
+            Camera.transform.position = path;
+            Debug.Log("active");
         }
-        if (AddRope.ropeObtained && placement == 0){
-            highlight.SetActive(false);
-            PlaceRopeClicked = true;
-            Debug.Log("clicked");
-            PandaDialogueBox.SetActive(true);
-            PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
-            textLabel.text = "";
-            SpeakerLabel.text = "";
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:NarratorAlternateLine1, textLabel);
-            self.GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<RemoveRopeFromInventory>().removeRope();
-            placement += 1;
-            withRope.SetActive(true);
+        */
+        if (AddRope.ropeObtained){
+            if (placed == false){
+                highlight.SetActive(false);
+                PlaceRopeClicked = true;
+                Debug.Log("clicked");
+                PandaDialogueBox.SetActive(true);
+                PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
+                textLabel.text = "";
+                SpeakerLabel.text = "";
+                GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:NarratorAlternateLine1, textLabel);
+                self.GetComponent<BoxCollider2D>().enabled = false;
+                GetComponent<RemoveRopeFromInventory>().removeRope();
+                placed = true;
+                withRope.SetActive(true);
+                cont.GetComponent<PandaContinueButton>().disableUI();
+            }
+            else if (placed){
+                UI.SetActive(true);
+                leftArrow.SetActive(false);
+                rightArrow.SetActive(false);
+                GetComponent<ToTop>().top();
+            }
         }
         else if (AddRope.ropeObtained == false){
             PlaceRopeClicked = true;
@@ -65,7 +77,7 @@ public class PlaceTheRope : MonoBehaviour
             SpeakerLabel.text = Username.username;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:NarratorLine1, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
+            cont.GetComponent<PandaContinueButton>().disableUI();
         }
-        cont.GetComponent<PandaContinueButton>().disableUI();
     }
 }
