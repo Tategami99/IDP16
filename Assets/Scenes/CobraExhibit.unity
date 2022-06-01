@@ -1626,13 +1626,13 @@ MonoBehaviour:
   PandaDialogueBox: {fileID: 716250462}
   PandaContinue: {fileID: 716250458}
   self: {fileID: 576614062}
-  Hints3Line: Maybe I have to use the distance formula to find the distance between
-    the two points on the left and right cacti.
-  Hints2Line: Maybe the number of cacti is what the location of the point is scaled
-    by.
-  Hint1Line: Maybe the arrows have something to do with the location of the point
-    on the cactus.
-  Hints0Line: I can't seem to think of anything.
+  Hints3Line: "[Maybe I have to use the distance formula to find the distance between
+    the two points on the left and right cacti.] (d=\u221A(x2-x1)\xB2+(y2-y1)\xB2)"
+  Hints2Line: '[Maybe the number of cacti is what the location of the point is scaled
+    by.]'
+  Hint1Line: '[Maybe the arrows have something to do with the location of the points
+    on the cactus.]'
+  Hints0Line: '[I can''t seem to think of anything.]'
 --- !u!1 &601704987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &803877518
 Canvas:
   m_ObjectHideFlags: 0

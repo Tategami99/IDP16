@@ -764,12 +764,12 @@ MonoBehaviour:
   PandaDialogueBox: {fileID: 1342534176}
   PandaContinue: {fileID: 1342534170}
   self: {fileID: 198134842}
-  Hints3Line: What was that thing that happens when I shout in a cave called.
-  Hints2Line: The riddle on the left seems like it has something to do with foxes.
-    The riddle in the middle might have something to do with wolves..
-  Hint1Line: Maybe the letters these berries form have something to do with the reversed
-    paw prints.
-  Hints0Line: I can't seem to think of anything.
+  Hints3Line: '[What was that thing that happens when I shout in a cave called.]'
+  Hints2Line: '[The riddle on the left seems like it has something to do with foxes.
+    The riddle in the middle might have something to do with wolves..]'
+  Hint1Line: '[Maybe the letters these berries form have something to do with the
+    reversed paw prints.]'
+  Hints0Line: '[I can''t seem to think of anything.]'
 --- !u!1 &201919163
 GameObject:
   m_ObjectHideFlags: 0
