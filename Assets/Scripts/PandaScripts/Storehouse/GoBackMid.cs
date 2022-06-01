@@ -20,6 +20,7 @@ public class GoBackMid : MonoBehaviour
         
     }
     private void OnMouseDown() {
+        NumOHint.playerLocation = "";
         Camera.transform.position = mid;
         LeftArrow.SetActive(true);
         RightArrow.SetActive(true);

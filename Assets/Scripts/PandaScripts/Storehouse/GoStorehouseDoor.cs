@@ -25,6 +25,7 @@ public class GoStorehouseDoor : MonoBehaviour
     }
     void OnMouseDown() {
         textBox.text = "";
+        NumOHint.playerLocation = "storehouse";
         Debug.Log("clicked");
         if (GoDoorsHouse.EnteredFromDoorsHouse){
             Camera.transform.position = DoorsHouseFront;

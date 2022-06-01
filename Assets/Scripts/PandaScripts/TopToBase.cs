@@ -19,6 +19,7 @@ public class TopToBase : MonoBehaviour
     }
     void OnMouseDown()
     {
+        NumOHint.playerLocation = "";
         Camera.transform.position = mountainBase;
     }
 }

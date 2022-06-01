@@ -16,7 +16,10 @@ public class NumOHint : MonoBehaviour
     [SerializeField] private string Hints2Line;
     [SerializeField] private string Hint1Line;
     [SerializeField] private string Hints0Line;
+    [SerializeField] private string wrongAreaLine;
     public static bool HintButtonClicked = false;
+    public static string playerLocation;
+    private bool sUsed = false, dUsed = false, cUsed = false;
     
     public static int number = 3;
     // Start is called before the first frame update
@@ -42,39 +45,48 @@ public class NumOHint : MonoBehaviour
             SpeakerLabel.text = Username.username;
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
-        if (number == 3){
-            PandaTime.totalTimeLeft -= 60;
-            PandaTime.pandaTimeSec += 60;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
-            ThHints.SetActive(false);
-            TwHints.SetActive(true);
+        if (playerLocation == "storehouse" && sUsed == false){
+            store();
             number -= 1;
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hint1Line, textLabel);
+            changeLabel();
         }
-        else if(number == 2){
-            PandaTime.totalTimeLeft -= 60;
-            PandaTime.pandaTimeSec += 60;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
-            TwHints.SetActive(false);
-            OHint.SetActive(true);
+        else if(playerLocation == "doorhouse" && dUsed == false){
+            door();
             number -= 1;
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints2Line, textLabel);
+            changeLabel();
         }
-        else if(number == 1){
-            PandaTime.totalTimeLeft -= 60;
-            PandaTime.pandaTimeSec += 60;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
-            OHint.SetActive(false);
-            NoHints.SetActive(true);
+        else if(playerLocation == "case" && cUsed == false){
+            artifact();
             number -= 1;
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints3Line, textLabel);
+            changeLabel();
         }
         else if (number == 0){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints0Line, textLabel);
         }
+        else{
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:wrongAreaLine, textLabel);
+        }
     }
     private void store(){
-
+        PandaTime.totalTimeLeft -= 60;
+        PandaTime.pandaTimeSec += 60;
+        Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hint1Line, textLabel);
+        sUsed = true;
+    }
+    private void door(){
+        PandaTime.totalTimeLeft -= 60;
+        PandaTime.pandaTimeSec += 60;
+        Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints2Line, textLabel);
+        dUsed = true;
+    }
+    private void artifact(){
+        PandaTime.totalTimeLeft -= 60;
+        PandaTime.pandaTimeSec += 60;
+        Debug.Log(PandaTime.totalTimeLeft + "+" + PandaTime.pandaTimeSec);
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints3Line, textLabel);
+        cUsed = true;
     }
     private void changeLabel(){
         for (int i = 0; i < 4; i++){

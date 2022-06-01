@@ -26,6 +26,7 @@ public class GoDoorsHouse : MonoBehaviour
         
     }
     void OnMouseDown() {
+        NumOHint.playerLocation = "doorhouse";
         doorHandle.SetActive(true);
         EnteredFromDoorsHouse = true;
         Debug.Log("clicked");

@@ -21,6 +21,7 @@ public class ExitDoorsFront : MonoBehaviour
         
     }
     private void OnMouseDown() {
+        NumOHint.playerLocation = "";
         label.SetActive(false);
         wall.SetActive(false);
         GoDoorsHouse.EnteredFromDoorsHouse = false;

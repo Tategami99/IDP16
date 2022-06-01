@@ -35,6 +35,7 @@ public class PlaceTheRope : MonoBehaviour
     }
     public void OnMouseDown(){
         if (placement == 1){
+            NumOHint.playerLocation = "case";
             Debug.Log("place");
             Camera.transform.position = path;
             UI.SetActive(true);
