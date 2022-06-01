@@ -53,7 +53,7 @@ public class StorehouseDoor : MonoBehaviour
             highlight.SetActive(false);
             GetComponent<AddRope>().ropeAdd();
             GetComponent<AddMagnifyingGlass>().magniAdd();
-            storeDown.SetActive(false);
+            storeDown.SetActive(true);
             Debug.Log("clicked");
             PandaContinueButton.storehouseClicked = true;
             PandaDialogueBox.SetActive(true);

@@ -234,6 +234,9 @@ public class PandaContinueButton : MonoBehaviour
             enterCaseDown.SetActive(true);
             enterFragDown.SetActive(true);
             exitkeypad.SetActive(true);
+            if (KeypadEnter.solved1 || KeypadEnter.solved2){
+                exitkeypad.SetActive(false);
+            }
             enableUI();
         }
         

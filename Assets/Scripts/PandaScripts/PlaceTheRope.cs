@@ -54,6 +54,7 @@ public class PlaceTheRope : MonoBehaviour
             GetComponent<RemoveRopeFromInventory>().removeRope();
             placement += 1;
             withRope.SetActive(true);
+            cont.GetComponent<PandaContinueButton>().disableUI();
         }
         else if (AddRope.ropeObtained == false){
             PlaceRopeClicked = true;
@@ -65,7 +66,7 @@ public class PlaceTheRope : MonoBehaviour
             SpeakerLabel.text = Username.username;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:NarratorLine1, textLabel);
             self.GetComponent<BoxCollider2D>().enabled = false;
+            cont.GetComponent<PandaContinueButton>().disableUI();
         }
-        cont.GetComponent<PandaContinueButton>().disableUI();
     }
 }

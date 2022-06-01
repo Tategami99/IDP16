@@ -47,7 +47,7 @@ public class DoorsHouseDoor : MonoBehaviour
             notLocked.Play();
             highlight.SetActive(false);
             GetComponent<AddSword>().swordAdd();
-            doorDown.SetActive(false);
+            doorDown.SetActive(true);
             Debug.Log("clicked");
             PandaContinueButton.storehouseClicked = true;
             PandaDialogueBox.SetActive(true);

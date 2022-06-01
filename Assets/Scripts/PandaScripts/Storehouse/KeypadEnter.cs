@@ -19,7 +19,7 @@ public class KeypadEnter : MonoBehaviour
     [SerializeField] private GameObject highlight;
     [SerializeField] private GameObject highlight2;
     public static bool KeypadEnterClicked = false;
-    private bool solved1 = false, solved2 = false, solved3 = false;
+    public static bool solved1 = false, solved2 = false, solved3 = false;
     // Start is called before the first frame update
     void Start()
     {

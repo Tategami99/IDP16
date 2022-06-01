@@ -1626,8 +1626,8 @@ MonoBehaviour:
   PandaDialogueBox: {fileID: 716250462}
   PandaContinue: {fileID: 716250458}
   self: {fileID: 576614062}
-  Hints3Line: Maybe the number is the distance between the two points on the left
-    and right cactus.
+  Hints3Line: Maybe I have to use the distance formula to find the distance between
+    the two points on the left and right cacti.
   Hints2Line: Maybe the number of cacti is what the location of the point is scaled
     by.
   Hint1Line: Maybe the arrows have something to do with the location of the point

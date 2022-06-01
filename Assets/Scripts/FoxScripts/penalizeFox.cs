@@ -47,8 +47,8 @@ public class penalizeFox : MonoBehaviour
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
         if(number == 1){
-            FoxTime.totalTimeLeft -= 40;
-            FoxTime.foxTimeSec += 40;
+            FoxTime.totalTimeLeft -= 90;
+            FoxTime.foxTimeSec += 90;
             Debug.Log(FoxTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
             OHint.SetActive(false);
             NoHints.SetActive(true);
@@ -56,8 +56,8 @@ public class penalizeFox : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints3Line, textLabel);
         }
         else if(number == 2){
-            FoxTime.totalTimeLeft -= 35;
-            FoxTime.foxTimeSec += 35;
+            FoxTime.totalTimeLeft -= 75;
+            FoxTime.foxTimeSec += 75;
             Debug.Log(FoxTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
             TwHints.SetActive(false);
             OHint.SetActive(true);
@@ -65,8 +65,8 @@ public class penalizeFox : MonoBehaviour
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints2Line, textLabel);
         }
         else if (number == 3){
-            FoxTime.totalTimeLeft -= 25;
-            FoxTime.foxTimeSec += 25;
+            FoxTime.totalTimeLeft -= 60;
+            FoxTime.foxTimeSec += 60;
             Debug.Log(FoxTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
             ThHints.SetActive(false);
             TwHints.SetActive(true);
