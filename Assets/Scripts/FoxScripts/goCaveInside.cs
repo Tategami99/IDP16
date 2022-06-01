@@ -25,6 +25,7 @@ public class goCaveInside : MonoBehaviour
         }
         else{
             Camera.transform.position = inside;
+            penalizeFox.playerLocation = "";
         }
     }
 }

@@ -6,10 +6,7 @@ using  TMPro;
 
 public class NumOHint : MonoBehaviour
 {
-    public GameObject ThHints;
-    public GameObject TwHints;
-    public GameObject OHint;
-    public GameObject NoHints;
+    [SerializeField] private List<GameObject> hintLabel = new List<GameObject>();
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text SpeakerLabel;
     [SerializeField] private GameObject PandaDialogueBox;
@@ -25,9 +22,8 @@ public class NumOHint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TwHints.SetActive(false);
-        OHint.SetActive(false);
-        NoHints.SetActive(false);
+        hintLabel[0].SetActive(false);hintLabel[1].SetActive(false);hintLabel[2].SetActive(false);
+        hintLabel[3].SetActive(true);
     }
 
     // Update is called once per frame
@@ -76,5 +72,14 @@ public class NumOHint : MonoBehaviour
         else if (number == 0){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints0Line, textLabel);
         }
+    }
+    private void store(){
+
+    }
+    private void changeLabel(){
+        for (int i = 0; i < 4; i++){
+            hintLabel[i].SetActive(false);
+        }
+        hintLabel[number].SetActive(true);
     }
 }

@@ -6,10 +6,7 @@ using  TMPro;
 
 public class penalizeFox : MonoBehaviour
 {
-    public GameObject ThHints;
-    public GameObject TwHints;
-    public GameObject OHint;
-    public GameObject NoHints;
+    [SerializeField] private List<GameObject> hintLabel = new List<GameObject>();
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private TMP_Text SpeakerLabel;
     [SerializeField] private GameObject PandaDialogueBox;
@@ -19,15 +16,17 @@ public class penalizeFox : MonoBehaviour
     [SerializeField] private string Hints2Line;
     [SerializeField] private string Hint1Line;
     [SerializeField] private string Hints0Line;
+    [SerializeField] private string wrongAreaLine;
     public static bool HintButtonClicked = false;
+    public static string playerLocation;
+    private bool eUsed = false, sUsed = false, siUsed = false;
     
     public static int number = 3;
     // Start is called before the first frame update
     void Start()
     {
-        TwHints.SetActive(false);
-        OHint.SetActive(false);
-        NoHints.SetActive(false);
+        hintLabel[0].SetActive(false);hintLabel[1].SetActive(false);hintLabel[2].SetActive(false);
+        hintLabel[3].SetActive(true);
     }
 
     // Update is called once per frame
@@ -46,35 +45,53 @@ public class penalizeFox : MonoBehaviour
             SpeakerLabel.text = Username.username;
             self.GetComponent<BoxCollider2D>().enabled = false;
         }
-        if(number == 1){
-            PandaTime.totalTimeLeft -= 90;
-            FoxTime.foxTimeSec += 90;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
-            OHint.SetActive(false);
-            NoHints.SetActive(true);
+        if(playerLocation == "echo" && eUsed == false){
+            echoHint();
             number -= 1;
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints3Line, textLabel);
+            changeLabel();
         }
-        else if(number == 2){
-            PandaTime.totalTimeLeft -= 75;
-            FoxTime.foxTimeSec += 75;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
-            TwHints.SetActive(false);
-            OHint.SetActive(true);
+        else if(playerLocation == "statue" && sUsed == false){
+            statueHint();
             number -= 1;
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints2Line, textLabel);
+            changeLabel();
         }
-        else if (number == 3){
-            PandaTime.totalTimeLeft -= 60;
-            FoxTime.foxTimeSec += 60;
-            Debug.Log(PandaTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
-            ThHints.SetActive(false);
-            TwHints.SetActive(true);
-            number -= 1;
-            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hint1Line, textLabel);
+        else if (playerLocation == "sign" && siUsed == false){
+           signHint();
+           number -= 1;
+           changeLabel();
         }
         else if (number == 0){
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints0Line, textLabel);
         }
+        else{
+            GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:wrongAreaLine, textLabel);
+        }
+    }
+    private void echoHint(){
+        PandaTime.totalTimeLeft -= 90;
+        FoxTime.foxTimeSec += 90;
+        Debug.Log(PandaTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints3Line, textLabel);
+        eUsed = true;
+    }
+    private void statueHint(){
+        PandaTime.totalTimeLeft -= 75;
+        FoxTime.foxTimeSec += 75;
+        Debug.Log(PandaTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hints2Line, textLabel);
+        sUsed = true;
+    }
+    private void signHint(){
+        PandaTime.totalTimeLeft -= 60;
+        FoxTime.foxTimeSec += 60;
+        Debug.Log(PandaTime.totalTimeLeft + "+" + FoxTime.foxTimeSec);
+        GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Hint1Line, textLabel);
+        siUsed = true;
+    }
+    private void changeLabel(){
+        for (int i = 0; i < 4; i++){
+            hintLabel[i].SetActive(false);
+        }
+        hintLabel[number].SetActive(true);
     }
 }

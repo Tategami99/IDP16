@@ -19,5 +19,6 @@ public class goCaveFront : MonoBehaviour
     }
     private void OnMouseDown() {
         Camera.transform.position = front;
+        penalizeFox.playerLocation = "sign";
     }
 }

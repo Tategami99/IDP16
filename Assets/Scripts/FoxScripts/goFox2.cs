@@ -19,5 +19,6 @@ public class goFox2 : MonoBehaviour
     }
     private void OnMouseDown() {
         Camera.transform.position = fox;
+        penalizeFox.playerLocation = "statue";
     }
 }

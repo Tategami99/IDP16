@@ -19,5 +19,6 @@ public class exitFoxStatue : MonoBehaviour
     }
     private void OnMouseDown() {
         Camera.transform.position = inside;
+        penalizeFox.playerLocation = "";
     }
 }

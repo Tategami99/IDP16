@@ -20,5 +20,6 @@ public class BackDesert : MonoBehaviour
     void OnMouseDown()
     {
         Camera.transform.position = desert;
+        penalizeCobra.playerLocation = "";
     }
 }

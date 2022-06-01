@@ -20,5 +20,6 @@ public class BackOutside : MonoBehaviour
     void OnMouseDown()
     {
         Camera.transform.position = outside;
+        penalizeCobra.playerLocation = "";
     }
 }

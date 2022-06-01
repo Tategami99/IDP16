@@ -19,5 +19,6 @@ public class ExitCaveFrontArea : MonoBehaviour
     }
     private void OnMouseDown() {
         Camera.transform.position = path;
+        penalizeFox.playerLocation = "";
     }
 }

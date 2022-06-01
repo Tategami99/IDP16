@@ -25,6 +25,7 @@ public class DoorStatueCobra : MonoBehaviour
         }
         else{
             Camera.transform.position = insideStatue;
+            penalizeCobra.playerLocation = "formula";
         }
     }
 }

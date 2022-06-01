@@ -1617,10 +1617,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f704a858924b949946ad308ba84869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThHints: {fileID: 576614061}
-  TwHints: {fileID: 576614060}
-  OHint: {fileID: 576614059}
-  NoHints: {fileID: 576614058}
+  hintLabel:
+  - {fileID: 576614058}
+  - {fileID: 576614059}
+  - {fileID: 576614060}
+  - {fileID: 576614061}
   textLabel: {fileID: 716250461}
   SpeakerLabel: {fileID: 716250460}
   PandaDialogueBox: {fileID: 716250462}
@@ -1633,6 +1634,8 @@ MonoBehaviour:
   Hint1Line: '[Maybe the arrows have something to do with the location of the points
     on the cactus.]'
   Hints0Line: '[I can''t seem to think of anything.]'
+  wrongAreaLine: '*You may not use a hint in this area. Go to a different area and
+    try again.*'
 --- !u!1 &601704987
 GameObject:
   m_ObjectHideFlags: 0

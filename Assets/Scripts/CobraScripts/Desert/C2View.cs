@@ -21,6 +21,7 @@ public class C2View : MonoBehaviour
     void OnMouseDown()
     {
         Camera.transform.position = c2;
+        penalizeCobra.playerLocation = "cacti";
         if (C1View.Cfirsttime){
             cont.GetComponent<CobraContinue>().clickCactus();
             C1View.Cfirsttime = false;
