@@ -18,7 +18,7 @@ public class KeypadEnter : MonoBehaviour
     [SerializeField] private GameObject enterDown;
     [SerializeField] private GameObject highlight;
     [SerializeField] private GameObject highlight2;
-    public static bool KeypadEnterClicked = false, KeypadEnterClicked2 = false;
+    public static bool KeypadEnterClicked = false;
     private bool solved1 = false, solved2 = false, solved3 = false;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,7 @@ public class KeypadEnter : MonoBehaviour
          
     }
     public void OnMouseDown(){
+        KeypadEnterClicked = true;
         Debug.Log("clicked");
         PandaDialogueBox.SetActive(true);
         PandaContinue.GetComponent<BoxCollider2D>().enabled = false;
@@ -39,27 +40,22 @@ public class KeypadEnter : MonoBehaviour
         SpeakerLabel.text = "";
         SpeakerLabel.text = Username.username;
         if (solved1 == false && Keypad1.StorehousePasscode == "78191823" && GoDoorsHouse.EnteredFromDoorsHouse == false && ToCase1Keypad.enteredFromcase1 == false){
-            KeypadEnterClicked2 = true;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForStorehouse, textLabel);
             StorehouseDoor.locked = false;
             highlight.SetActive(true);
             PandaTime.Ppuzzle1Time = PandaTime.pandaTimeSec - PandaTime.Ppuzzle2Time;
             Debug.Log(PandaTime.Ppuzzle1Time + "-1");
             solved1 = true;
-            enterDown.SetActive(false);
         }
         else if (solved2 == false && Keypad1.StorehousePasscode == "12" && GoDoorsHouse.EnteredFromDoorsHouse){
-            KeypadEnterClicked2 = true;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForDoorsHouse, textLabel);
             DoorsHouseDoor.DoorsHouselocked = false;
             highlight.SetActive(true);
             PandaTime.Ppuzzle2Time = PandaTime.pandaTimeSec - PandaTime.Ppuzzle1Time;
             Debug.Log(PandaTime.Ppuzzle2Time + "-2");
             solved2 = true;
-            enterDown.SetActive(false);
         }
         else if (solved3 == false && key1.fragment1Code == "13152114201914"){
-            KeypadEnterClicked2 = true;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:CorrectForFragment1Case, textLabel);
             fragment1case.case1unlocked = true;
             highlight2.SetActive(true);
@@ -68,7 +64,6 @@ public class KeypadEnter : MonoBehaviour
             solved3 = true;
         }
         else{
-            KeypadEnterClicked = true;
             GetComponent<Panda1Dialogue>().RunPanda1Dialogue(textToType:Inorrect, textLabel);
         }
         self.GetComponent<BoxCollider2D>().enabled = false;
